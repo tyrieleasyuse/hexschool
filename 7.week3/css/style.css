@@ -68,12 +68,12 @@ table {
 }
 
 .menu{
-  margin-right: 88px;
   margin-top: 40px;
+  margin-right: 88px;
 }
 
 .menu ul{
-  width: 412px;
+  width: 492px;
   display: flex;
   justify-content: space-between;
 }
@@ -82,4 +82,59 @@ table {
   color: #FFFFFF;
   font-family: Noto_Sans;
   font-size: 20px;
+}
+
+@media(max-width:992px){
+.header img{
+  margin-left: 39px;
+}
+
+.menu{
+    margin-right: 39px;
+ }  
+
+ .menu ul{
+  width: 430px;
+}
+
+}
+
+@media(max-width:767px){
+  .header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .header img{
+    margin: 10px auto 10.86px;
+  }
+  
+  .menu{
+    width:100%;
+    margin: 0 auto;
+  }
+
+  .menu ul{
+    display: flex;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    flex-wrap:wrap;
+  }
+
+  .menu ul p{
+    margin: 8px auto 8px;
+  }
+
+  .menu ul li{
+    border-top: 1px solid white;
+    width: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
