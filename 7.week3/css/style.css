@@ -52,7 +52,6 @@ table {
   src: url(/font/Noto_Sans/NotoSans-Regular.ttf); /* 如果使用者電腦中找不到，則從網路下載 */
 }
 
-
 .header{
   background-color: #AA0601;
   height: 108px;
@@ -125,12 +124,13 @@ table {
     flex-wrap:wrap;
   }
 
-  .menu ul p{
-    margin: 8px auto 8px;
+  .menu ul li p{
+    padding: 8px 0px 8px 0px ;
+    border: 1px solid white;
+    width: 100%;
   }
 
   .menu ul li{
-    border-top: 1px solid white;
     width: 50%;
     text-align: center;
     display: flex;
