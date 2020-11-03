@@ -1,0 +1,56 @@
+body{
+    font-family: 微軟正黑體;
+    width: 850px;
+    border-top: 5px solid skyblue;
+    border-bottom: 5px solid skyblue;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    padding: 5px;
+}
+h1{
+    color:blue;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;    
+    text-decoration: underline;
+}
+p{
+    color:black;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+li{
+    color: black;
+}
+
+p img{
+    border: 2px solid skyblue;
+}
+
+.imgcenter{
+    text-align: center;    
+}
+.content p{
+    text-indent: 32px;
+}
+
+.pink{
+    color: pink;
+    font-size: 16px;
+}
+
+.blue{
+    color:skyblue;
+    font-size: 16px;
+}
+
+a:hover{
+    color:red;
+}
+
+.content p:hover{
+    color:red;
+}
