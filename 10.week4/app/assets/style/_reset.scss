@@ -47,6 +47,10 @@ table {
 	border-spacing: 0;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 @font-face {
   font-family: Noto_Sans;
   src: url(../font/Noto_Sans/NotoSans-Regular.ttf); /* 如果使用者電腦中找不到，則從網路下載 */
@@ -59,4 +63,9 @@ table {
 a {
     text-decoration: none;
     color: white;
-  }
+ }
+  
+img{
+	width: 100%;
+	height: auto;
+}

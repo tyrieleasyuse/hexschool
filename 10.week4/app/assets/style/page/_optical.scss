@@ -46,10 +46,6 @@
     display: flex;
     justify-content: space-between;
 
-    li img{
-        width: 100%;
-        height: auto;
-    }
     li:nth-child(2) {
         width: 30px;
     }
@@ -87,11 +83,6 @@
             padding-right: 15px;
             padding-left: 15px;
             
-            img {
-                width: 100%;
-                height: auto;
-            }
-
             p {
                 display: flex;
                 justify-content: space-between;
@@ -155,10 +146,19 @@
     .optical_menu {
         width: 100%;
         .optical_menu_img {
-            width: 33%;
+            width: 33.333333%;
         }
         .optical_menu_bottom {
-            width: 33%;
+            width: 33.333333%;
         }
+    }
+    
+    .optical_product {
+        padding-right: 24px;
+        padding-left: 24px;
+        li {
+            width: 50%;
+        }
+        
     }
 }

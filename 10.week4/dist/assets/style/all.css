@@ -46,6 +46,10 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
 @font-face {
   font-family: Noto_Sans;
   src: url(../font/Noto_Sans/NotoSans-Regular.ttf);
@@ -57,6 +61,10 @@ table {
 a {
   text-decoration: none;
   color: white; }
+
+img {
+  width: 100%;
+  height: auto; }
 
 .header {
   background-color: #AA0601;
@@ -394,9 +402,6 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between; }
-  .optical_demoimg li img {
-    width: 100%;
-    height: auto; }
   .optical_demoimg li:nth-child(2) {
     width: 30px; }
 
@@ -440,9 +445,6 @@ a {
     .optical_product li .optical_wrap {
       padding-right: 15px;
       padding-left: 15px; }
-      .optical_product li .optical_wrap img {
-        width: 100%;
-        height: auto; }
       .optical_product li .optical_wrap p {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -500,9 +502,14 @@ a {
   .optical_menu {
     width: 100%; }
     .optical_menu .optical_menu_img {
-      width: 33%; }
+      width: 33.333333%; }
     .optical_menu .optical_menu_bottom {
-      width: 33%; } }
+      width: 33.333333%; }
+  .optical_product {
+    padding-right: 24px;
+    padding-left: 24px; }
+    .optical_product li {
+      width: 50%; } }
 
 .sunglasses {
   background: white;
