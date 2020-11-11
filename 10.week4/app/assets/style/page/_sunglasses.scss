@@ -1,11 +1,12 @@
-.optical {
+.sunglasses {
     background: white;
     color: #111619;
+    padding-bottom: 304px;
 }
-.optical_menu{    
+.sunglasses_menu{    
     display: flex;
     justify-content: center;
-    .optical_menu_img {
+    .sunglasses_menu_img {
         display: flex;
         justify-content: center;
         width: 462px;
@@ -26,7 +27,7 @@
             }
         }
     }
-    .optical_menu_bottom {
+    .sunglasses_menu_bottom {
         display: flex;
         justify-content: center;
         width: 462px;
@@ -34,11 +35,11 @@
         border-right: 1px solid #DCDCDC;
         padding-top: 16px;
     }
-    .active_optical_menu_bottom {
+    .active_sunglasses_menu_bottom {
         background-color: #AA0601;
     }
 }
-.optical_demoimg {
+.sunglasses_demoimg {
     display: flex;
     justify-content: space-between;
 
@@ -51,7 +52,7 @@
     }
 }
 
-.optical_title {    
+.sunglasses_title {    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,17 +70,18 @@
     }
 }
 
-.optical_product {
+.sunglasses_product {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     padding-right: 390px;
     padding-left: 390px;
-    li {
-        width: 25%;
+    > li {
+        width: 33.333333%;
         padding-bottom: 104px;     
 
-        .optical_wrap {
+        .sunglasses_wrap {
+            font-size: 18px;  
             padding-right: 15px;
             padding-left: 15px;
             
@@ -88,24 +90,24 @@
                 height: auto;
             }
 
-            p {
-                display: flex;
-                justify-content: space-between;
-                font-size: 24px;            
-                line-height: 36px;
+            ul li:nth-child(1) {          
+                line-height: 24px;
+                padding-bottom: 8px;
             }
-            p span:nth-child(2){
-                color: #AA0601;            
+            ul li:nth-child(2){       
+                line-height: 24px;
+                color: #AA0601;
+                padding-bottom: 11px;
             }
         }
     }
 
 }
 
-.optical_color{    
+.sunglasses_color{    
     display: flex;
 
-    .optical_color1 {
+    .sunglasses_color1 {
         width: 24px;
         height: 24px;
         background: #5F3E2D 0% 0% no-repeat padding-box;
@@ -113,36 +115,10 @@
         margin-right: 8px;
     }
     
-    .optical_color2 {
+    .sunglasses_color2 {
         width: 24px;
         height: 24px;
         background: #B75929 0% 0% no-repeat padding-box;
         border-radius: 4px;
-    }
-}
-
-.optical_onpage {
-    display: flex;
-    justify-content: center;
-    padding-top: 100px;
-    padding-bottom: 156px;
-    li{
-        font-size: 18px;
-        padding: 10px 14px 12px 14px;
-        border: 1px solid #555555;
-    }
-    .optical_onpage_active{
-        color: #FFFFFF;
-        background: #000000;
-        border: 0px;
-    }
-    li:first-child {
-        font-size: 19px;
-        padding: 10px 12px 12px 12px;
-    }
-    li:last-child{
-        font-size: 19px;
-        padding: 10px 12px 12px 12px;
-        background: #F2F2F2;
     }
 }
