@@ -1,14 +1,18 @@
 .optical {
     background: white;
     color: #111619;
+    width: 100%;
 }
 .optical_menu{    
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    width: 1386px;
+    margin: 0 auto;
     .optical_menu_img {
         display: flex;
         justify-content: center;
-        width: 462px;
+        width: 444px;
         border-left: 1px solid #DCDCDC;
         border-right: 1px solid #DCDCDC;
         padding-top: 24px;
@@ -29,7 +33,7 @@
     .optical_menu_bottom {
         display: flex;
         justify-content: center;
-        width: 462px;
+        width: 444px;
         border-left: 1px solid #DCDCDC;
         border-right: 1px solid #DCDCDC;
         padding-top: 16px;
@@ -144,5 +148,17 @@
         font-size: 19px;
         padding: 10px 12px 12px 12px;
         background: #F2F2F2;
+    }
+}
+
+@media(max-width:992px){
+    .optical_menu {
+        width: 100%;
+        .optical_menu_img {
+            width: 33%;
+        }
+        .optical_menu_bottom {
+            width: 33%;
+        }
     }
 }

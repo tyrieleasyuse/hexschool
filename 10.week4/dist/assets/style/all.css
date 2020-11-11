@@ -339,7 +339,8 @@ a {
 
 .optical {
   background: white;
-  color: #111619; }
+  color: #111619;
+  width: 100%; }
 
 .optical_menu {
   display: -webkit-box;
@@ -347,7 +348,11 @@ a {
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center; }
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 1386px;
+  margin: 0 auto; }
   .optical_menu .optical_menu_img {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -355,7 +360,7 @@ a {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    width: 462px;
+    width: 444px;
     border-left: 1px solid #DCDCDC;
     border-right: 1px solid #DCDCDC;
     padding-top: 24px;
@@ -375,7 +380,7 @@ a {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    width: 462px;
+    width: 444px;
     border-left: 1px solid #DCDCDC;
     border-right: 1px solid #DCDCDC;
     padding-top: 16px; }
@@ -490,6 +495,14 @@ a {
     font-size: 19px;
     padding: 10px 12px 12px 12px;
     background: #F2F2F2; }
+
+@media (max-width: 992px) {
+  .optical_menu {
+    width: 100%; }
+    .optical_menu .optical_menu_img {
+      width: 33%; }
+    .optical_menu .optical_menu_bottom {
+      width: 33%; } }
 
 .sunglasses {
   background: white;
