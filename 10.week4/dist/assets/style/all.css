@@ -50,20 +50,15 @@ table {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
 
-@font-face {
-  font-family: Noto_Sans;
-  src: url(../font/Noto_Sans/NotoSans-Regular.ttf);
-  /* 如果使用者電腦中找不到，則從網路下載 */ }
-
-.body {
-  font-family: Noto_Sans; }
+* {
+  font-family: 'Noto Sans', sans-serif; }
 
 a {
   text-decoration: none;
   color: white; }
 
 img {
-  width: 100%;
+  max-width: 100%;
   height: auto; }
 
 .header {
@@ -222,9 +217,12 @@ img {
     width: 100%; }
   .footer_menu .footer_menu_connect {
     font-size: 20px; }
+  .footer_menu .footer_menu_connect li:nth-child(1) {
+    padding-right: 15px; }
   .footer_menu .footer_menu_connect li img {
     width: 24px;
-    height: 24px; }
+    height: 24px;
+    padding-right: 0; }
   .footer_icon li img {
     width: 24px;
     height: 24px; }
@@ -368,6 +366,9 @@ img {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 444px;
     border-left: 1px solid #DCDCDC;
     border-right: 1px solid #DCDCDC;
@@ -375,10 +376,10 @@ img {
     padding-bottom: 8px; }
     .optical_menu .optical_menu_img img {
       width: 48px;
-      height: 48px;
-      padding-right: 8px; }
+      height: 48px; }
     .optical_menu .optical_menu_img p {
-      font-size: 42px; }
+      font-size: 42px;
+      padding-left: 8px; }
       .optical_menu .optical_menu_img p a {
         color: #000; }
   .optical_menu .optical_menu_bottom {
@@ -445,6 +446,8 @@ img {
     .optical_product li .optical_wrap {
       padding-right: 15px;
       padding-left: 15px; }
+      .optical_product li .optical_wrap img {
+        width: 100%; }
       .optical_product li .optical_wrap p {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -503,13 +506,79 @@ img {
     width: 100%; }
     .optical_menu .optical_menu_img {
       width: 33.333333%; }
+      .optical_menu .optical_menu_img img {
+        width: 32px;
+        height: 25px; }
+      .optical_menu .optical_menu_img p {
+        font-size: 28px; }
     .optical_menu .optical_menu_bottom {
       width: 33.333333%; }
   .optical_product {
     padding-right: 24px;
     padding-left: 24px; }
     .optical_product li {
-      width: 50%; } }
+      width: 50%; }
+  .optical_demoimg li:nth-child(2) {
+    width: 0px; }
+  .optical_title li:nth-child(1) {
+    font-size: 32px;
+    line-height: 48px;
+    padding-top: 40px; }
+  .optical_title li:nth-child(2) {
+    font-size: 24px;
+    line-height: 36px;
+    padding-bottom: 32px; } }
+
+@media (max-width: 767px) {
+  .optical_menu {
+    width: 100%; }
+    .optical_menu .optical_menu_img {
+      width: 33.333333%;
+      padding-top: 8px;
+      padding-bottom: 8px; }
+      .optical_menu .optical_menu_img img {
+        width: 15px;
+        height: 12px; }
+      .optical_menu .optical_menu_img p {
+        padding-left: 5px;
+        font-size: 14px; }
+    .optical_menu .optical_menu_bottom {
+      width: 33.333333%;
+      padding-top: 4px; }
+  .optical_product {
+    padding-right: 15px;
+    padding-left: 15px; }
+    .optical_product li {
+      width: 100%;
+      padding-bottom: 32px; }
+      .optical_product li .optical_wrap {
+        padding-right: 0px;
+        padding-left: 0px; }
+        .optical_product li .optical_wrap p {
+          font-size: 16px;
+          line-height: 21px; }
+  .optical_demoimg li:nth-child(2) {
+    width: 0px; }
+  .optical_title li:nth-child(1) {
+    font-size: 20px;
+    line-height: 26px;
+    padding-top: 30px; }
+  .optical_title li:nth-child(2) {
+    font-size: 16px;
+    line-height: 22px;
+    padding-bottom: 20px; }
+  .optical_onpage {
+    padding-top: 40px;
+    padding-bottom: 56px; }
+    .optical_onpage li {
+      font-size: 11px;
+      padding: 8px 11px 7px 10px; }
+    .optical_onpage li:first-child {
+      font-size: 12px;
+      padding: 8px 9px 7px 8px; }
+    .optical_onpage li:last-child {
+      font-size: 12px;
+      padding: 8px 9px 7px 8px; } }
 
 .sunglasses {
   background: white;
