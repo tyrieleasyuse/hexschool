@@ -147,9 +147,14 @@
       font-size: 20px;
     }
     
+    .footer_menu .footer_menu_connect li:nth-child(1){
+      padding-right: 15px;
+    }  
+
     .footer_menu .footer_menu_connect li img{
       width: 24px;
       height: 24px;
+      padding-right: 0;
     }  
     
     .footer_icon li img{

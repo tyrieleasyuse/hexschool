@@ -47,16 +47,20 @@ table {
 	border-spacing: 0;
 }
 
-@font-face {
-  font-family: Noto_Sans;
-  src: url(../font/Noto_Sans/NotoSans-Regular.ttf); /* 如果使用者電腦中找不到，則從網路下載 */
+* {
+    box-sizing: border-box;
 }
 
-.body{
-  font-family: Noto_Sans;
+* {
+    font-family: 'Noto Sans', sans-serif;
 }
 
 a {
     text-decoration: none;
     color: white;
-  }
+ }
+  
+img{
+	max-width: 100%;
+	height: auto;
+}
