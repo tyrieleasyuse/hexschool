@@ -46,12 +46,10 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-* {
+body, html {
+  font-family: 'Noto Sans', sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
-
-* {
-  font-family: 'Noto Sans', sans-serif; }
 
 a {
   text-decoration: none;
@@ -359,7 +357,7 @@ img {
       flex-wrap: wrap;
   width: 1386px;
   margin: 0 auto; }
-  .optical_menu .optical_menu_img {
+  .optical_menu_img {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -374,13 +372,13 @@ img {
     border-right: 1px solid #DCDCDC;
     padding-top: 24px;
     padding-bottom: 8px; }
-    .optical_menu .optical_menu_img img {
+    .optical_menu_img img {
       width: 48px;
       height: 48px; }
-    .optical_menu .optical_menu_img p {
+    .optical_menu_img p {
       font-size: 42px;
       padding-left: 8px; }
-      .optical_menu .optical_menu_img p a {
+      .optical_menu_img p a {
         color: #000; }
   .optical_menu .optical_menu_bottom {
     display: -webkit-box;
