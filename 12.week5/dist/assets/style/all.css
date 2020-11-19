@@ -1,13 +1,31 @@
+.text-primary {
+  color: #EDF4EE; }
+
+.background-color-primary {
+  background-color: #EDF4EE; }
+
+.border-color-primary {
+  border-color: #CDDDCD; }
+
+.color-success {
+  color: #2A8356; }
+
+.color-danger {
+  color: #E3006E; }
+
 body, html {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+          box-sizing: border-box;
+  font-family: 'Lato', sans-serif; }
 
 img {
   max-width: 100%;
   height: auto; }
 
-.container {
-  width: 1110px;
-  margin: 0 auto; }
+.font-bold {
+  font-weight: bold; }
+
+.modal-title-primary {
+  font-size: 1.5rem; }
 
 /*# sourceMappingURL=all.css.map */

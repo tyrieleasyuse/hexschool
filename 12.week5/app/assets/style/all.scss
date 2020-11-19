@@ -1,3 +1,4 @@
-@import "variables.scss";
-@import "reset.scss";
-@import "layout.scss";
+@import "abstracts/variables.scss";
+@import "base/reset.scss";
+@import "layout/layout.scss";
+@import "pages/index.scss";
