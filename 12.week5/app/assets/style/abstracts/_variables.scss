@@ -1,9 +1,11 @@
+//_variables.scss
 $theme-colors: map-merge(
   (
     'primary': #EDF4EE,
     'secondary': #CDDDCD,
     'success': #2A8356,
-    'danger':#E3006E
+    'danger':#E3006E,
+    'dark':#000000
   ),
   ()
 );
@@ -11,24 +13,4 @@ $theme-colors: map-merge(
 // _functions.scss
 @function theme-color($key) {
   @return map-get($theme-colors, $key);
-}
-
-.text-primary {
-  color: theme-color(primary);
-}
-
-.background-color-primary {
-	background-color: theme-color(primary);
-}
-
-.border-color-primary {
-    border-color: theme-color(secondary);
-}
-
-.color-success {
-    color: theme-color(success);
-}
-
-.color-danger {
-    color: theme-color(danger);
 }

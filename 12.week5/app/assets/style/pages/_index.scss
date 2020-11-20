@@ -1,3 +1,68 @@
+.logo {
+    display: block;
+    background: url("../../assets/images/logo-ANSWER.svg") no-repeat;
+    text-indent: 101%;
+    /*首行縮排*/
+    overflow: hidden;
+    /*自動隱藏超出的文字或圖片*/
+    white-space: nowrap;
+    /*希望元素在第一排上面，沒有斷行*/
+}
+
 .modal-title-primary {
     font-size: 1.5rem;
+}
+
+.menu {
+    width: 296px;
+
+    .menu__list {
+        padding-bottom: 363px;
+    }
+
+    .menu__user {
+        padding-bottom: 32px;
+    }
+}
+
+.content {
+    width: 984px;
+}
+
+.btn-admin {
+    display: inline;
+    cursor: pointer;
+}
+
+.btn-sort {
+    display: inline;
+    cursor: pointer;
+    vertical-align: middle;
+    span {
+        font-size: 18px;
+    }
+}
+
+.menu__list-focus {
+    border-left: 4px solid;
+    padding-left: 20px;
+}
+
+.menu__user-logo{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.menu__user_email {
+    font-size: 14px;
+    color: #0000009A;
+}
+
+.custom-page-style {
+    margin-top: 85px;
+}
+
+.custom-table-hover tbody tr:hover{
+    background-color: theme-color(primary);
 }
