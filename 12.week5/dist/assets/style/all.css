@@ -13,6 +13,7 @@ html {
   font-family: "Lato", sans-serif; }
 
 a {
+  display: block;
   cursor: pointer;
   text-decoration: none; }
 
