@@ -13,8 +13,8 @@ html {
   font-family: "Lato", sans-serif; }
 
 a {
-  cursor: pointer;
-  text-decoration: none; }
+  cursor: pointer !important;
+  text-decoration: none !important; }
 
 .font-bold {
   font-weight: bold; }
@@ -49,6 +49,10 @@ a {
 .fz24 {
   font-size: 24px; }
 
+.wrap {
+  width: 1280px;
+  margin: 0 auto; }
+
 .logo {
   display: block;
   background: url("../../assets/images/logo-ANSWER.svg") no-repeat;
@@ -64,10 +68,6 @@ a {
 
 .menu {
   width: 296px; }
-  .menu .menu__list {
-    padding-bottom: 363px; }
-  .menu .menu__user {
-    padding-bottom: 32px; }
 
 .content {
   width: 984px; }
@@ -97,7 +97,7 @@ a {
   color: #0000009A; }
 
 .custom-page-style {
-  margin-top: 85px; }
+  margin-top: 55px; }
 
 .custom-table-hover tbody tr:hover {
   background-color: #EDF4EE; }
