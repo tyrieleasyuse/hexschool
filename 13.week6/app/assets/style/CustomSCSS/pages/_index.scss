@@ -1,0 +1,145 @@
+.banner {
+    background: url("../images/index1.jpg") no-repeat right top; 
+    background-size: cover;
+    padding-top: 295px;
+    padding-bottom: 295px;
+}
+
+.bannerContent {
+    h1 {
+        font-size: 40px;
+    }
+    p {
+        font-size: 24px;
+    }
+    button {
+        font-size: 24px;
+        border-radius: 30px;
+    }
+    color: white;
+}
+
+.content {
+    margin-top: 60px;
+}
+
+.product {
+    .productTitle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        p {
+            font-size: 20px;
+        }
+        a {
+            font-size: 16px;
+            color: #AC8A46;
+            text-decoration: none;
+        }
+    }
+
+    .productAction {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 22px;
+        }
+        button {
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 30px;
+            border: 2px solid #000000;
+        }
+    }
+}
+
+.productList {
+    background-color: #E0E0E0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    .productListItem {
+        img {
+            height: 524px;
+        }
+        h1 {
+            margin-top: 8px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        ul {
+            display: flex;            
+            margin-top: 16px;            
+            li:nth-child(1) {
+                margin-right: 8px;
+            }      
+            li:nth-child(2) {
+                color:#8D8D8D;
+                text-decoration: line-through;
+            }
+        }
+    }
+}
+
+.productGreen {
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+    .productGreenContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        h2{
+            font-size: 20px;
+        }
+        p {
+            margin-top: 16px;
+            font-size: 16px;
+        }
+        a {
+            margin-top: 16px;
+            font-size: 16px;
+            color: #AC8A46;
+            text-decoration: none;
+        }
+    }
+}
+
+.order {
+    background: url("../images/index10.jpg") no-repeat center center; 
+    background-size: cover;
+    padding-top: 295px;
+    padding-bottom: 295px;
+
+    h1 {
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 48px;
+    }
+    .inputOrder {
+        border-color: #916000;
+        color: #8D8D8D;
+    }
+    .btnOrder {
+        background-color: #916000;
+        border-color: #916000;
+        color: white;
+    }
+    .btnOrder:hover {
+        cursor: pointer;
+        background: #6C4700;
+    }
+}

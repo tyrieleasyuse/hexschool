@@ -1,7 +1,8 @@
-@import "bootstrap/bootstrap.scss";
-@import "scss/abstracts/variables.scss";
-@import "scss/base/reset.scss";
-@import "scss/base/base.scss";
-@import "scss/layout/header.scss";
-@import "scss/layout/footer.scss";
-@import "scss/pages/index.scss";
+@import "Bootstrap/bootstrap.scss";
+@import "CustomSCSS/abstracts/variables.scss";
+@import "CustomSCSS/base/reset.scss";
+@import "CustomSCSS/base/base.scss";
+@import "CustomSCSS/components/images.scss";
+@import "CustomSCSS/layout/header.scss";
+@import "CustomSCSS/layout/footer.scss";
+@import "CustomSCSS/pages/index.scss";

@@ -1,13 +1,5 @@
-
-.logo {
-    display: block;
+.logoPerfumeHeader {
     background: url("../images/d’Perfume.png") no-repeat;
-    text-indent: 101%;
-    /*首行縮排*/
-    overflow: hidden;
-    /*自動隱藏超出的文字或圖片*/
-    white-space: nowrap;
-    /*希望元素在第一排上面，沒有斷行*/
     width: 128px;
     height: 38px;
 }
