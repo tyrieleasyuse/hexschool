@@ -84,7 +84,7 @@ $theme-colors: map-merge(
     "danger":     $danger,
     "light":      $light,
     "dark":       $dark,
-    "copyright":#916000
+    "brown":    #916000
   ),
   $theme-colors
 );
@@ -145,6 +145,7 @@ $spacers: map-merge(
     4: ($spacer * 1.5),
     5: ($spacer * 3),
     32: ($spacer * 2),
+    58: ($spacer * 3.625),
     96: ($spacer * 6),
     295: ($spacer * 18.4375)
   ),
