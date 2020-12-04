@@ -1,0 +1,18 @@
+.logoPerfumeHeader {
+    background: url("../images/d’Perfume.png") no-repeat;
+    width: 128px;
+    height: 38px;
+}
+
+.menuAction {
+    display: flex;
+    align-items: center;
+    span {
+        font-size: 20px;
+        margin-right: 3px;
+    }
+    p {
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+}

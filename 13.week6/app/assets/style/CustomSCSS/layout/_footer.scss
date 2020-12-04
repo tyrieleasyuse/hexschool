@@ -1,0 +1,41 @@
+.logoPerfumeFooter {
+    background: url("../images/d’Perfumewhite.png") no-repeat;
+    width: 128px;
+    height: 38px;
+}
+
+.footer {
+    padding-top: 20px;
+    padding-bottom: 22px;
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.copyright {
+    display: flex;
+    align-items: center;
+    h1 {
+        margin: 0;
+    }
+    p {
+        color: white;
+        font-size: 14px;
+        margin: 0 0 0 20px;
+    }
+}
+
+.menuLink {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    margin: 0;
+    li {
+        margin-left: 36px;
+        a {
+            text-decoration: none;
+            color:white;
+        }
+    }
+}
