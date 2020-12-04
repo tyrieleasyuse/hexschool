@@ -115,29 +115,3 @@
         }
     }
 }
-
-.order {
-    background: url("../images/index10.jpg") no-repeat center center; 
-    background-size: cover;
-    padding-top: 295px;
-    padding-bottom: 295px;
-
-    h1 {
-        font-size: 32px;
-        font-weight: bold;
-        line-height: 48px;
-    }
-    .inputOrder {
-        border-color: #916000;
-        color: #8D8D8D;
-    }
-    .btnOrder {
-        background-color: #916000;
-        border-color: #916000;
-        color: white;
-    }
-    .btnOrder:hover {
-        cursor: pointer;
-        background: #6C4700;
-    }
-}

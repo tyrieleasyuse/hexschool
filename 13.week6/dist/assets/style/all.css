@@ -9146,6 +9146,26 @@ a.text-copyright:hover, a.text-copyright:focus {
     font-size: 20px;
     margin-bottom: 0; }
 
+.order {
+  background: url("../images/index10.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 295px;
+  padding-bottom: 295px; }
+  .order h1 {
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 48px; }
+  .order .inputOrder {
+    border-color: #916000;
+    color: #8D8D8D; }
+  .order .btnOrder {
+    background-color: #916000;
+    border-color: #916000;
+    color: white; }
+  .order .btnOrder:hover {
+    cursor: pointer;
+    background: #6C4700; }
+
 .logoPerfumeFooter {
   background: url("../images/d’Perfumewhite.png") no-repeat;
   width: 128px;
@@ -9300,25 +9320,5 @@ a.text-copyright:hover, a.text-copyright:focus {
       font-size: 16px;
       color: #AC8A46;
       text-decoration: none; }
-
-.order {
-  background: url("../images/index10.jpg") no-repeat center center;
-  background-size: cover;
-  padding-top: 295px;
-  padding-bottom: 295px; }
-  .order h1 {
-    font-size: 32px;
-    font-weight: bold;
-    line-height: 48px; }
-  .order .inputOrder {
-    border-color: #916000;
-    color: #8D8D8D; }
-  .order .btnOrder {
-    background-color: #916000;
-    border-color: #916000;
-    color: white; }
-  .order .btnOrder:hover {
-    cursor: pointer;
-    background: #6C4700; }
 
 /*# sourceMappingURL=all.css.map */
