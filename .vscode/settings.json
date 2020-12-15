@@ -1,0 +1,8 @@
+{
+    "editor.overviewRulerBorder": false,
+    "editor.rulers": [
+    {}
+    ],"workbench.colorCustomizations":{
+        "editorIndentGuide.background": "#000000"
+     }
+}
