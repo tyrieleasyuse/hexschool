@@ -1,0 +1,48 @@
+footer {
+    .Connect {
+        padding-top: 66px;
+        padding-bottom: 66px;
+        img {
+            width: 168px;
+            height: 36px;
+            object-fit: contain;
+            margin-left: 471px;
+            margin-right: 130px;
+        }
+        ul {
+            margin-right: 471px;
+            li:nth-child(1) > a, li:nth-child(1) > a:hover {
+                font-family: PingFangTC;
+                font-weight: 600;
+                letter-spacing: 0.62px;
+            }
+            
+            li:nth-child(2) > a, li:nth-child(2) > a:hover {
+                font-family: Avenir;
+                font-weight: 500;
+                letter-spacing: 0.62px;
+                margin-top: 18px;
+            }
+            
+            li:nth-child(3) > a, li:nth-child(3) > a:hover {
+                font-family: Avenir;
+                font-weight: 500;
+                letter-spacing: 0.62px;
+                margin-top: 16px;
+            }
+        }        
+    }
+
+    .Copyright {
+        padding-top: 21px;
+        padding-bottom: 21px;
+        h5 {
+            font-family: Avenir;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-align: center;
+            color: #d8d8d8;
+        }
+    }
+}
