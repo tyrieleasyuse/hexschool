@@ -59,12 +59,7 @@ $colors: map-merge(
     "cyan":       $cyan,
     "white":      $white,
     "gray":       $gray-600,
-    "gray-dark":  $gray-800,
-    "light":      #ffffff,
-    "dark":       #373737,
-    "dark-light": #1f2c4f,
-    "grey-light": #f9f9f9,
-    "green-light":#719f2c
+    "gray-dark":  $gray-800
   ),
   $colors
 );
@@ -82,7 +77,8 @@ $theme-colors: () !default;
 $theme-colors: map-merge(
   (
     "primary":    $primary,
-    "secondary":  $secondary,
+    "secondary":  #6b89ef,
+    "thirdly":    #ecf1ff,
     "success":    $success,
     "info":       $info,
     "warning":    $warning,
