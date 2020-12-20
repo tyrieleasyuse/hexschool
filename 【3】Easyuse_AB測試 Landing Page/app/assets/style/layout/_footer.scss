@@ -91,17 +91,15 @@ footer {
             text-align: center;
             color: #d8d8d8;
         }
-        .display-md {
-            display: block;
-            @include mobile() {
-                display: none;
-            }
-        }
-        .display-sm {
-            display: none;
-            @include mobile() {
-                display: block;
-            }
-        }
+    }
+    .half {
+        height: 100px;
+        background: linear-gradient(
+            to right, 
+            #c0ceff 0%, 
+            #c0ceff 50%, 
+            #d7e0ff 50%, 
+            #d7e0ff 100%
+          );
     }
 }

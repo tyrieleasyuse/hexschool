@@ -10126,16 +10126,12 @@ footer .Copyright {
     letter-spacing: 0.5px;
     text-align: center;
     color: #d8d8d8; }
-  footer .Copyright .display-md {
-    display: block; }
-    @media (max-width: 767px) {
-      footer .Copyright .display-md {
-        display: none; } }
-  footer .Copyright .display-sm {
-    display: none; }
-    @media (max-width: 767px) {
-      footer .Copyright .display-sm {
-        display: block; } }
+
+footer .half {
+  height: 100px;
+  background: -webkit-gradient(linear, left top, right top, from(#c0ceff), color-stop(50%, #c0ceff), color-stop(50%, #d7e0ff), to(#d7e0ff));
+  background: -o-linear-gradient(left, #c0ceff 0%, #c0ceff 50%, #d7e0ff 50%, #d7e0ff 100%);
+  background: linear-gradient(to right, #c0ceff 0%, #c0ceff 50%, #d7e0ff 50%, #d7e0ff 100%); }
 
 .ABTest-subject {
   padding-top: 100px; }
