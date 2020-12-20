@@ -457,15 +457,15 @@ pre {
 
 @media (min-width: 576px) {
   .container, .container-sm {
-    max-width: 540px; } }
+    max-width: 576px; } }
 
 @media (min-width: 768px) {
   .container, .container-sm, .container-md {
-    max-width: 720px; } }
+    max-width: 768px; } }
 
 @media (min-width: 992px) {
   .container, .container-sm, .container-md, .container-lg {
-    max-width: 960px; } }
+    max-width: 992px; } }
 
 @media (min-width: 1200px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
@@ -9969,6 +9969,13 @@ dl {
 a, a:hover {
   text-decoration: none; }
 
+img {
+  border-style: none; }
+
+.container {
+  padding-left: 0;
+  padding-right: 0; }
+
 @font-face {
   font-family: "Avenir";
   src: url("../font/Avenir-Heavy.ttf"); }
@@ -10002,12 +10009,25 @@ html {
 header {
   padding-top: 27px;
   padding-bottom: 28px; }
-  header img {
+  @media (max-width: 1439px) {
+    header {
+      padding-top: 21px;
+      padding-bottom: 19px; } }
+  header .mhu-logo {
+    background-image: url("../images/desktop/desktop_ic_header_logo@2x.png");
+    background-size: contain;
     width: 222px;
     height: 33px;
-    -o-object-fit: contain;
-       object-fit: contain;
     margin-left: 24px; }
+    @media (max-width: 1439px) {
+      header .mhu-logo {
+        background-image: url("../images/tablet/tablet_ic_header_logo@2x.png");
+        width: 187px;
+        height: 28px;
+        margin-left: 20px; } }
+    @media (max-width: 767px) {
+      header .mhu-logo {
+        background-image: url("../images/mobile/mobile_ic_header_logo@2x.png"); } }
   header a, header a:hover {
     margin-right: 40px;
     font-family: PingFangTC, AvenirNext;
@@ -10015,37 +10035,90 @@ header {
     font-weight: 500;
     letter-spacing: 0.62px;
     color: #ffffff; }
+    @media (max-width: 1439px) {
+      header a, header a:hover {
+        margin-right: 20px; } }
+    @media (max-width: 767px) {
+      header a, header a:hover {
+        display: none; } }
 
 footer .Connect {
   padding-top: 66px;
-  padding-bottom: 66px; }
-  footer .Connect img {
+  padding-bottom: 66px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  @media (max-width: 1439px) {
+    footer .Connect {
+      padding-top: 50px;
+      padding-bottom: 50px;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+  @media (max-width: 767px) {
+    footer .Connect {
+      padding-top: 46px;
+      padding-bottom: 46px; } }
+  footer .Connect .img {
+    background-image: url("../images/desktop/desktop_ic_footer_logo@2x.png");
+    background-size: contain;
     width: 168px;
     height: 36px;
     -o-object-fit: contain;
        object-fit: contain;
     margin-left: 471px;
     margin-right: 130px; }
+    @media (max-width: 1439px) {
+      footer .Connect .img {
+        background-image: url("../images/tablet/tablet_ic_footer_logo@2x.png");
+        margin-left: auto;
+        margin-right: auto; } }
+    @media (max-width: 767px) {
+      footer .Connect .img {
+        background-image: url("../images/mobile/mobile_ic_footer_logo@2x.png"); } }
   footer .Connect ul {
     margin-right: 471px; }
-    footer .Connect ul li:nth-child(1) > a, footer .Connect ul li:nth-child(1) > a:hover {
+    @media (max-width: 1439px) {
+      footer .Connect ul {
+        margin-left: auto;
+        margin-right: auto; } }
+    footer .Connect ul .custom-connect-company-name a, footer .Connect ul .custom-connect-company-name a:hover {
       font-family: PingFangTC;
       font-weight: 600;
       letter-spacing: 0.62px; }
-    footer .Connect ul li:nth-child(2) > a, footer .Connect ul li:nth-child(2) > a:hover {
-      font-family: Avenir;
-      font-weight: 500;
-      letter-spacing: 0.62px;
+      @media (max-width: 1439px) {
+        footer .Connect ul .custom-connect-company-name a, footer .Connect ul .custom-connect-company-name a:hover {
+          display: none; } }
+    footer .Connect ul .custom-connect-company-phone {
       margin-top: 18px; }
-    footer .Connect ul li:nth-child(3) > a, footer .Connect ul li:nth-child(3) > a:hover {
-      font-family: Avenir;
-      font-weight: 500;
-      letter-spacing: 0.62px;
+      @media (max-width: 1439px) {
+        footer .Connect ul .custom-connect-company-phone {
+          margin-top: 30px; } }
+      @media (max-width: 767px) {
+        footer .Connect ul .custom-connect-company-phone {
+          margin-top: 24px; } }
+      footer .Connect ul .custom-connect-company-phone a, footer .Connect ul .custom-connect-company-phone a:hover {
+        font-family: Avenir;
+        font-weight: 500;
+        letter-spacing: 0.62px; }
+    footer .Connect ul .custom-connect-company-mail {
       margin-top: 16px; }
+      @media (max-width: 767px) {
+        footer .Connect ul .custom-connect-company-mail {
+          margin-top: 12px; } }
+      footer .Connect ul .custom-connect-company-mail a, footer .Connect ul .custom-connect-company-mail a:hover {
+        font-family: Avenir;
+        font-weight: 500;
+        letter-spacing: 0.62px; }
 
 footer .Copyright {
   padding-top: 21px;
   padding-bottom: 21px; }
+  @media (max-width: 767px) {
+    footer .Copyright {
+      padding-top: 19px;
+      padding-bottom: 19px; } }
   footer .Copyright h5 {
     font-family: Avenir;
     font-size: 13px;
@@ -10053,6 +10126,16 @@ footer .Copyright {
     letter-spacing: 0.5px;
     text-align: center;
     color: #d8d8d8; }
+  footer .Copyright .display-md {
+    display: block; }
+    @media (max-width: 767px) {
+      footer .Copyright .display-md {
+        display: none; } }
+  footer .Copyright .display-sm {
+    display: none; }
+    @media (max-width: 767px) {
+      footer .Copyright .display-sm {
+        display: block; } }
 
 .ABTest-subject {
   padding-top: 100px; }
