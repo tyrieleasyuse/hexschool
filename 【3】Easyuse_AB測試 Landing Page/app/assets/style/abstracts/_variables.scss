@@ -59,12 +59,7 @@ $colors: map-merge(
     "cyan":       $cyan,
     "white":      $white,
     "gray":       $gray-600,
-    "gray-dark":  $gray-800,
-    "light":      #ffffff,
-    "dark":       #373737,
-    "dark-light": #1f2c4f,
-    "grey-light": #f9f9f9,
-    "green-light":#719f2c
+    "gray-dark":  $gray-800
   ),
   $colors
 );
@@ -82,7 +77,8 @@ $theme-colors: () !default;
 $theme-colors: map-merge(
   (
     "primary":    $primary,
-    "secondary":  $secondary,
+    "secondary":  #6b89ef,
+    "thirdly":    #ecf1ff,
     "success":    $success,
     "info":       $info,
     "warning":    $warning,
@@ -217,9 +213,9 @@ $grid-breakpoints: (
 // Define the maximum width of `.container` for different screen sizes.
 
 $container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
   xl: 1440px
 ) !default;
 
