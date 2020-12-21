@@ -10189,8 +10189,8 @@ header {
     @media (max-width: 767px) {
       header a, header a:hover {
         display: none; } }
-  header a:hover {
-    text-decoration: underline; }
+  header .text-active:hover {
+    border-bottom: 4px solid #ffffff; }
 
 footer .ABTest-Connect {
   padding-top: 66px;

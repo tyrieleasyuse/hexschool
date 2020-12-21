@@ -26,7 +26,7 @@
   <!-- header -->
   <header class="bg-dark-light">
     <div class="d-flex  align-items-center  justify-content-between">
-        <a class="SiteLogo  mhu-logo" href="#demoblock">MailHunter</a><a href="#">預約Demo</a>
+        <a class="SiteLogo  mhu-logo" href="#">MailHunter</a><a class="text-active" href="#demoblock">預約 Demo</a>
     </div>
 </header>
 
@@ -99,56 +99,93 @@
         <h2 class="text-light">A/B Test 功能</h2>
     </div>
     <div class="order-content bg-secondary-light" id="demoblock">
-        <div class="d-flex  flex-md-row  flex-column">
-            <div class="form-group">
-                <label for="username">姓名*</label>
-                <input type="text" class="form-control  wd-100 background-color-primary" id="username" name="username"
-                    placeholder="" value="">
+        <form id="form-demo" class="needs-validation" novalidate>
+            <div class="d-flex  flex-md-row  flex-column">
+                <div class="form-group">
+                    <label for="username">姓名*</label>
+                    <input type="text" class="form-control  wd-100 background-color-primary" id="username"
+                        name="username" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                        請輸入姓名
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="companyname">公司名稱*</label>
+                    <input type="text" class="form-control  wd-100 background-color-primary" id="companyname"
+                        name="companyname" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                        請輸入公司名稱
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex  flex-md-row  flex-column">
+                <div class="form-group">
+                    <label for="companytype">產業類別*</label>
+                    <select class="form-control  wd-100" id="companytype" name="companytype" required>
+                        <option class="wd-100" value=""> 請選擇 </option>
+                        <option class="wd-100"> 金融業 </option>
+                        <option class="wd-100"> 保險業 </option>
+                        <option class="wd-100"> 零售業 </option>
+                        <option class="wd-100"> 百貨業 </option>
+                        <option class="wd-100"> 旅遊業 </option>
+                        <option class="wd-100"> 電信業 </option>
+                        <option class="wd-100"> 運輸業 </option>
+                        <option class="wd-100"> 餐飲業 </option>
+                        <option class="wd-100"> 電商業 </option>
+                        <option class="wd-100"> 醫療業 </option>
+                        <option class="wd-100"> 資訊科技 </option>
+                        <option class="wd-100"> 行銷廣告 </option>
+                        <option class="wd-100"> 政府機關 </option>
+                        <option class="wd-100"> 非營利組織 </option>
+                        <option class="wd-100"> 其他 </option>
+                    </select>
+                    <div class="invalid-feedback">
+                        請選擇類別
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">聯絡電話*</label>
+                    <input type="text" class="form-control  wd-100 background-color-primary" id="phone" name="phone"
+                        placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                        請輸入電話號碼
+                    </div>
+                </div>
             </div>
             <div class="form-group">
-                <label for="companyname">公司名稱*</label>
-                <input type="text" class="form-control  wd-100 background-color-primary" id="companyname" name="companyname"
-                    placeholder="" value="">
-            </div>
-        </div>
-        <div class="d-flex  flex-md-row  flex-column">
-            <div class="form-group">
-                <label for="companytype">產業類別*</label>
-                <select class="form-control  wd-100" id="companytype" name="companytype">
-                    <option class="wd-100"> 請選擇 </option>
-                    <option class="wd-100"> 金融業 </option>
-                    <option class="wd-100"> 保險業 </option>
-                    <option class="wd-100"> 零售業 </option>
-                    <option class="wd-100"> 百貨業 </option>
-                    <option class="wd-100"> 旅遊業 </option>
-                    <option class="wd-100"> 電信業 </option>
-                    <option class="wd-100"> 運輸業 </option>
-                    <option class="wd-100"> 餐飲業 </option>
-                    <option class="wd-100"> 電商業 </option>
-                    <option class="wd-100"> 醫療業 </option>
-                    <option class="wd-100"> 資訊科技 </option>
-                    <option class="wd-100"> 行銷廣告 </option>
-                    <option class="wd-100"> 政府機關 </option>
-                    <option class="wd-100"> 非營利組織 </option>
-                    <option class="wd-100"> 其他 </option>
-                </select>
+                <label for="email">Email*</label>
+                <input type="text" class="form-control  wd-200 background-color-primary" id="email" name="email"
+                    placeholder="" value="" required>
+                <div class="invalid-feedback">
+                    請輸入電子信箱
+                </div>
             </div>
             <div class="form-group">
-                <label for="phone">聯絡電話*</label>
-                <input type="text" class="form-control  wd-100 background-color-primary" id="phone" name="phone"
-                    placeholder="" value="">
+                <label for="memo">備註</label>
+                <textarea class="form-control  wd-200 background-color-primary" rows="3" id="memo"
+                    name="memo"></textarea>
+            </div>
+            <button type="submit" class="custom-btn-demo  wd-200  btn  btn-light text-light" data-toggle="modal">預約 DEMO</button>
+        </form>
+
+        <!-- Modal -->
+        <div class="modal fade" id="LandingModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                        <button type="button" class="custom-btn-finish btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="form-group">
-            <label for="email">Email*</label>
-            <input type="text" class="form-control  wd-200 background-color-primary" id="email" name="email"
-                placeholder="" value="">
-        </div>
-        <div class="form-group">
-            <label for="memo">備註</label>
-            <textarea class="form-control  wd-200 background-color-primary" rows="3" id="memo" name="memo"></textarea>
-        </div>
-        <button class="custom-btn-demo  wd-200  btn  btn-light text-light">預約 DEMO</button>
     </div>
 </div>
 
@@ -177,8 +214,10 @@
     </div>
 </footer>  
   
-  <script src="./assets/animation/aos.js"></script>
+  <script src="./assets/vendor/aos.js"></script>
   <script src="./assets/js/vendors.js"></script>
+  <script src="./assets/vendor/jquery-3.5.1.min.js"></script>
+  <script src="./assets/vendor/bootstrap-4.5.3.min.js"></script>
   <script src="./assets/js/all.js"></script>
   <script>
     AOS.init({
@@ -205,7 +244,39 @@
     });
   </script>
   <script>
-    $(".custom-btn-demo").click(function() {
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+  </script>
+  <script>
+    $(".custom-btn-demo").click(function() {         
+      if($("#username").val() === '')
+         return;
+      if($("#companyname").val() === '')
+         return;
+      if($("#companytype").val() === '')
+         return;
+      if($("#phone").val() === '')
+         return;
+      if($("#email").val() === '')
+         return;
+         
+
       var requestURL = "https://s1.mailhunter.com.tw/WebDemoReservation/WebDemoReservation.ashx";
       var dataJSON = {};
       dataJSON["category"] = "A/B Test模組";
@@ -215,6 +286,8 @@
       dataJSON["phone"] = $("#phone").val();
       dataJSON["email"] = $("#email").val();
       dataJSON["remark"] = $("#memo").val();
+
+      console.log(dataJSON);
       
       $.ajax({
           url: requestURL,
@@ -231,6 +304,12 @@
           }
       });
       ga('send', 'event', '預約 A/B Test模組Demo', 'MailHunter A/B Test模組', '0');
+      
+      $('#LandingModalCenter').modal('show');
+      return;
+    });
+    $(".custom-btn-finish").click(function() {   
+      $('#form-demo').removeClass('was-validated');
     });
     </script>
 </body>
