@@ -10190,7 +10190,7 @@ header {
       header a, header a:hover {
         display: none; } }
   header a:hover {
-    text-decoration: underline; }
+    border-bottom: 4px solid #ffffff; }
 
 footer .ABTest-Connect {
   padding-top: 66px;
