@@ -6,69 +6,173 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>A/B Test</title>
+  <link rel="icon" href="favicon.png">
   <link rel="stylesheet" href="./assets/style/all.css">
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', 'UA-43276311-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- End Google Analytics -->
 </head>
 
 <body>
 
   <!-- header -->
   <header class="bg-dark-light">
-    <div class="container  d-flex  align-items-center  justify-content-between">
-        <a class="SiteLogo  mhu-logo" href="#">MailHunter</a><a href="#">預約Demo</a>
+    <div class="d-flex  align-items-center  justify-content-between">
+        <a class="SiteLogo  mhu-logo" href="#demoblock">MailHunter</a><a href="#">預約Demo</a>
     </div>
 </header>
 
-  <!-- 
+  
+<div class="ABTest-banner">
+    <div class="container  d-flex  flex-xl-row  flex-column">
+        <div class="img"></div>
+        <div class="banner-text  d-flex  flex-column  align-items-xl-start  align-items-center">
+            <div
+                class="banner-notice  btn  btn-outline-light  text-light  d-flex  justify-content-center  align-items-center">
+                <span>千呼萬喚</span>
+            </div>
+            <h1 class="text-light">A/B Test 終於登場</h1>
+            <p class="text-light">您的需求，我們都聽到了！<br>為了詢問度最高的 A/B 測試功能，我們卯足<br>全力，端出最厲害的 A/B 測試工具。</p>
+            <a href="#demoblock"><button class="custom-btn-light  btn  btn-light">搶先體驗</button></a>
+        </div>
+    </div>
+</div>
+
 <div class="ABTest-subject  bg-thirdly  container  d-flex flex-column  align-items-center">
-    <h3 class="text-dark">在 MailHunter 中進行 A/B Test</h3>
-    <h3 class="text-dark">只要簡單 3 步驟</h3>
+    <h3 class="text-dark"> 在 MailHunter 中<br class="d-md-none d-block">進行 A/B Test<span
+            class="d-md-none d-line-block">，</span><br>只要簡單 3 步驟</h3>
 </div>
 <div class="ABTest-flow  bg-thirdly  container  d-flex flex-column  align-items-center">
-    <ul class="list-unstyled  d-flex">
+    <ul class="list-unstyled  d-flex flex-xl-row  flex-column  align-items-center">
         <li class="bg-secondary  d-flex flex-column  align-items-center">
-                <h4 class="text-light">1</h4>
-                <h5 class="text-light">選擇 A/B 測試項目</h5>
-                <p>測試內文/主旨/進階設定</p>
-                <img src="./assets/images/desktop/desktop_img_step_1@2x.png" class="img-fluid" alt="">
+            <h4 class="text-light">1</h4>
+            <h5 class="text-light">選擇 A/B 測試項目</h5>
+            <p class="text-secondary-light">測試內文/主旨/進階設定</p>
+            <div class="cust-img-step1"></div>
         </li>
-        <li><img src="./assets/images/ic_arrow@2x.png" class="img-fluid" alt=""></li>
-        <li class="bg-secondary  d-flex flex-column  align-items-center">
-                <h4 class="text-light">2</h4>
-                <h5 class="text-light">設定測試名單比例</h5>
-                <div class="d-flex  align-items-center"><p>測試比例</p><img class="cust-img-select" src="./assets/images/ic_select@2x.png" alt=""><p>%</p></div>
-                <img src="./assets/images/desktop/desktop_img_step_2@2x.png" class="img-step  img-fluid" alt="">
+        <li>
+            <div class="img"></div>
         </li>
-        <li><img src="./assets/images/ic_arrow@2x.png" class="img-fluid" alt=""></li>
         <li class="bg-secondary  d-flex flex-column  align-items-center">
-                <h4 class="text-light">3</h4>
-                <h5 class="text-light">寄送成效最佳版本</h5>
-                <p>寄給 80% 剩餘連絡人</p>
-                <img src="./assets/images/desktop/desktop_img_step_3@2x.png" class="img-fluid" alt="">
+            <h4 class="text-light">2</h4>
+            <h5 class="text-light">設定測試名單比例</h5>
+            <div class="d-flex  align-items-center  text-secondary-light">
+                <p>測試比例</p>
+                <div class="cust-img-select"></div>
+                <p>%</p>
+            </div>
+            <div class="cust-img-step2"></div>
+        </li>
+        <li>
+            <div class="img"></div>
+        </li>
+        <li class="bg-secondary  d-flex flex-column  align-items-center">
+            <h4 class="text-light">3</h4>
+            <h5 class="text-light">寄送成效最佳版本</h5>
+            <p class="text-secondary-light">寄給 80% 剩餘連絡人</p>
+            <div class="cust-img-step3"></div>
         </li>
         <li></li>
     </ul>
-</div> -->
+</div>
+<div class="ABTest-half  container  d-flex flex-column  align-items-center">
+    <h2>用 A/B Test 輕鬆提升<br class="d-md-none d-inline-block">開啟/點擊率</h2>
+    <p>除了優化主旨提升開啟率，還可以進行信件內容<br class="d-md-none d-inline-block">與其它進階測試<br class="d-none d-md-inline-block">提升點擊率，快利用
+        A/B Test <br class="d-md-none d-inline-block">找出客戶的偏好吧！</p>
+    <div class="img"></div>
+</div>
+<div class="order-banner container  d-flex  flex-xl-row  flex-column  align-items-center">
+    <div class="img  d-flex  flex-column  align-items-xl-start align-items-center">
+        <div
+            class="order-notice  btn  btn-outline-light  text-light  d-flex  justify-content-center  align-items-center">
+            <span>詳細了解</span>
+        </div>
+        <div class="order-logo"></div>
+        <h2 class="text-light">A/B Test 功能</h2>
+    </div>
+    <div class="order-content bg-secondary-light" id="demoblock">
+        <div class="d-flex  flex-md-row  flex-column">
+            <div class="form-group">
+                <label for="username">姓名*</label>
+                <input type="text" class="form-control  wd-100 background-color-primary" id="username" name="username"
+                    placeholder="" value="">
+            </div>
+            <div class="form-group">
+                <label for="companyname">公司名稱*</label>
+                <input type="text" class="form-control  wd-100 background-color-primary" id="companyname" name="companyname"
+                    placeholder="" value="">
+            </div>
+        </div>
+        <div class="d-flex  flex-md-row  flex-column">
+            <div class="form-group">
+                <label for="companytype">產業類別*</label>
+                <select class="form-control  wd-100" id="companytype" name="companytype">
+                    <option class="wd-100"> 請選擇 </option>
+                    <option class="wd-100"> 金融業 </option>
+                    <option class="wd-100"> 保險業 </option>
+                    <option class="wd-100"> 零售業 </option>
+                    <option class="wd-100"> 百貨業 </option>
+                    <option class="wd-100"> 旅遊業 </option>
+                    <option class="wd-100"> 電信業 </option>
+                    <option class="wd-100"> 運輸業 </option>
+                    <option class="wd-100"> 餐飲業 </option>
+                    <option class="wd-100"> 電商業 </option>
+                    <option class="wd-100"> 醫療業 </option>
+                    <option class="wd-100"> 資訊科技 </option>
+                    <option class="wd-100"> 行銷廣告 </option>
+                    <option class="wd-100"> 政府機關 </option>
+                    <option class="wd-100"> 非營利組織 </option>
+                    <option class="wd-100"> 其他 </option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="phone">聯絡電話*</label>
+                <input type="text" class="form-control  wd-100 background-color-primary" id="phone" name="phone"
+                    placeholder="" value="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email*</label>
+            <input type="text" class="form-control  wd-200 background-color-primary" id="email" name="email"
+                placeholder="" value="">
+        </div>
+        <div class="form-group">
+            <label for="memo">備註</label>
+            <textarea class="form-control  wd-200 background-color-primary" rows="3" id="memo" name="memo"></textarea>
+        </div>
+        <button class="custom-btn-demo  wd-200  btn  btn-light text-light">預約 DEMO</button>
+    </div>
+</div>
 
   <!-- footer -->
   <footer>
-    <div class="Connect  bg-grey-light  container  d-flex">
-        <div class="img"></div>
-        <ul class="list-unstyled  d-flex  flex-column">
-            <li class="custom-connect-company-name">
-                <a class="text-green-light" href="http://www.easyuse.com.tw/">繹宇數位科技股份有限公司</a>
-            </li>
-            <li class="custom-connect-company-phone">
-                <a class="text-dark-light" href="tel:+886-2-2775-5005">+886-2-2775-5005</a>
-            </li>
-            <li class="custom-connect-company-mail">
-                <a class="text-dark-light" href="mailto:sales@easyuse.com.tw">sales@easyuse.com.tw</a>
-            </li>
-        </ul>
+    <div class="ABTest-Connect  bg-grey-light">
+        <div class="container d-flex  flex-xl-row  flex-column">
+            <div class="img"></div>
+            <ul class="list-unstyled  d-flex  flex-column">
+                <li class="custom-connect-company-name">
+                    <a class="text-green-light" href="http://www.easyuse.com.tw/">繹宇數位科技股份有限公司</a>
+                </li>
+                <li class="custom-connect-company-phone">
+                    <a class="text-dark-light" href="tel:+886-2-2775-5005">+886-2-2775-5005</a>
+                </li>
+                <li class="custom-connect-company-mail">
+                    <a class="text-dark-light" href="mailto:sales@easyuse.com.tw">sales@easyuse.com.tw</a>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div class="Copyright  bg-dark">
+    <div class="ABTest-Copyright  bg-dark">
         <div class="container">
-            <h5 class="display-md">© 2020 EASYUSE DIGITAL TECHNOLOGY. ALL RIGHTS RESERVED.</h5>
-            <h5 class="display-sm">© 2020 EASYUSE DIGITAL TECHNOLOGY.<br>ALL RIGHTS RESERVED.</h5>
+            <h5>© 2020 EASYUSE DIGITAL TECHNOLOGY.<br class="d-md-none">ALL RIGHTS RESERVED.</h5>
         </div>
     </div>
 </footer>  
@@ -100,6 +204,35 @@
 
     });
   </script>
+  <script>
+    $(".custom-btn-demo").click(function() {
+      var requestURL = "https://s1.mailhunter.com.tw/WebDemoReservation/WebDemoReservation.ashx";
+      var dataJSON = {};
+      dataJSON["category"] = "A/B Test模組";
+      dataJSON["purchaser"] = $("#username").val();
+      dataJSON["company"] = $("#companyname").val();
+      dataJSON["industrycategory"] = $("#companytype").val();
+      dataJSON["phone"] = $("#phone").val();
+      dataJSON["email"] = $("#email").val();
+      dataJSON["remark"] = $("#memo").val();
+      
+      $.ajax({
+          url: requestURL,
+          data: JSON.stringify(dataJSON),
+          type: "POST",
+          dataType: "json",
+          contentType: "application/json;charset=utf-8",
+          success: function(returnData){
+              console.log(returnData);
+          },
+          error: function(xhr, ajaxOptions, thrownError){
+              console.log(xhr.status);
+              console.log(thrownError);
+          }
+      });
+      ga('send', 'event', '預約 A/B Test模組Demo', 'MailHunter A/B Test模組', '0');
+    });
+    </script>
 </body>
 
 </html>

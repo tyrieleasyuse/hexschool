@@ -1,5 +1,5 @@
 footer {
-    .Connect {
+    .ABTest-Connect {
         padding-top: 66px;
         padding-bottom: 66px;
         align-items: center;
@@ -15,18 +15,22 @@ footer {
         .img {
             background-image: url("../images/desktop/desktop_ic_footer_logo@2x.png");
             background-size: contain;
-            width: 168px;
+            width: 165px;
             height: 36px;
             object-fit: contain;
             margin-left: 471px;
             margin-right: 130px;
             @include tablet() {
                 background-image: url("../images/tablet/tablet_ic_footer_logo@2x.png");
+                width: 163px;
+                height: 35px;
                 margin-left: auto;
                 margin-right: auto;
             }
             @include mobile() {
                 background-image: url("../images/mobile/mobile_ic_footer_logo@2x.png");
+                width: 163px;
+                height: 35px;
             }
         }
         ul {
@@ -37,7 +41,7 @@ footer {
             }
             .custom-connect-company-name {
                 a , a:hover {
-                    font-family: PingFangTC;
+                    font-family: PingFangTC-Semibold;
                     font-weight: 600;
                     letter-spacing: 0.62px;
                     @include tablet() {
@@ -55,7 +59,7 @@ footer {
                     margin-top: 24px;
                 }
                 a , a:hover {
-                    font-family: Avenir;
+                    font-family: Avenir-Medium;
                     font-weight: 500;
                     letter-spacing: 0.62px;
                 }
@@ -67,7 +71,7 @@ footer {
                     margin-top: 12px;
                 }
                 a , a:hover {
-                    font-family: Avenir;
+                    font-family: Avenir-Medium;
                     font-weight: 500;
                     letter-spacing: 0.62px;
                 }
@@ -76,7 +80,7 @@ footer {
         }        
     }
 
-    .Copyright {
+    .ABTest-Copyright {
         padding-top: 21px;
         padding-bottom: 21px;
         @include mobile() {
@@ -84,24 +88,12 @@ footer {
             padding-bottom: 19px;
         }
         h5 {
-            font-family: Avenir;
+            font-family: Avenir-Medium;
             font-size: 13px;
             font-weight: 500;
             letter-spacing: 0.5px;
             text-align: center;
             color: #d8d8d8;
-        }
-        .display-md {
-            display: block;
-            @include mobile() {
-                display: none;
-            }
-        }
-        .display-sm {
-            display: none;
-            @include mobile() {
-                display: block;
-            }
         }
     }
 }

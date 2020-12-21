@@ -6,7 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title><%- title %></title>
+  <link rel="icon" href="favicon.png">
   <link rel="stylesheet" href="./assets/style/all.css">
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', 'UA-43276311-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- End Google Analytics -->
 </head>
 
 <body>
@@ -14,7 +26,7 @@
   <!-- header -->
   <%- include ('./ejs/layout/header.ejs') %>
 
-  <!-- <%- contents %> -->
+  <%- contents %>
 
   <!-- footer -->
   <%- include ('./ejs/layout/footer.ejs') %>  
@@ -46,6 +58,35 @@
 
     });
   </script>
+  <script>
+    $(".custom-btn-demo").click(function() {
+      var requestURL = "https://s1.mailhunter.com.tw/WebDemoReservation/WebDemoReservation.ashx";
+      var dataJSON = {};
+      dataJSON["category"] = "A/B Test模組";
+      dataJSON["purchaser"] = $("#username").val();
+      dataJSON["company"] = $("#companyname").val();
+      dataJSON["industrycategory"] = $("#companytype").val();
+      dataJSON["phone"] = $("#phone").val();
+      dataJSON["email"] = $("#email").val();
+      dataJSON["remark"] = $("#memo").val();
+      
+      $.ajax({
+          url: requestURL,
+          data: JSON.stringify(dataJSON),
+          type: "POST",
+          dataType: "json",
+          contentType: "application/json;charset=utf-8",
+          success: function(returnData){
+              console.log(returnData);
+          },
+          error: function(xhr, ajaxOptions, thrownError){
+              console.log(xhr.status);
+              console.log(thrownError);
+          }
+      });
+      ga('send', 'event', '預約 A/B Test模組Demo', 'MailHunter A/B Test模組', '0');
+    });
+    </script>
 </body>
 
 </html>
