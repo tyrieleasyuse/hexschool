@@ -1,21 +1,58 @@
 @font-face {
-  font-family: "Avenir";
+  font-family: "Avenir-Heavy";
   src: url("../font/Avenir-Heavy.ttf");
 }
 
 @font-face {
-  font-family: "AvenirNext";
+  font-family: "Avenir-Medium";
+  src: url("../font/Avenir-Medium.ttf");
+}
+
+@font-face {
+  font-family: "AvenirNext-Medium";
   src: url("../font/AvenirNext-Medium.ttf");
 }
 
 @font-face {
-  font-family: "AvenirNextItalic";
+  font-family: "AvenirNext-MediumItalic";
   src: url("../font/AvenirNext-MediumItalic.ttf");
 }
 
 @font-face {
-  font-family: "PingFangTC";
-  src: url("../font/PingFangTC-Medium.ttf");
+  font-family: "AvenirNext-DemiBold";
+  src: url("../font/AvenirNext-DemiBold.ttf");
+}
+
+
+
+@font-face {
+  font-family: "PingFangTC-Regular";
+  src: url("../font/PingFang-TC-Regular-2.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PingFangTC-Light";
+  src: url("../font/PingFang-TC-Light-2.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PingFangTC-Medium";
+  src: url("../font/PingFang-TC-Medium-2.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PingFangTC-Semibold";
+  src: url("../font/PingFang-TC-Semibold-2.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PingFangTC-Thin";
+  src: url("../font/PingFang-TC-Thin-2.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PingFangTC-Light";
+  src: url("../font/PingFang-TC-Light-2.otf") format("opentype");
 }
 
 body,

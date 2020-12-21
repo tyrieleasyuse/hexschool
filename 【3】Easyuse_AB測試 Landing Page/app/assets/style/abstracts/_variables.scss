@@ -78,6 +78,7 @@ $theme-colors: map-merge(
   (
     "primary":    $primary,
     "secondary":  #6b89ef,
+    "secondary-light":  #ecf1ff,
     "thirdly":    #ecf1ff,
     "success":    $success,
     "info":       $info,
@@ -201,7 +202,7 @@ $grid-breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1200px
+  xl: 1440px
 ) !default;
 
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
