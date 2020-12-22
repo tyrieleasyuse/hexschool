@@ -31,6 +31,9 @@
   <!-- footer -->
   <%- include ('./ejs/layout/footer.ejs') %>  
   
+  <!-- modal -->
+  <%- include ('./ejs/layout/modal.ejs') %>  
+  
   <script src="./assets/vendor/aos.js"></script>
   <script src="./assets/js/vendors.js"></script>
   <script src="./assets/vendor/jquery-3.5.1.min.js"></script>
@@ -123,10 +126,16 @@
       ga('send', 'event', '預約 A/B Test模組Demo', 'MailHunter A/B Test模組', '0');
       
       $('#LandingModalCenter').modal('show');
-      return;
+         return false;
     });
     $(".custom-btn-finish").click(function() {   
       $('#form-demo').removeClass('was-validated');
+      $("#username").val('');
+      $("#companyname").val('');
+      $("#companytype").val('');
+      $("#phone").val('');
+      $("#email").val('');
+      $("#memo").val('');
     });
     </script>
 </body>

@@ -1,0 +1,100 @@
+
+.modal-landing-content {
+    width: 340px;
+    border-radius: 10px;
+    margin: 0 auto;
+    @include mobile() {
+        width: 240px;
+    }
+}
+
+.modal-landing-header {
+    .modal-landing-title {
+        background-image: url("../images/desktop/desktop_ic_popup_success@2x.png");
+        background-size: contain;
+        width: 137px;
+        height: 137px;
+        margin: 0 auto 26px;
+        @include mobile() {
+            width: 116px;
+            height: 116px;
+            margin: 0 auto 22px;
+        }
+    }
+    .btn-landing-close {
+        margin: 0 0 0 auto;
+    }
+    .modal-landing-close {
+        background-image: url("../images/desktop/desktop_ic_popup_close@2x.png");
+        background-size: contain;
+        width: 24px;
+        height: 24px;
+        @include mobile() {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+.modal-landing-body {
+    padding: 30px 0 26px 0;
+    @include mobile() {
+        padding: 20px 0 20px 0;
+    }
+    h5 {
+        font-family: PingFangTC-Semibold;
+        font-size: 18px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: 0.7px;        
+        @include mobile() {
+            font-size: 16px;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1;
+            letter-spacing: 0.62px;
+        }
+    }
+
+    h6 {
+        margin-top: 16px;
+        margin-bottom: 24px;
+        font-family: PingFangTC-Medium;
+        font-size: 16px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: 0.03px;
+        @include tablet() {
+            margin-top: 12px;
+            margin-bottom: 24px;
+        }
+        @include mobile() {
+            margin-top: 10px;
+            margin-bottom: 16px;
+            font-size: 15px;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.07;
+            letter-spacing: 0.03px;
+        }
+    }
+
+    .custom-btn-finish {
+        width: 150px;
+        height: 44px;
+        border-radius: 23px;
+        font-family: PingFangTC-Medium;
+        font-size: 18px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: 0.03px;
+    }
+}

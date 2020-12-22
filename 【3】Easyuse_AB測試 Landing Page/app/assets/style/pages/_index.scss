@@ -21,10 +21,6 @@
             margin: 50px auto 0 auto;
         }
     }
-    .banner-notice:hover, .banner-notice:not(:disabled):not(.disabled) {
-        background-color: inherit;
-        cursor: inherit;
-    }
     .banner-notice {
         margin-top: 120px;
         width: 130px;
@@ -136,6 +132,790 @@
             font-size: 18px;
             font-weight: 600;
             letter-spacing: 0.7px;
+        }
+    }
+}
+
+.ABTest-content {
+    padding: 100px 275px 100px 275px;
+    @include tablet() {
+        padding: 70px 30px 70px 30px;
+    }
+    @include mobile() {
+        padding: 50px 10px 50px 10px;
+    }
+    .content-question-block {
+        .content-question {        
+            width: 504px;
+            padding: 22px 24px;
+            font-family: PingFangTC-Medium;
+            font-size: 32px;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.5;
+            letter-spacing: 0.06px;
+            text-align: justify;
+            border-radius: 20px;
+            @include tablet() { 
+                width: 452px;
+                font-size: 28px;
+                font-weight: 500;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.43;
+                letter-spacing: 0.05px;
+                text-align: justify;
+            }
+            @include mobile() {
+                padding: 10px 12px;
+                width: 273px;
+                font-size: 20px;
+                font-weight: 500;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.4;
+                letter-spacing: 0.04px;
+                text-align: justify;
+            }
+        }
+        .content-question-img {
+            margin-left: 18px;
+            background-image: url("../images/desktop/desktop_ic_dialog_user@2x.png");
+            background-size: contain;
+            width: 78px;
+            height: 78px;
+            @include tablet() { 
+                margin-left: 14px;
+                width: 72px;
+                height: 72px;
+            }
+            @include mobile() {
+                background-image: url("../images/mobile/mobile_ic_dialog_user@2x.png");
+                margin-left: 8px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+    .content-reply-block {        
+        margin-top: 40px;
+        @include tablet() {     
+            margin-top: 30px;
+        }
+        .content-reply-img {
+            margin-right: 18px;
+            background-image: url("../images/desktop/desktop_ic_dialog_mailhunter@2x.png");
+            background-size: contain;
+            width: 78px;
+            height: 78px;
+            @include tablet() {     
+                width: 72px;
+                height: 72px;
+            }
+            @include mobile() {
+                margin-right: 8px;
+                background-image: url("../images/mobile/mobile_ic_dialog_mailhunter@2x.png");
+                width: 40px;
+                height: 40px;
+            }
+        }
+        .content-reply {        
+            width: 346px;
+            padding: 20px 0 20px 24px;
+            border-radius: 20px;
+            font-family: PingFangTC-Medium, AvenirNext-Medium;
+            font-size: 32px;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.5;
+            letter-spacing: 0.06px;
+            text-align: center;
+            @include tablet() {     
+                font-size: 28px;
+                font-weight: 500;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.43;
+                letter-spacing: 0.05px;
+            }
+            @include mobile() {
+                width: 210px;
+                padding: 8px 0 8px 0;
+                font-size: 20px;
+                font-weight: 500;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.4;
+                letter-spacing: 0.04px;
+            }
+        }
+    }
+
+    .content-atest-block {
+        margin-top: 60px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        border-radius: 10px;
+        @include tablet() {     
+            margin-top: 50px;
+            padding-top: 26px;
+            padding-bottom: 26px;
+        }
+        .content-atest-percent {
+            margin-left: 40px;
+            margin-right: 16px;
+            font-family: AvenirNext-Medium;
+            font-size: 62px;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1;
+            letter-spacing: 0.11px;
+            @include tablet() {     
+                margin-left: 24px;
+                margin-right: 16px;
+                font-size: 38px;
+                font-weight: 500;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1;
+                letter-spacing: 0.07px;
+            }
+        }
+        .content-atest-img {
+            margin-right: 54px;
+            background-image: url("../images/desktop/desktop_ic_dialog_pie_20@2x.png");
+            background-size: contain;
+            width: 232px;
+            height: 154px;            
+            @include tablet() {    
+                background-image: url("../images/tablet/tablet_ic_dialog_pie_20@2x.png");
+                margin-right: 20px; 
+                width: 205px;
+                height: 134px;            
+            }
+        }
+        .content-atest-word {
+            font-family: PingFangTC-Medium, AvenirNext-Medium;
+            font-size: 26px;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.54;
+            letter-spacing: 0.05px;     
+            @include tablet() {    
+                width: 283px;
+                font-size: 24px;
+                font-weight: 500;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.5;
+                letter-spacing: 0.04px;       
+            }    
+            @include mobile() {    
+                margin-top: 12px;
+                font-size: 18px;
+                font-weight: 500;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.56;
+                letter-spacing: 0.03px;
+                text-align: center;      
+            }
+        }
+    }
+    .content-project-block {
+        margin-top: 26px;
+        @include tablet() {    
+            margin-top: 20px;
+        }
+        @include mobile() {    
+            margin-top: 18px;
+        }
+        .content-a-project-percent {
+            width: 100px;
+            height: 54px;
+            padding: 15px 22px 13px 21px;
+            border-radius: 27px;
+            font-family: AvenirNext-DemiBold;
+            font-size: 26px;
+            font-weight: 600;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1;
+            letter-spacing: 0.05px;
+            text-align: center;   
+            @include tablet() {    
+                font-size: 26px;
+                font-weight: 600;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1;
+                letter-spacing: 0.05px; 
+            }
+            @include mobile() {    
+                width: 80px;
+                font-size: 20px;
+                font-weight: 600;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1;
+                letter-spacing: 0.04px;
+                text-align: center;
+            }
+        }
+        .content-a-project-arrow {
+            margin-top: -1px;
+            background-image: url("../images/desktop/desktop_ic_dialog_arrow_darkB@2x.png");
+            background-size: contain;
+            width: 26px;
+            height: 50px;
+            @include mobile() {    
+                background-image: url("../images/mobile/mobile_ic_dialog_arrow_darkB@2x.png");
+                width: 14px;
+                height: 26px;
+            }
+        }
+        .content-a-project-crown {
+            padding-top: 47px;
+            @include tablet() {    
+                padding-top: 41px;
+            }
+            @include mobile() {   
+                padding-top: 29px;
+            }
+            .content-a-project-crown-img {
+                background-image: url("../images/desktop/desktop_ic_dialog_champion@2x.png");
+                background-size: contain;
+                width: 80px;
+                height: 55px;
+                @include tablet() {  
+                    background-image: url("../images/desktop/desktop_ic_dialog_champion@2x.png");
+                    width: 57.2px;
+                    height: 33.9px;
+                }
+                @include mobile() {   
+                    background-image: url("../images/mobile/mobile_ic_dialog_champion@2x.png");
+                    width: 32px;
+                    height: 22px;
+                }
+            }
+        }
+        .content-a-onsale-block {
+            position: relative;
+            padding-top: 57px;
+            padding-bottom: 30px;
+            width: 426px;
+            border-radius: 10px;    
+            @include tablet() {    
+                width: 340px;      
+            }
+            @include mobile() {   
+                width: 174px;      
+            }
+            .content-a-onsale-subject {
+                position: absolute;
+                top: -26px;
+                width: 100px;
+                height: 54px;
+                padding: 14px 21px;
+                border-radius: 27px;
+                font-family: PingFangTC-Semibold;
+                background-color: #f48f7a;
+                font-size: 18px;
+                font-weight: 600;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1;
+                letter-spacing: 0.03px;
+                text-align: center;
+                @include tablet() {    
+                    font-size: 18px;
+                    font-weight: 600;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1;
+                    letter-spacing: 0.03px;
+                }
+                @include mobile() {  
+                    padding: 12px 17px;
+                    width: 80px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1;
+                    letter-spacing: 0.02px;  
+                }
+                span {
+                    padding-left: 2px;
+                    font-family: AvenirNext-DemiBold;
+                    font-size: 26px;
+                    font-weight: 600;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1;
+                    letter-spacing: 0.05px;
+                    text-align: center;
+                    @include tablet() {    
+                        font-size: 26px;
+                        font-weight: 600;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1;
+                        letter-spacing: 0.05px;
+                    }     
+                    @include mobile() {  
+                        font-size: 20px;
+                        font-weight: 600;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1;
+                        letter-spacing: 0.04px;
+                    }               
+                }
+            }
+            .content-a-onsale-word {
+                font-family: PingFangTC-Medium, AvenirNext-Medium;
+                font-size: 24px;
+                font-weight: 500;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1;
+                letter-spacing: 0.04px;
+                padding-bottom: 12.5px;
+                border-bottom: 4px solid #f48f7a;                
+                @include tablet() {    
+                    font-size: 20px;
+                    font-weight: 500;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.2;
+                    letter-spacing: 0.04px;
+                }    
+                @include mobile() {  
+                    font-size: 16px;
+                    font-weight: 500;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1;
+                    letter-spacing: 0.03px;
+                }           
+            }
+            .content-a-onsale-word-break {
+                @include mobile() {  
+                    margin-top: 13px;
+                }    
+            }
+            .content-a-onsale-open {
+                margin-top: 24.5px;
+                width: 100px;
+                height: 38px;
+                padding: 10px 23px 10px 24px;
+                border-radius: 6px;
+                font-family: PingFangTC-Medium, AvenirNext-Medium;
+                font-size: 18px;
+                font-weight: 500;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1;
+                letter-spacing: 0.03px;
+                @include tablet() {    
+                    margin-top: 21px;
+                    font-size: 18px;
+                    font-weight: 500;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1;
+                    letter-spacing: 0.03px;
+                }    
+                @include mobile() {  
+                    margin-top: 17px;
+                    font-size: 14px;
+                    font-weight: 500;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1;
+                    letter-spacing: 0.02px;
+                }    
+            }
+        }
+        
+        .content-b-project-percent {
+            width: 100px;
+            height: 54px;
+            padding: 15px 22px 13px 21px;
+            border-radius: 27px;
+            font-family: AvenirNext-DemiBold;
+            font-size: 26px;
+            font-weight: 600;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1;
+            letter-spacing: 0.05px;
+            text-align: center;
+            @include tablet() {    
+                font-size: 26px;
+                font-weight: 600;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1;
+                letter-spacing: 0.05px; 
+            }
+            @include mobile() {    
+                width: 80px;
+                font-size: 20px;
+                font-weight: 600;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1;
+                letter-spacing: 0.04px;
+                text-align: center;
+            }
+        }
+        .content-b-project-arrow {
+            margin-top: -1px;
+            background-image: url("../images/desktop/desktop_ic_dialog_arrow_darkB@2x.png");
+            background-size: contain;
+            width: 26px;
+            height: 50px;
+            @include mobile() {    
+                background-image: url("../images/mobile/mobile_ic_dialog_arrow_darkB@2x.png");
+                width: 14px;
+                height: 26px;
+            }
+        }
+        .content-b-project-crown {
+            padding-top: 47px;
+            @include tablet() {    
+                padding-top: 41px;
+            }
+            @include mobile() {   
+                padding-top: 29px;
+            }
+            .content-b-project-crown-img {
+                background-image: url("../images/desktop/desktop_ic_dialog_champion@2x.png");
+                background-size: contain;
+                width: 80px;
+                height: 55px;
+                margin-right: 47px;
+                @include tablet() {  
+                    background-image: url("../images/desktop/desktop_ic_dialog_champion@2x.png");
+                    width: 48px;
+                    height: 33px;
+                    margin-right: 17.6px;
+                }
+                @include mobile() {   
+                    background-image: url("../images/mobile/mobile_ic_dialog_champion@2x.png");
+                    width: 32px;
+                    height: 22px;
+                    margin-right: 7px;
+                }
+            }
+        }
+        .content-b-onsale-block {
+            position: relative;
+            padding-top: 57px;
+            padding-bottom: 30px;
+            width: 426px;
+            border-radius: 10px;
+            @include tablet() {    
+                width: 340px;      
+            }
+            @include mobile() {   
+                width: 174px;      
+            }
+            .content-b-onsale-subject {
+                position: absolute;
+                top: -26px;
+                width: 100px;
+                height: 54px;
+                padding: 14px 21px;
+                border-radius: 27px;
+                font-family: PingFangTC-Semibold;
+                background-color: #0fc4ca;
+                font-size: 18px;
+                font-weight: 600;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1;
+                letter-spacing: 0.03px;
+                text-align: center;
+                @include tablet() {    
+                    font-size: 18px;
+                    font-weight: 600;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1;
+                    letter-spacing: 0.03px;
+                }
+                @include mobile() {  
+                    padding: 12px 17px;
+                    width: 80px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1;
+                    letter-spacing: 0.02px;  
+                }
+                span {
+                    padding-left: 3px;
+                    font-family: AvenirNext-DemiBold;
+                    font-size: 26px;
+                    font-weight: 600;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1;
+                    letter-spacing: 0.05px;
+                    text-align: center;
+                    @include tablet() {    
+                        font-size: 26px;
+                        font-weight: 600;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1;
+                        letter-spacing: 0.05px;
+                    }            
+                    @include mobile() {  
+                        font-size: 20px;
+                        font-weight: 600;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1;
+                        letter-spacing: 0.04px;
+                    }              
+                }
+            }
+            .content-b-onsale-word {
+                font-family: PingFangTC-Medium, AvenirNext-Medium;
+                font-size: 24px;
+                font-weight: 500;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1;
+                letter-spacing: 0.04px;
+                padding-bottom: 12.5px;
+                border-bottom: 4px solid #0fc4ca;             
+                @include tablet() {    
+                    font-size: 20px;
+                    font-weight: 500;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.2;
+                    letter-spacing: 0.04px;
+                }    
+                @include mobile() {  
+                    font-size: 16px;
+                    font-weight: 500;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1;
+                    letter-spacing: 0.03px;
+                }           
+            }
+            .content-b-onsale-word-break {
+                @include mobile() {  
+                    margin-top: 13px;
+                }    
+            }
+            .content-b-onsale-open {
+                margin-top: 24.5px;
+                width: 100px;
+                height: 38px;
+                padding: 10px 18px;
+                border-radius: 6px;
+                font-family: PingFangTC-Medium, AvenirNext-Medium;
+                font-size: 18px;
+                font-weight: 500;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1;
+                letter-spacing: 0.03px;
+                @include tablet() {    
+                    margin-top: 21px;
+                    font-size: 18px;
+                    font-weight: 500;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1;
+                    letter-spacing: 0.03px;
+                }    
+                @include mobile() {  
+                    margin-top: 17px;
+                    font-size: 14px;
+                    font-weight: 500;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1;
+                    letter-spacing: 0.02px;
+                }    
+            }
+        }
+    }
+    .content-into-b-block {
+        padding-top: 28px;
+        padding-bottom: 20px;
+        padding-left: 659px;
+        @include tablet() {    
+            padding-top: 20px;
+            padding-bottom: 14px;
+            padding-left: 524px;
+        }    
+        @include mobile() {    
+            padding-top: 12px;
+            padding-bottom: 10px;
+            padding-left: 0;
+        }    
+        .content-into-b-img {
+            background-image: url("../images/desktop/desktop_ic_dialog_arrow_lightB@2x.png");
+            background-size: contain;
+            width: 26px;
+            height: 50px;
+            @include mobile() {    
+                background-image: url("../images/mobile/mobile_ic_dialog_arrow_lightB@2x.png");
+                width: 14px;
+                height: 26px;
+                margin-right: 80px;
+                margin-left: auto;
+            }    
+        }
+    }
+    .content-btest-block {
+        padding-top: 24px;
+        padding-bottom: 24px;
+        border-radius: 10px;
+        @include tablet() {    
+            padding-top: 26px;
+            padding-bottom: 26px;
+        }
+        .content-btest-percent {
+            margin-left: 40px;
+            margin-right: 16px;
+            font-family: AvenirNext-Medium;
+            font-size: 62px;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1;
+            letter-spacing: 0.11px;
+            @include tablet() {     
+                margin-left: 24px;
+                margin-right: 16px;
+                font-size: 38px;
+                font-weight: 500;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1;
+                letter-spacing: 0.07px;
+            }
+        }
+        .content-btest-img {
+            margin-right: 54px;
+            background-image: url("../images/desktop/desktop_ic_dialog_pie_80@2x.png");
+            background-size: contain;
+            width: 232px;
+            height: 154px;       
+            @include tablet() {    
+                background-image: url("../images/tablet/tablet_ic_dialog_pie_80@2x.png");
+                margin-right: 20px; 
+                width: 205px;
+                height: 134px;            
+            }
+        }
+        .content-btest-word {
+            font-family: PingFangTC-Medium, AvenirNext-Medium;
+            font-size: 26px;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.54;
+            letter-spacing: 0.05px;
+            @include tablet() {    
+                font-size: 24px;
+                font-weight: 500;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.5;
+                letter-spacing: 0.04px;   
+            }            
+            @include mobile() {    
+                margin-top: 12px;
+                font-size: 18px;
+                font-weight: 500;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.56;
+                letter-spacing: 0.03px;
+                text-align: center; 
+            }
+        }    
+    }
+    .content-out-b-block {
+        padding-top: 28px;
+        padding-bottom: 20px;
+        @include tablet() {    
+            padding-top: 20px;
+            padding-bottom: 14px;
+        }
+        @include mobile() {    
+            padding-top: 12px;
+            padding-bottom: 10px;
+        }    
+        .content-out-b-img {
+            background-image: url("../images/desktop/desktop_ic_dialog_arrow_lightB@2x.png");
+            background-size: contain;
+            width: 26px;
+            height: 50px;
+            margin: 0 auto;
+            @include mobile() {    
+                background-image: url("../images/mobile/mobile_ic_dialog_arrow_lightB@2x.png");
+                width: 14px;
+                height: 26px;
+            }    
+        }
+    }
+    .content-result-block {
+        background: url("../images/desktop/tablet_bg_dialog_open@2x.png") no-repeat center center; 
+        background-size: cover;
+        padding-top: 32px;
+        padding-bottom: 34px;
+        border-radius: 10px;
+        @include tablet() {    
+            padding-top: 26px;
+            padding-bottom: 30px;
+        }
+        .content-result-img {
+            background-image: url("../images/desktop/desktop_ic_dialog_open@2x.png");
+            background-size: contain;
+            width: 116px;
+            height: 116px;
+            @include tablet() {    
+                background-image: url("../images/tablet/tablet_ic_dialog_open@2x.png");
+                width: 94px;
+                height: 94px;
+            }
+        }
+        .content-result-word {
+            margin-top: 14px;
+            font-family: PingFangTC-Medium;
+            font-size: 26px;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1;
+            letter-spacing: 0.05px;
+            text-align: center;
+            @include tablet() {    
+                font-size: 24px;
+                font-weight: 500;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1;
+                letter-spacing: 0.04px;
+            }
         }
     }
 }
@@ -468,6 +1248,18 @@
         }
     }
 }
+
+.invalid-feedback {
+    font-family: PingFangTC-Medium;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.03px;
+    color: #f75f5f;
+  }
+
 .order-banner {
 
     .img {
@@ -487,10 +1279,6 @@
         @include mobile() {
             width: 331px;
         }
-    }
-    .order-notice:hover, .order-notice:not(:disabled):not(.disabled) {
-        background-color: inherit;
-        cursor: inherit;
     }
     .order-notice {
         width: 140px;
