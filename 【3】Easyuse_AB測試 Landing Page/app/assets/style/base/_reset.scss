@@ -27,3 +27,9 @@ img {
     padding-left: 0;
     padding-right: 0;
 }
+
+
+.btn-none-hover:hover, .btn-none-hover:not(:disabled):not(.disabled) {
+    background-color: inherit;
+    cursor: inherit;
+}
