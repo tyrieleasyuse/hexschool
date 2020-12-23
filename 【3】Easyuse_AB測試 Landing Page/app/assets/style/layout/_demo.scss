@@ -11,7 +11,18 @@
   }
 
 .order-banner {
-
+    input, textarea, select, option, input:focus, textarea:focus, select:focus, option:focus,.form-control:focus {
+        border: 0;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+    .was-validated .form-control:invalid {
+        background-image: none;
+        border: solid 2px #f75f5f;
+    }
+    .was-validated textarea.form-control:valid {
+        background-image: none;
+    }
     .img {
         margin: 100px 0px 100px 79px;
         padding-top: 225px;
@@ -20,14 +31,16 @@
         width: 640px;
         background: url("../images/desktop/desktop_bg_demo@2x.png") no-repeat center center; 
         background-size: cover;
-        border-radius: 8px;
+        border-radius: 8px 0 0 8px;
               
         @include tablet() {
             margin: 70px auto 0px;
             padding: 118px 0px 117px 0px;
+            border-radius: 8px 8px 0 0;
         }
         @include mobile() {
             width: 331px;
+            padding: 94px 0px 94px 0px;
         }
     }
     .order-notice {
@@ -63,13 +76,23 @@
     .order-logo {
         margin-top: 24px;
         margin-bottom: 24px;
-        background-image: url("../images/desktop/desktop_ic_header_logo@2x.png");
+        background-image: url("../images/desktop/desktop_ic_demo_logo@2x.png");
         background-size: contain;
-        width: 218px;
-        height: 33px;        
+        width: 311px;
+        height: 46px;    
+        @include tablet() {
+            background-image: url("../images/tablet/tablet_ic_demo_logo@2x.png");
+            width: 250px;
+            height: 37px;   
+        }
+        @include mobile() {
+            background-image: url("../images/mobile/mobile_logo_mailhunter@2x.png");
+            width: 200px;
+            height: 30px;   
+        }
     }
     h2 {
-        font-family: PingFangTC-Medium, AvenirNext-DemiBold;
+        font-family: AvenirNext-DemiBold, PingFangTC-Medium;
         font-size: 50px;
         font-weight: 600;
         font-stretch: normal;
@@ -77,7 +100,7 @@
         line-height: 0.92;
         letter-spacing: 0.09px;
         @include tablet() {
-            font-family: PingFangTC-Medium, AvenirNext-DemiBold;
+            font-family: AvenirNext-DemiBold, PingFangTC-Medium;
             font-size: 40px;
             font-weight: 500;
             font-stretch: normal;
@@ -86,7 +109,7 @@
             letter-spacing: 0.07px;
         }
         @include mobile() {
-            font-family: PingFangTC-Medium, AvenirNext-DemiBold;
+            font-family: AvenirNext-DemiBold, PingFangTC-Medium;
             font-size: 32px;
             font-weight: 500;
             font-stretch: normal;
@@ -101,11 +124,12 @@
         padding-bottom: 69px;
         padding-left: 74px;
         width: 640px;
-        border-radius: 8px;        
+        border-radius: 0 8px 8px 0;
         @include tablet() {
             margin: 0px auto 70px;
             padding-top: 50px;
             padding-bottom: 50px;
+            border-radius: 0 0 8px 8px;
         }
         @include mobile() {
             width: 331px;
@@ -116,7 +140,7 @@
             margin-right: 12px;
         }
         label {
-            font-family: PingFangTC-Medium, AvenirNext-DemiBold;
+            font-family: AvenirNext-DemiBold, PingFangTC-Medium;
             font-size: 16px;
             font-weight: 500;
             font-stretch: normal;
@@ -148,7 +172,7 @@
             height: 40px;
             border-radius: 6px;
             background-color: #ffffff;
-            font-family: PingFangTC-Medium, AvenirNext-DemiBold;
+            font-family: AvenirNext-DemiBold, PingFangTC-Medium;
             font-size: 16px;
             font-weight: 500;
             font-stretch: normal;
@@ -162,7 +186,7 @@
             margin: 8px 0 40px;
             border-radius: 6px;
             background-color: #ffffff;
-            font-family: PingFangTC-Medium, AvenirNext-DemiBold;
+            font-family: AvenirNext-DemiBold, PingFangTC-Medium;
             font-size: 16px;
             font-weight: 500;
             font-stretch: normal;
@@ -171,6 +195,31 @@
             letter-spacing: 0.03px;
             color: #373737;
         }
+        select {
+            font-family: PingFangTC-Regular;
+            font-size: 16px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1;
+            letter-spacing: 0.03px;
+            color: #919191;
+        }
+        option {
+            font-family: PingFangTC-Regular;
+            font-size: 16px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1;
+            letter-spacing: 0.03px;
+            color: #919191;
+        }
+        option:hover {
+            background-color: #7c98fc;
+            color: #ffffff;
+        }
+        
         
         .custom-btn-demo:hover {
             background-color: #1f2c4f;
@@ -181,7 +230,7 @@
             border-radius: 32px;
             background-color: #4369ee;
 
-            font-family: PingFangTC-Medium, Avenir-Medium;
+            font-family: Avenir-Medium, PingFangTC-Medium;
             font-size: 18px;
             font-weight: 500;
             font-stretch: normal;

@@ -87,7 +87,7 @@
     })();
   </script>
   <script>
-    $(".custom-btn-demo").click(function() {         
+    $(".custom-btn-demo").click(function() {      
       if($("#username").val() === '')
          return;
       if($("#companyname").val() === '')
@@ -98,6 +98,10 @@
          return;
       if($("#email").val() === '')
          return;
+      let emailstring = $("#email").val();
+      let emailreg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;       
+      if(!emailreg.test(String(emailstring).toLowerCase()))
+          return;
          
 
       var requestURL = "https://s1.mailhunter.com.tw/WebDemoReservation/WebDemoReservation.ashx";

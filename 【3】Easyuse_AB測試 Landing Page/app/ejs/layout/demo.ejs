@@ -1,4 +1,4 @@
-<div class="order-banner container  d-flex  flex-xl-row  flex-column  align-items-center  align-items-stretch">
+<div id="demoblock" class="order-banner container  d-flex  flex-xl-row  flex-column  align-items-center  align-items-stretch">
     <div class="img  d-flex  flex-column  align-items-xl-start align-items-center">
         <div
             class="order-notice  btn  btn-outline-light  btn-none-hover text-light  d-flex  justify-content-center  align-items-center">
@@ -7,10 +7,13 @@
         <div class="order-logo"></div>
         <h2 class="text-light">A/B Test 功能</h2>
     </div>
-    <div class="order-content bg-secondary-light" id="demoblock">
+    <div class="order-content bg-secondary-light" id="demoblock2">
         <form id="form-demo" class="needs-validation" novalidate method="POST" action="">
             <div class="d-flex  flex-md-row  flex-column">
                 <div class="form-group">
+                    <div class="invalid-feedback">
+                        請輸入姓名
+                    </div>
                     <label for="username">姓名*</label>
                     <input type="text" class="form-control  wd-100 background-color-primary" id="username"
                         name="username" placeholder="" value="" required>
@@ -64,7 +67,7 @@
             <div class="form-group">
                 <label for="email">Email*</label>
                 <input type="text" class="form-control  wd-200 background-color-primary" id="email" name="email"
-                    placeholder="" value="" required>
+                    placeholder="" value="" pattern="^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-zA-Z]{2,6}(?:\.[a-zA-Z]{2})?)$" required>
                 <div class="invalid-feedback">
                     請輸入電子信箱
                 </div>
