@@ -38,7 +38,10 @@ header {
             display: none;
         }
     }
-    .text-active:hover {
-        border-bottom: 4px solid #ffffff;
+    .text-active:hover {        
+        padding-bottom: 3px
+    }
+    .text-active {        
+        @include underlineMovie(#ffffff, 3px);
     }
 }
