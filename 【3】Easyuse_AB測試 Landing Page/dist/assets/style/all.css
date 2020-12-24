@@ -2124,6 +2124,10 @@ textarea.form-control {
 .is-valid ~ .valid-tooltip {
   display: block; }
 
+.was-validated :valid ~ div .valid-feedback,
+.is-valid ~ div .valid-feedback {
+  display: block; }
+
 .was-validated .form-control:valid, .form-control.is-valid {
   border-color: #4369ee;
   padding-right: calc(1.5em + 0.75rem);
@@ -2207,6 +2211,10 @@ textarea.form-control {
 .was-validated :invalid ~ .invalid-tooltip,
 .is-invalid ~ .invalid-feedback,
 .is-invalid ~ .invalid-tooltip {
+  display: block; }
+
+.was-validated :invalid ~ div .invalid-feedback,
+.is-invalid ~ div .invalid-feedback {
   display: block; }
 
 .was-validated .form-control:invalid, .form-control.is-invalid {
@@ -10680,7 +10688,7 @@ img {
 
 .btn-none-hover:hover, .btn-none-hover:not(:disabled):not(.disabled) {
   background-color: inherit;
-  cursor: inherit; }
+  cursor: inherit !important; }
 
 @font-face {
   font-family: "Avenir-Heavy";
@@ -10764,7 +10772,7 @@ header {
         background-image: url("../images/mobile/mobile_ic_header_logo@2x.png"); } }
   header a, header a:hover {
     margin-right: 40px;
-    font-family: PingFangTC-Medium, AvenirNext;
+    font-family: AvenirNext, PingFangTC-Medium;
     font-size: 16px;
     font-weight: 500;
     font-stretch: normal;
@@ -10779,7 +10787,252 @@ header {
       header a, header a:hover {
         display: none; } }
   header .text-active:hover {
-    border-bottom: 4px solid #ffffff; }
+    padding-bottom: 3px; }
+  header .text-active {
+    text-decoration: none;
+    position: relative;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s; }
+    header .text-active:before {
+      content: "";
+      width: 0;
+      height: 2px;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      background: #ffffff;
+      -webkit-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s; }
+    header .text-active:hover:before {
+      width: 100%;
+      left: 0;
+      background: #ffffff; }
+
+.order-banner .form-control:focus, .order-banner .form-control:valid, .order-banner .form-control:valid:focus {
+  border: 0;
+  box-shadow: none;
+  -webkit-box-shadow: none; }
+
+.order-banner .was-validated .form-control:invalid {
+  background-image: none;
+  border: solid 2px #f75f5f; }
+
+.order-banner .form-control:valid {
+  background-image: none; }
+
+.order-banner .img {
+  margin: 100px 0px 100px 79px;
+  padding-top: 225px;
+  padding-bottom: 225px;
+  padding-left: 133px;
+  width: 640px;
+  background: url("../images/desktop/desktop_bg_demo@2x.png") no-repeat center center;
+  background-size: cover;
+  border-radius: 8px 0 0 8px; }
+  @media (max-width: 1439px) {
+    .order-banner .img {
+      margin: 70px auto 0px;
+      padding: 118px 0px 117px 0px;
+      border-radius: 8px 8px 0 0; } }
+  @media (max-width: 767px) {
+    .order-banner .img {
+      width: 331px;
+      padding: 94px 0px 94px 0px; } }
+
+.order-banner .order-notice {
+  width: 140px;
+  height: 50px;
+  border-radius: 10px;
+  font-family: PingFangTC-Regular;
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 0.04px; }
+  @media (max-width: 1439px) {
+    .order-banner .order-notice {
+      font-family: PingFangTC-Regular;
+      font-size: 18px;
+      font-weight: 600;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1;
+      letter-spacing: 0.9px; } }
+  @media (max-width: 767px) {
+    .order-banner .order-notice {
+      font-family: PingFangTC-Regular;
+      font-size: 18px;
+      font-weight: 600;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1;
+      letter-spacing: 0.9px; } }
+
+.order-banner .order-logo {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  background-image: url("../images/desktop/desktop_ic_demo_logo@2x.png");
+  background-size: contain;
+  width: 311px;
+  height: 46px; }
+  @media (max-width: 1439px) {
+    .order-banner .order-logo {
+      background-image: url("../images/tablet/tablet_ic_demo_logo@2x.png");
+      width: 250px;
+      height: 37px; } }
+  @media (max-width: 767px) {
+    .order-banner .order-logo {
+      background-image: url("../images/mobile/mobile_logo_mailhunter@2x.png");
+      width: 200px;
+      height: 30px; } }
+
+.order-banner h2 {
+  font-family: AvenirNext-DemiBold, PingFangTC-Medium;
+  font-size: 50px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.92;
+  letter-spacing: 0.09px; }
+  @media (max-width: 1439px) {
+    .order-banner h2 {
+      font-family: AvenirNext-DemiBold, PingFangTC-Medium;
+      font-size: 40px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1;
+      letter-spacing: 0.07px; } }
+  @media (max-width: 767px) {
+    .order-banner h2 {
+      font-family: AvenirNext-DemiBold, PingFangTC-Medium;
+      font-size: 32px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.25;
+      letter-spacing: 0.06px; } }
+
+.order-banner .order-content {
+  margin: 100px 80px 100px 0px;
+  padding-top: 69px;
+  padding-bottom: 69px;
+  padding-left: 74px;
+  width: 640px;
+  border-radius: 0 8px 8px 0; }
+  @media (max-width: 1439px) {
+    .order-banner .order-content {
+      margin: 0px auto 70px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      border-radius: 0 0 8px 8px; } }
+  @media (max-width: 767px) {
+    .order-banner .order-content {
+      width: 331px;
+      padding-left: 35px; } }
+  .order-banner .order-content .custom-form-group {
+    margin-right: 12px;
+    margin-bottom: 20px; }
+  .order-banner .order-content .form-label {
+    font-family: AvenirNext-DemiBold, PingFangTC-Medium;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.03px;
+    color: #919191; }
+  .order-banner .order-content .wd-100 {
+    width: 240px; }
+    @media (max-width: 1439px) {
+      .order-banner .order-content .wd-100 {
+        width: 240px; } }
+    @media (max-width: 767px) {
+      .order-banner .order-content .wd-100 {
+        width: 260px; } }
+  .order-banner .order-content .wd-200 {
+    width: 492px; }
+    @media (max-width: 1439px) {
+      .order-banner .order-content .wd-200 {
+        width: 492px; } }
+    @media (max-width: 767px) {
+      .order-banner .order-content .wd-200 {
+        width: 260px; } }
+  .order-banner .order-content input, .order-banner .order-content option, .order-banner .order-content select {
+    height: 40px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    font-family: AvenirNext-DemiBold, PingFangTC-Medium;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.03px;
+    color: #373737; }
+  .order-banner .order-content textarea {
+    height: 122px;
+    margin: 8px 0 20px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    font-family: AvenirNext-DemiBold, PingFangTC-Medium;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.03px;
+    color: #373737; }
+  .order-banner .order-content select {
+    font-family: PingFangTC-Regular;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.03px;
+    color: #919191; }
+  .order-banner .order-content option {
+    font-family: PingFangTC-Regular;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.03px;
+    color: #919191; }
+  .order-banner .order-content option:hover {
+    background-color: #7c98fc;
+    color: #ffffff; }
+  .order-banner .order-content .custom-btn-demo:hover {
+    background-color: #1f2c4f;
+    color: #ffffff; }
+  .order-banner .order-content .custom-btn-demo {
+    height: 64px;
+    border-radius: 32px;
+    background-color: #4369ee;
+    font-family: Avenir-Medium, PingFangTC-Medium;
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.03px; }
+
+.invalid-feedback {
+  font-family: PingFangTC-Medium;
+  font-size: 16px;
+  font-weight: 500;
+  width: auto;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0.03px;
+  color: #f75f5f;
+  margin-top: 0; }
 
 footer .ABTest-Connect {
   padding-top: 66px;
@@ -10802,7 +11055,7 @@ footer .ABTest-Connect {
   footer .ABTest-Connect .img {
     background-image: url("../images/desktop/desktop_ic_footer_logo@2x.png");
     background-size: contain;
-    width: 165px;
+    width: 168px;
     height: 36px;
     -o-object-fit: contain;
        object-fit: contain;
@@ -10811,15 +11064,15 @@ footer .ABTest-Connect {
     @media (max-width: 1439px) {
       footer .ABTest-Connect .img {
         background-image: url("../images/tablet/tablet_ic_footer_logo@2x.png");
-        width: 163px;
-        height: 35px;
+        width: 168px;
+        height: 36px;
         margin-left: auto;
         margin-right: auto; } }
     @media (max-width: 767px) {
       footer .ABTest-Connect .img {
         background-image: url("../images/mobile/mobile_ic_footer_logo@2x.png");
-        width: 163px;
-        height: 35px; } }
+        width: 168px;
+        height: 36px; } }
   footer .ABTest-Connect ul {
     margin-right: 471px; }
     @media (max-width: 1439px) {
@@ -10837,7 +11090,9 @@ footer .ABTest-Connect {
       margin-top: 18px; }
       @media (max-width: 1439px) {
         footer .ABTest-Connect ul .custom-connect-company-phone {
-          margin-top: 30px; } }
+          margin-top: 30px;
+          margin-left: auto;
+          margin-right: auto; } }
       @media (max-width: 767px) {
         footer .ABTest-Connect ul .custom-connect-company-phone {
           margin-top: 24px; } }
@@ -10849,7 +11104,9 @@ footer .ABTest-Connect {
       margin-top: 16px; }
       @media (max-width: 767px) {
         footer .ABTest-Connect ul .custom-connect-company-mail {
-          margin-top: 12px; } }
+          margin-top: 12px;
+          margin-left: auto;
+          margin-right: auto; } }
       footer .ABTest-Connect ul .custom-connect-company-mail a, footer .ABTest-Connect ul .custom-connect-company-mail a:hover {
         font-family: Avenir-Medium;
         font-weight: 500;
@@ -10873,35 +11130,43 @@ footer .ABTest-Copyright {
 .modal-landing-content {
   width: 340px;
   border-radius: 10px;
+  border: 0;
   margin: 0 auto; }
   @media (max-width: 767px) {
     .modal-landing-content {
       width: 240px; } }
 
-.modal-landing-header .modal-landing-title {
-  background-image: url("../images/desktop/desktop_ic_popup_success@2x.png");
-  background-size: contain;
-  width: 137px;
-  height: 137px;
-  margin: 0 auto 26px; }
-  @media (max-width: 767px) {
-    .modal-landing-header .modal-landing-title {
-      width: 116px;
-      height: 116px;
-      margin: 0 auto 22px; } }
-
-.modal-landing-header .btn-landing-close {
-  margin: 0 0 0 auto; }
-
-.modal-landing-header .modal-landing-close {
-  background-image: url("../images/desktop/desktop_ic_popup_close@2x.png");
-  background-size: contain;
-  width: 24px;
-  height: 24px; }
-  @media (max-width: 767px) {
-    .modal-landing-header .modal-landing-close {
-      width: 20px;
-      height: 20px; } }
+.modal-landing-header {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px; }
+  .modal-landing-header .modal-landing-title {
+    background-image: url("../images/desktop/desktop_ic_popup_success@2x.png");
+    background-size: contain;
+    width: 137px;
+    height: 112px;
+    margin: 0 auto 26px; }
+    @media (max-width: 767px) {
+      .modal-landing-header .modal-landing-title {
+        background-image: url("../images/mobile/mobile_ic_popup_success@2x.png");
+        width: 116px;
+        height: 96px;
+        margin: 0 auto 22px; } }
+  .modal-landing-header .btn-landing-close {
+    margin: 0 0 0 auto; }
+  .modal-landing-header .modal-landing-close {
+    padding: 0;
+    margin: 0;
+    background-image: url("../images/desktop/desktop_ic_popup_close@2x.png");
+    background-size: contain;
+    width: 24px;
+    height: 24px; }
+    @media (max-width: 767px) {
+      .modal-landing-header .modal-landing-close {
+        background-image: url("../images/mobile/mobile_ic_popup_close@2x.png");
+        width: 23px;
+        height: 22px; } }
+  .modal-landing-header .modal-landing-close:hover {
+    cursor: pointer; }
 
 .modal-landing-body {
   padding: 30px 0 26px 0; }
@@ -10963,38 +11228,45 @@ footer .ABTest-Copyright {
 .ABTest-banner {
   background: url("../images/desktop/desktop_bg_banner@2x.png") no-repeat center center;
   background-size: cover; }
+  @media (max-width: 1439px) {
+    .ABTest-banner {
+      background: url("../images/tablet/tablet_bg_banner@2x.png") no-repeat center center; } }
+  @media (max-width: 767px) {
+    .ABTest-banner {
+      background: url("../images/mobile/mobile_bg_banner@2x.png") no-repeat center center; } }
   .ABTest-banner .img {
     background-image: url("../images/desktop/desktop_img_banner_AB@2x.png");
     background-size: contain;
     width: 390px;
-    height: 344px;
+    height: 332px;
     margin: 128px 92px 128px 258px; }
     @media (max-width: 1439px) {
       .ABTest-banner .img {
         background-image: url("../images/tablet/tablet_img_banner_AB@2x.png");
         width: 390px;
-        height: 344px;
+        height: 332px;
         margin: 70px auto 0 auto; } }
     @media (max-width: 767px) {
       .ABTest-banner .img {
         background-image: url("../images/mobile/mobile_img_banner_AB@2x.png");
         width: 288px;
-        height: 254px;
+        height: 244px;
         margin: 50px auto 0 auto; } }
   .ABTest-banner .banner-notice {
     margin-top: 120px;
     width: 130px;
     height: 50px;
-    font-family: PingFangTC-Semibold;
+    font-family: AvenirNext-Medium, PingFangTC-Semibold;
     font-size: 20px;
     font-weight: 600;
-    letter-spacing: 1px; }
+    letter-spacing: 1px;
+    border-radius: 10px; }
     @media (max-width: 1439px) {
       .ABTest-banner .banner-notice {
         margin-top: 65px;
         width: 110px;
         height: 40px;
-        font-family: PingFangTC-Semibold;
+        font-family: AvenirNext-Medium, PingFangTC-Semibold;
         font-size: 18px;
         font-weight: 600;
         letter-spacing: 0.9px; } }
@@ -11003,13 +11275,13 @@ footer .ABTest-Copyright {
         margin-top: 40px;
         width: 110px;
         height: 40px;
-        font-family: PingFangTC-Semibold;
+        font-family: AvenirNext-Medium, PingFangTC-Semibold;
         font-size: 16px;
         font-weight: 600;
         letter-spacing: 0.8px; } }
   .ABTest-banner h1 {
     margin-top: 24px;
-    font-family: PingFangTC-Medium, AvenirNext-Medium;
+    font-family: AvenirNext-Medium, PingFangTC-Medium;
     font-size: 50px;
     font-weight: 500;
     line-height: 1;
@@ -11017,20 +11289,20 @@ footer .ABTest-Copyright {
     @media (max-width: 1439px) {
       .ABTest-banner h1 {
         margin-top: 18px;
-        font-family: PingFangTC-Medium, AvenirNext-Medium;
+        font-family: AvenirNext-Medium, PingFangTC-Medium;
         font-size: 40px;
         font-weight: 500;
         letter-spacing: 0.07px; } }
     @media (max-width: 767px) {
       .ABTest-banner h1 {
         margin-top: 16px;
-        font-family: PingFangTC-Medium, AvenirNext-Medium;
+        font-family: AvenirNext-Medium, PingFangTC-Medium;
         font-size: 32px;
         font-weight: 500;
         letter-spacing: 0.06px; } }
   .ABTest-banner p {
     margin-top: 26px;
-    font-family: PingFangTC-Medium, AvenirNext-Medium;
+    font-family: AvenirNext-Medium, PingFangTC-Medium;
     font-size: 20px;
     font-weight: 500;
     font-stretch: normal;
@@ -11040,7 +11312,7 @@ footer .ABTest-Copyright {
     @media (max-width: 1439px) {
       .ABTest-banner p {
         margin-top: 30px;
-        font-family: PingFangTC-Medium, AvenirNext-Medium;
+        font-family: AvenirNext-Medium, PingFangTC-Medium;
         font-size: 20px;
         font-weight: 500;
         line-height: 1.8;
@@ -11049,7 +11321,7 @@ footer .ABTest-Copyright {
     @media (max-width: 767px) {
       .ABTest-banner p {
         margin-top: 26px;
-        font-family: PingFangTC-Medium, AvenirNext-Medium;
+        font-family: AvenirNext-Medium, PingFangTC-Medium;
         font-size: 16px;
         font-weight: 500;
         line-height: 1.75;
@@ -11063,7 +11335,7 @@ footer .ABTest-Copyright {
     margin-top: 44px;
     width: 330px;
     height: 70px;
-    font-family: PingFangTC-Semibold;
+    font-family: AvenirNext-Medium, PingFangTC-Semibold;
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 0.7px;
@@ -11075,7 +11347,7 @@ footer .ABTest-Copyright {
         margin-bottom: 70px;
         width: 330px;
         height: 60px;
-        font-family: PingFangTC-Semibold;
+        font-family: AvenirNext-Medium, PingFangTC-Semibold;
         font-size: 18px;
         font-weight: 600;
         letter-spacing: 0.7px; } }
@@ -11085,7 +11357,7 @@ footer .ABTest-Copyright {
         margin-bottom: 50px;
         width: 270px;
         height: 60px;
-        font-family: PingFangTC-Semibold;
+        font-family: AvenirNext-Medium, PingFangTC-Semibold;
         font-size: 18px;
         font-weight: 600;
         letter-spacing: 0.7px; } }
@@ -11130,7 +11402,8 @@ footer .ABTest-Copyright {
         font-style: normal;
         line-height: 1.4;
         letter-spacing: 0.04px;
-        text-align: justify; } }
+        text-align: justify;
+        border-radius: 10.2px; } }
   .ABTest-content .content-question-block .content-question-img {
     margin-left: 18px;
     background-image: url("../images/desktop/desktop_ic_dialog_user@2x.png");
@@ -11173,7 +11446,7 @@ footer .ABTest-Copyright {
       width: 346px;
       padding: 20px 0 20px 24px;
       border-radius: 20px;
-      font-family: PingFangTC-Medium, AvenirNext-Medium;
+      font-family: AvenirNext-Medium, PingFangTC-Medium;
       font-size: 32px;
       font-weight: 500;
       font-stretch: normal;
@@ -11198,7 +11471,8 @@ footer .ABTest-Copyright {
           font-stretch: normal;
           font-style: normal;
           line-height: 1.4;
-          letter-spacing: 0.04px; } }
+          letter-spacing: 0.04px;
+          border-radius: 10.2px; } }
   .ABTest-content .content-atest-block {
     margin-top: 60px;
     padding-top: 24px;
@@ -11242,7 +11516,7 @@ footer .ABTest-Copyright {
           width: 205px;
           height: 134px; } }
     .ABTest-content .content-atest-block .content-atest-word {
-      font-family: PingFangTC-Medium, AvenirNext-Medium;
+      font-family: AvenirNext-Medium, PingFangTC-Medium;
       font-size: 26px;
       font-weight: 500;
       font-stretch: normal;
@@ -11276,6 +11550,17 @@ footer .ABTest-Copyright {
     @media (max-width: 767px) {
       .ABTest-content .content-project-block {
         margin-top: 18px; } }
+    .ABTest-content .content-project-block .content-a-project-block {
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      margin-right: 14px; }
+      @media (max-width: 1439px) {
+        .ABTest-content .content-project-block .content-a-project-block {
+          margin-right: 13.5px; } }
+      @media (max-width: 767px) {
+        .ABTest-content .content-project-block .content-a-project-block {
+          margin-right: 3.5px; } }
     .ABTest-content .content-project-block .content-a-project-percent {
       width: 100px;
       height: 54px;
@@ -11300,6 +11585,8 @@ footer .ABTest-Copyright {
       @media (max-width: 767px) {
         .ABTest-content .content-project-block .content-a-project-percent {
           width: 80px;
+          height: 44px;
+          padding: 12px 18px;
           font-size: 20px;
           font-weight: 600;
           font-stretch: normal;
@@ -11319,13 +11606,13 @@ footer .ABTest-Copyright {
           width: 14px;
           height: 26px; } }
     .ABTest-content .content-project-block .content-a-project-crown {
-      padding-top: 47px; }
+      margin-top: -8px; }
       @media (max-width: 1439px) {
         .ABTest-content .content-project-block .content-a-project-crown {
-          padding-top: 41px; } }
+          margin-top: 0px; } }
       @media (max-width: 767px) {
         .ABTest-content .content-project-block .content-a-project-crown {
-          padding-top: 29px; } }
+          margin-top: 7.6px; } }
       .ABTest-content .content-project-block .content-a-project-crown .content-a-project-crown-img {
         background-image: url("../images/desktop/desktop_ic_dialog_champion@2x.png");
         background-size: contain;
@@ -11345,14 +11632,8 @@ footer .ABTest-Copyright {
       position: relative;
       padding-top: 57px;
       padding-bottom: 30px;
-      width: 426px;
+      width: 100%;
       border-radius: 10px; }
-      @media (max-width: 1439px) {
-        .ABTest-content .content-project-block .content-a-onsale-block {
-          width: 340px; } }
-      @media (max-width: 767px) {
-        .ABTest-content .content-project-block .content-a-onsale-block {
-          width: 174px; } }
       .ABTest-content .content-project-block .content-a-onsale-block .content-a-onsale-subject {
         position: absolute;
         top: -26px;
@@ -11379,8 +11660,9 @@ footer .ABTest-Copyright {
             letter-spacing: 0.03px; } }
         @media (max-width: 767px) {
           .ABTest-content .content-project-block .content-a-onsale-block .content-a-onsale-subject {
-            padding: 12px 17px;
             width: 80px;
+            height: 44px;
+            padding: 12px 17px;
             font-size: 14px;
             font-weight: 600;
             font-stretch: normal;
@@ -11407,6 +11689,7 @@ footer .ABTest-Copyright {
               letter-spacing: 0.05px; } }
           @media (max-width: 767px) {
             .ABTest-content .content-project-block .content-a-onsale-block .content-a-onsale-subject span {
+              padding-left: 0px;
               font-size: 20px;
               font-weight: 600;
               font-stretch: normal;
@@ -11414,7 +11697,7 @@ footer .ABTest-Copyright {
               line-height: 1;
               letter-spacing: 0.04px; } }
       .ABTest-content .content-project-block .content-a-onsale-block .content-a-onsale-word {
-        font-family: PingFangTC-Medium, AvenirNext-Medium;
+        font-family: AvenirNext-Medium, PingFangTC-Medium;
         font-size: 24px;
         font-weight: 500;
         font-stretch: normal;
@@ -11448,7 +11731,7 @@ footer .ABTest-Copyright {
         height: 38px;
         padding: 10px 23px 10px 24px;
         border-radius: 6px;
-        font-family: PingFangTC-Medium, AvenirNext-Medium;
+        font-family: AvenirNext-Medium, PingFangTC-Medium;
         font-size: 18px;
         font-weight: 500;
         font-stretch: normal;
@@ -11467,12 +11750,26 @@ footer .ABTest-Copyright {
         @media (max-width: 767px) {
           .ABTest-content .content-project-block .content-a-onsale-block .content-a-onsale-open {
             margin-top: 17px;
+            width: 64px;
+            height: 28px;
+            padding: 7px 11px;
             font-size: 14px;
             font-weight: 500;
             font-stretch: normal;
             font-style: normal;
             line-height: 1;
             letter-spacing: 0.02px; } }
+    .ABTest-content .content-project-block .content-b-project-block {
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      margin-left: 14px; }
+      @media (max-width: 1439px) {
+        .ABTest-content .content-project-block .content-b-project-block {
+          margin-left: 13.5px; } }
+      @media (max-width: 767px) {
+        .ABTest-content .content-project-block .content-b-project-block {
+          margin-left: 3.5px; } }
     .ABTest-content .content-project-block .content-b-project-percent {
       width: 100px;
       height: 54px;
@@ -11497,6 +11794,8 @@ footer .ABTest-Copyright {
       @media (max-width: 767px) {
         .ABTest-content .content-project-block .content-b-project-percent {
           width: 80px;
+          height: 44px;
+          padding: 12px 18px;
           font-size: 20px;
           font-weight: 600;
           font-stretch: normal;
@@ -11516,13 +11815,13 @@ footer .ABTest-Copyright {
           width: 14px;
           height: 26px; } }
     .ABTest-content .content-project-block .content-b-project-crown {
-      padding-top: 47px; }
+      margin-top: -8px; }
       @media (max-width: 1439px) {
         .ABTest-content .content-project-block .content-b-project-crown {
-          padding-top: 41px; } }
+          margin-top: 0px; } }
       @media (max-width: 767px) {
         .ABTest-content .content-project-block .content-b-project-crown {
-          padding-top: 29px; } }
+          margin-top: 7.6px; } }
       .ABTest-content .content-project-block .content-b-project-crown .content-b-project-crown-img {
         background-image: url("../images/desktop/desktop_ic_dialog_champion@2x.png");
         background-size: contain;
@@ -11545,14 +11844,8 @@ footer .ABTest-Copyright {
       position: relative;
       padding-top: 57px;
       padding-bottom: 30px;
-      width: 426px;
+      width: 100%;
       border-radius: 10px; }
-      @media (max-width: 1439px) {
-        .ABTest-content .content-project-block .content-b-onsale-block {
-          width: 340px; } }
-      @media (max-width: 767px) {
-        .ABTest-content .content-project-block .content-b-onsale-block {
-          width: 174px; } }
       .ABTest-content .content-project-block .content-b-onsale-block .content-b-onsale-subject {
         position: absolute;
         top: -26px;
@@ -11579,8 +11872,9 @@ footer .ABTest-Copyright {
             letter-spacing: 0.03px; } }
         @media (max-width: 767px) {
           .ABTest-content .content-project-block .content-b-onsale-block .content-b-onsale-subject {
-            padding: 12px 17px;
             width: 80px;
+            height: 44px;
+            padding: 12px 17px;
             font-size: 14px;
             font-weight: 600;
             font-stretch: normal;
@@ -11607,6 +11901,7 @@ footer .ABTest-Copyright {
               letter-spacing: 0.05px; } }
           @media (max-width: 767px) {
             .ABTest-content .content-project-block .content-b-onsale-block .content-b-onsale-subject span {
+              padding-left: 0px;
               font-size: 20px;
               font-weight: 600;
               font-stretch: normal;
@@ -11614,7 +11909,7 @@ footer .ABTest-Copyright {
               line-height: 1;
               letter-spacing: 0.04px; } }
       .ABTest-content .content-project-block .content-b-onsale-block .content-b-onsale-word {
-        font-family: PingFangTC-Medium, AvenirNext-Medium;
+        font-family: AvenirNext-Medium, PingFangTC-Medium;
         font-size: 24px;
         font-weight: 500;
         font-stretch: normal;
@@ -11648,7 +11943,7 @@ footer .ABTest-Copyright {
         height: 38px;
         padding: 10px 18px;
         border-radius: 6px;
-        font-family: PingFangTC-Medium, AvenirNext-Medium;
+        font-family: AvenirNext-Medium, PingFangTC-Medium;
         font-size: 18px;
         font-weight: 500;
         font-stretch: normal;
@@ -11667,6 +11962,9 @@ footer .ABTest-Copyright {
         @media (max-width: 767px) {
           .ABTest-content .content-project-block .content-b-onsale-block .content-b-onsale-open {
             margin-top: 17px;
+            width: 64px;
+            height: 28px;
+            padding: 7px 7px;
             font-size: 14px;
             font-weight: 500;
             font-stretch: normal;
@@ -11675,30 +11973,26 @@ footer .ABTest-Copyright {
             letter-spacing: 0.02px; } }
   .ABTest-content .content-into-b-block {
     padding-top: 28px;
-    padding-bottom: 20px;
-    padding-left: 659px; }
+    padding-bottom: 20px; }
     @media (max-width: 1439px) {
       .ABTest-content .content-into-b-block {
         padding-top: 20px;
-        padding-bottom: 14px;
-        padding-left: 524px; } }
+        padding-bottom: 14px; } }
     @media (max-width: 767px) {
       .ABTest-content .content-into-b-block {
         padding-top: 12px;
-        padding-bottom: 10px;
-        padding-left: 0; } }
+        padding-bottom: 10px; } }
     .ABTest-content .content-into-b-block .content-into-b-img {
       background-image: url("../images/desktop/desktop_ic_dialog_arrow_lightB@2x.png");
       background-size: contain;
       width: 26px;
-      height: 50px; }
+      height: 50px;
+      margin: 0 auto; }
       @media (max-width: 767px) {
         .ABTest-content .content-into-b-block .content-into-b-img {
           background-image: url("../images/mobile/mobile_ic_dialog_arrow_lightB@2x.png");
           width: 14px;
-          height: 26px;
-          margin-right: 80px;
-          margin-left: auto; } }
+          height: 26px; } }
   .ABTest-content .content-btest-block {
     padding-top: 24px;
     padding-bottom: 24px;
@@ -11740,7 +12034,7 @@ footer .ABTest-Copyright {
           width: 205px;
           height: 134px; } }
     .ABTest-content .content-btest-block .content-btest-word {
-      font-family: PingFangTC-Medium, AvenirNext-Medium;
+      font-family: AvenirNext-Medium, PingFangTC-Medium;
       font-size: 26px;
       font-weight: 500;
       font-stretch: normal;
@@ -11836,17 +12130,17 @@ footer .ABTest-Copyright {
       padding-top: 50px; } }
   .ABTest-subject h3 {
     margin-bottom: 60px;
-    font-family: PingFangTC-Semibold, AvenirNext-DemiBold;
+    font-family: AvenirNext-DemiBold, PingFangTC-Semibold;
     font-size: 42px;
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.31;
+    line-height: 1.4;
     letter-spacing: 0.07px;
     text-align: center; }
     @media (max-width: 1439px) {
       .ABTest-subject h3 {
-        font-family: PingFangTC-Semibold, AvenirNext-DemiBold;
+        font-family: AvenirNext-DemiBold, PingFangTC-Semibold;
         font-size: 40px;
         font-weight: 600;
         font-stretch: normal;
@@ -11855,7 +12149,7 @@ footer .ABTest-Copyright {
         letter-spacing: 0.07px; } }
     @media (max-width: 767px) {
       .ABTest-subject h3 {
-        font-family: PingFangTC-Semibold, AvenirNext-DemiBold;
+        font-family: AvenirNext-DemiBold, PingFangTC-Semibold;
         font-size: 32px;
         font-weight: 600;
         font-stretch: normal;
@@ -11911,7 +12205,7 @@ footer .ABTest-Copyright {
           letter-spacing: 0.07px; } }
     .ABTest-flow li:nth-child(1) h5, .ABTest-flow li:nth-child(3) h5, .ABTest-flow li:nth-child(5) h5 {
       margin-top: 10px;
-      font-family: PingFangTC-Semibold, AvenirNext-DemiBold;
+      font-family: AvenirNext-DemiBold, PingFangTC-Semibold;
       font-size: 20px;
       font-weight: 600;
       font-stretch: normal;
@@ -11920,7 +12214,7 @@ footer .ABTest-Copyright {
       letter-spacing: 0.04px; }
       @media (max-width: 1439px) {
         .ABTest-flow li:nth-child(1) h5, .ABTest-flow li:nth-child(3) h5, .ABTest-flow li:nth-child(5) h5 {
-          font-family: PingFangTC-Semibold, AvenirNext-DemiBold;
+          font-family: AvenirNext-DemiBold, PingFangTC-Semibold;
           font-size: 20px;
           font-weight: 600;
           font-stretch: normal;
@@ -11929,7 +12223,7 @@ footer .ABTest-Copyright {
           letter-spacing: 0.04px; } }
       @media (max-width: 767px) {
         .ABTest-flow li:nth-child(1) h5, .ABTest-flow li:nth-child(3) h5, .ABTest-flow li:nth-child(5) h5 {
-          font-family: PingFangTC-Semibold, AvenirNext-DemiBold;
+          font-family: AvenirNext-DemiBold, PingFangTC-Semibold;
           font-size: 20px;
           font-weight: 600;
           font-stretch: normal;
@@ -12059,7 +12353,7 @@ footer .ABTest-Copyright {
     .ABTest-half {
       padding-top: 50px; } }
   .ABTest-half h2 {
-    font-family: PingFangTC-Semibold, AvenirNext-DemiBold;
+    font-family: AvenirNext-DemiBold, PingFangTC-Semibold;
     font-size: 42px;
     font-weight: 600;
     font-stretch: normal;
@@ -12069,7 +12363,7 @@ footer .ABTest-Copyright {
     text-align: center; }
     @media (max-width: 1439px) {
       .ABTest-half h2 {
-        font-family: PingFangTC-Semibold, AvenirNext-DemiBold;
+        font-family: AvenirNext-DemiBold, PingFangTC-Semibold;
         font-size: 40px;
         font-weight: 600;
         font-stretch: normal;
@@ -12078,7 +12372,7 @@ footer .ABTest-Copyright {
         letter-spacing: 0.07px; } }
     @media (max-width: 767px) {
       .ABTest-half h2 {
-        font-family: PingFangTC-Semibold, AvenirNext-DemiBold;
+        font-family: AvenirNext-DemiBold, PingFangTC-Semibold;
         font-size: 32px;
         font-weight: 600;
         font-stretch: normal;
@@ -12088,7 +12382,7 @@ footer .ABTest-Copyright {
   .ABTest-half p {
     margin-top: 36px;
     margin-bottom: 60px;
-    font-family: PingFangTC-Medium, AvenirNext-DemiBold;
+    font-family: AvenirNext-DemiBold, PingFangTC-Medium;
     font-size: 24px;
     font-weight: 500;
     font-stretch: normal;
@@ -12100,7 +12394,7 @@ footer .ABTest-Copyright {
       .ABTest-half p {
         margin-top: 40px;
         margin-bottom: 54px;
-        font-family: PingFangTC-Medium, AvenirNext-DemiBold;
+        font-family: AvenirNext-DemiBold, PingFangTC-Medium;
         font-size: 24px;
         font-weight: 500;
         font-stretch: normal;
@@ -12111,7 +12405,7 @@ footer .ABTest-Copyright {
       .ABTest-half p {
         margin-top: 20px;
         margin-bottom: 30px;
-        font-family: PingFangTC-Medium, AvenirNext-DemiBold;
+        font-family: AvenirNext-DemiBold, PingFangTC-Medium;
         font-size: 16px;
         font-weight: 500;
         font-stretch: normal;
@@ -12133,180 +12427,5 @@ footer .ABTest-Copyright {
         background-image: url("../images/mobile/mobile_img_ab_versus@2x.png");
         width: 344px;
         height: 245px; } }
-
-.invalid-feedback {
-  font-family: PingFangTC-Medium;
-  font-size: 16px;
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1;
-  letter-spacing: 0.03px;
-  color: #f75f5f; }
-
-.order-banner .img {
-  margin: 100px 0px 100px 79px;
-  padding-top: 225px;
-  padding-bottom: 225px;
-  padding-left: 133px;
-  width: 640px;
-  background: url("../images/desktop/desktop_bg_demo@2x.png") no-repeat center center;
-  background-size: cover;
-  border-radius: 8px; }
-  @media (max-width: 1439px) {
-    .order-banner .img {
-      margin: 70px auto 0px;
-      padding: 118px 0px 117px 0px; } }
-  @media (max-width: 767px) {
-    .order-banner .img {
-      width: 331px; } }
-
-.order-banner .order-notice {
-  width: 140px;
-  height: 50px;
-  border-radius: 10px;
-  font-family: PingFangTC-Regular;
-  font-size: 20px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: 0.04px; }
-  @media (max-width: 1439px) {
-    .order-banner .order-notice {
-      font-family: PingFangTC-Regular;
-      font-size: 18px;
-      font-weight: 600;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1;
-      letter-spacing: 0.9px; } }
-  @media (max-width: 767px) {
-    .order-banner .order-notice {
-      font-family: PingFangTC-Regular;
-      font-size: 18px;
-      font-weight: 600;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1;
-      letter-spacing: 0.9px; } }
-
-.order-banner .order-logo {
-  margin-top: 24px;
-  margin-bottom: 24px;
-  background-image: url("../images/desktop/desktop_ic_header_logo@2x.png");
-  background-size: contain;
-  width: 218px;
-  height: 33px; }
-
-.order-banner h2 {
-  font-family: PingFangTC-Medium, AvenirNext-DemiBold;
-  font-size: 50px;
-  font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 0.92;
-  letter-spacing: 0.09px; }
-  @media (max-width: 1439px) {
-    .order-banner h2 {
-      font-family: PingFangTC-Medium, AvenirNext-DemiBold;
-      font-size: 40px;
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1;
-      letter-spacing: 0.07px; } }
-  @media (max-width: 767px) {
-    .order-banner h2 {
-      font-family: PingFangTC-Medium, AvenirNext-DemiBold;
-      font-size: 32px;
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.25;
-      letter-spacing: 0.06px; } }
-
-.order-banner .order-content {
-  margin: 100px 80px 100px 0px;
-  padding-top: 69px;
-  padding-bottom: 69px;
-  padding-left: 74px;
-  width: 640px;
-  border-radius: 8px; }
-  @media (max-width: 1439px) {
-    .order-banner .order-content {
-      margin: 0px auto 70px;
-      padding-top: 50px;
-      padding-bottom: 50px; } }
-  @media (max-width: 767px) {
-    .order-banner .order-content {
-      width: 331px;
-      padding-left: 35px; } }
-  .order-banner .order-content .form-group {
-    margin-right: 12px; }
-  .order-banner .order-content label {
-    font-family: PingFangTC-Medium, AvenirNext-DemiBold;
-    font-size: 16px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1;
-    letter-spacing: 0.03px;
-    color: #919191; }
-  .order-banner .order-content .wd-100 {
-    width: 240px; }
-    @media (max-width: 1439px) {
-      .order-banner .order-content .wd-100 {
-        width: 240px; } }
-    @media (max-width: 767px) {
-      .order-banner .order-content .wd-100 {
-        width: 260px; } }
-  .order-banner .order-content .wd-200 {
-    width: 492px; }
-    @media (max-width: 1439px) {
-      .order-banner .order-content .wd-200 {
-        width: 492px; } }
-    @media (max-width: 767px) {
-      .order-banner .order-content .wd-200 {
-        width: 260px; } }
-  .order-banner .order-content input, .order-banner .order-content option, .order-banner .order-content select {
-    height: 40px;
-    border-radius: 6px;
-    background-color: #ffffff;
-    font-family: PingFangTC-Medium, AvenirNext-DemiBold;
-    font-size: 16px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1;
-    letter-spacing: 0.03px;
-    color: #373737; }
-  .order-banner .order-content textarea {
-    height: 122px;
-    margin: 8px 0 40px;
-    border-radius: 6px;
-    background-color: #ffffff;
-    font-family: PingFangTC-Medium, AvenirNext-DemiBold;
-    font-size: 16px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1;
-    letter-spacing: 0.03px;
-    color: #373737; }
-  .order-banner .order-content .custom-btn-demo:hover {
-    background-color: #1f2c4f;
-    color: #ffffff; }
-  .order-banner .order-content .custom-btn-demo {
-    height: 64px;
-    border-radius: 32px;
-    background-color: #4369ee;
-    font-family: PingFangTC-Medium, Avenir-Medium;
-    font-size: 18px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1;
-    letter-spacing: 0.03px; }
 
 /*# sourceMappingURL=all.css.map */

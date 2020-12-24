@@ -9,3 +9,26 @@
         @content
     }
 }
+
+@mixin underlineMovie($color, $size) {
+    text-decoration: none;
+    position: relative;
+    transition: all 0.2s;
+    &:before {
+        content: "";
+        width: 0;
+        height: $size;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        background: $color;
+        transition: all 0.2s;
+    }
+    &:hover {
+        &:before {
+            width: 100%;
+            left: 0;
+            background: $color;
+        }
+    }
+}

@@ -15,22 +15,22 @@ footer {
         .img {
             background-image: url("../images/desktop/desktop_ic_footer_logo@2x.png");
             background-size: contain;
-            width: 165px;
+            width: 168px;
             height: 36px;
             object-fit: contain;
             margin-left: 471px;
             margin-right: 130px;
             @include tablet() {
                 background-image: url("../images/tablet/tablet_ic_footer_logo@2x.png");
-                width: 163px;
-                height: 35px;
+                width: 168px;
+                height: 36px;
                 margin-left: auto;
                 margin-right: auto;
             }
             @include mobile() {
                 background-image: url("../images/mobile/mobile_ic_footer_logo@2x.png");
-                width: 163px;
-                height: 35px;
+                width: 168px;
+                height: 36px;
             }
         }
         ul {
@@ -54,6 +54,8 @@ footer {
                 margin-top: 18px;
                 @include tablet() {
                     margin-top: 30px;
+                    margin-left: auto;
+                    margin-right: auto;
                 }
                 @include mobile() {
                     margin-top: 24px;
@@ -69,6 +71,8 @@ footer {
                 margin-top: 16px;
                 @include mobile() {
                     margin-top: 12px;
+                    margin-left: auto;
+                    margin-right: auto;
                 }
                 a , a:hover {
                     font-family: Avenir-Medium;

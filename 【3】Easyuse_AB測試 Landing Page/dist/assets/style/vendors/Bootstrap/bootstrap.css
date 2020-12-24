@@ -1949,6 +1949,10 @@ textarea.form-control {
 .is-valid ~ .valid-tooltip {
   display: block; }
 
+.was-validated :valid ~ div .valid-feedback,
+.is-valid ~ div .valid-feedback {
+  display: block; }
+
 .was-validated .form-control:valid, .form-control.is-valid {
   border-color: #28a745;
   padding-right: calc(1.5em + 0.75rem);
@@ -2032,6 +2036,10 @@ textarea.form-control {
 .was-validated :invalid ~ .invalid-tooltip,
 .is-invalid ~ .invalid-feedback,
 .is-invalid ~ .invalid-tooltip {
+  display: block; }
+
+.was-validated :invalid ~ div .invalid-feedback,
+.is-invalid ~ div .invalid-feedback {
   display: block; }
 
 .was-validated .form-control:invalid, .form-control.is-invalid {
