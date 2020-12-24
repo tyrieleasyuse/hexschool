@@ -42,6 +42,6 @@ header {
         padding-bottom: 3px
     }
     .text-active {        
-        @include underlineMovie(#ffffff, 3px);
+        @include underlineMovie(#ffffff, 2px);
     }
 }

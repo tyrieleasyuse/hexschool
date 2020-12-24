@@ -27,8 +27,7 @@
   <header class="bg-dark-light">
     <div class="d-flex  align-items-center  justify-content-between">
         <a class="SiteLogo  mhu-logo" href="#">MailHunter</a>
-        <a class="text-active  d-none   d-xl-block" href="#demoblock">預約 Demo</a>
-        <a class="text-active  d-none d-md-block  d-xl-none"  href="#demoblock2">預約 Demo</a>
+        <a class="text-active" href="#demoblock">預約 Demo</a>
     </div>
 </header>
 
@@ -43,8 +42,7 @@
             </div>
             <h1 class="text-light">A/B Test 終於登場</h1>
             <p class="text-light">您的需求，我們都聽到了！<br>為了詢問度最高的 A/B 測試功能，我們卯足<br>全力，端出最厲害的 A/B 測試工具。</p>
-            <a class="d-none   d-xl-block"  href="#demoblock"><button class="custom-btn-light  btn  btn-light">搶先體驗</button></a>
-            <a class="d-block  d-xl-none"   href="#demoblock2"><button class="custom-btn-light  btn  btn-light">搶先體驗</button></a>
+            <a href="#demoblock"><button class="custom-btn-light  btn  btn-light">搶先體驗</button></a>
         </div>
     </div>
 </div>
@@ -183,29 +181,29 @@
     <div class="order-content bg-secondary-light" id="demoblock2">
         <form id="form-demo" class="needs-validation" novalidate method="POST" action="">
             <div class="d-flex  flex-md-row  flex-column">
-                <div class="form-group">
-                    <div class="invalid-feedback">
-                        請輸入姓名
-                    </div>
-                    <label for="username">姓名*</label>
+                <div class="custom-form-group  d-flex  flex-column-reverse">
                     <input type="text" class="form-control  wd-100 background-color-primary" id="username"
                         name="username" placeholder="" value="" required>
-                    <div class="invalid-feedback">
-                        請輸入姓名
-                    </div>
+                        <div class="wd-100  d-flex  align-items-center  justify-content-between">
+                            <label class="form-label" for="username">姓名*</label>
+                            <label class="invalid-feedback">
+                                請輸入姓名
+                            </label>
+                        </div>
                 </div>
-                <div class="form-group">
-                    <label for="companyname">公司名稱*</label>
+                <div class="custom-form-group  d-flex  flex-column-reverse">
                     <input type="text" class="form-control  wd-100 background-color-primary" id="companyname"
                         name="companyname" placeholder="" value="" required>
-                    <div class="invalid-feedback">
-                        請輸入公司名稱
+                    <div class="wd-100  d-flex  align-items-center  justify-content-between">
+                        <label class="form-label" for="companyname">公司名稱*</label>
+                        <label class="invalid-feedback">
+                            請輸入公司名稱
+                        </label>
                     </div>
                 </div>
             </div>
             <div class="d-flex  flex-md-row  flex-column">
-                <div class="form-group">
-                    <label for="companytype">產業類別*</label>
+                <div class="custom-form-group  d-flex  flex-column-reverse">
                     <select class="form-control  wd-100" id="companytype" name="companytype" required>
                         <option class="wd-100" value=""> 請選擇 </option>
                         <option class="wd-100"> 金融業 </option>
@@ -224,31 +222,40 @@
                         <option class="wd-100"> 非營利組織 </option>
                         <option class="wd-100"> 其他 </option>
                     </select>
-                    <div class="invalid-feedback">
-                        請選擇類別
+                    <div class="wd-100  d-flex  align-items-center  justify-content-between">
+                        <label class="form-label" for="companytype">產業類別*</label>
+                        <div class="invalid-feedback">
+                            請選擇類別
+                        </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="phone">聯絡電話*</label>
+                <div class="custom-form-group  d-flex  flex-column-reverse">
                     <input type="text" class="form-control  wd-100 background-color-primary" id="phone" name="phone"
                         placeholder="" value="" required>
-                    <div class="invalid-feedback">
-                        請輸入電話號碼
+                    <div class="wd-100  d-flex  align-items-center  justify-content-between">
+                        <label class="form-label" for="phone">聯絡電話*</label>
+                        <div class="invalid-feedback">
+                            請輸入電話號碼
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="email">Email*</label>
-                <input type="text" class="form-control  wd-200 background-color-primary" id="email" name="email"
+            <div class="custom-form-group  d-flex  flex-column-reverse">
+                <input type="text" class="form-control  wd-200  background-color-primary" id="email" name="email"
                     placeholder="" value="" pattern="^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-zA-Z]{2,6}(?:\.[a-zA-Z]{2})?)$" required>
-                <div class="invalid-feedback">
-                    請輸入電子信箱
+                <div class="wd-200  d-flex  align-items-center  justify-content-between">
+                    <label class="form-label" for="email">Email*</label>
+                    <div class="invalid-feedback">
+                        請輸入電子信箱
+                    </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="memo">備註</label>
+            <div class="custom-form-group  d-flex  flex-column-reverse">
                 <textarea class="form-control  wd-200 background-color-primary" rows="3" id="memo"
                     name="memo"></textarea>
+                    <div class="d-flex  align-items-center  justify-content-between">
+                        <label class="form-label" for="memo">備註</label>
+                    </div>
             </div>
             <button type="submit" class="custom-btn-demo  wd-200  btn  btn-light text-light"
                 data-toggle="modal">預約&nbsp;DEMO</button>
@@ -288,10 +295,9 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content  modal-landing-content">
             <div class="modal-header  modal-landing-header  bg-success  d-flex  flex-column">
-                <div type="button" class="bg-success  btn-landing-close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">
-                        <div class="bg-success  modal-landing-close"></div>
-                    </span>
+                <div class="bg-success  btn-landing-close" data-dismiss="modal" aria-label="Close">
+                    <div class="bg-success  modal-landing-close" aria-hidden="true">
+                    </div>
                 </div>
                 <div class="modal-landing-title"></div>
             </div>
@@ -411,6 +417,14 @@
       $("#email").val('');
       $("#memo").val('');
     });
+    </script>
+    <script>
+        jQuery('a').click(function(){
+          jQuery('html, body').animate({
+              scrollTop: jQuery( jQuery(this).attr('href') ).offset().top
+          }, 800);
+          return false;
+      }); 
     </script>
 </body>
 

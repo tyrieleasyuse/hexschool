@@ -1,17 +1,6 @@
 
-.invalid-feedback {
-    font-family: PingFangTC-Medium;
-    font-size: 16px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1;
-    letter-spacing: 0.03px;
-    color: #f75f5f;
-  }
-
 .order-banner {
-    input, textarea, select, option, input:focus, textarea:focus, select:focus, option:focus,.form-control:focus {
+    .form-control:focus, .form-control:valid, .form-control:valid:focus {
         border: 0;
         box-shadow: none;
         -webkit-box-shadow: none;
@@ -20,7 +9,7 @@
         background-image: none;
         border: solid 2px #f75f5f;
     }
-    .was-validated textarea.form-control:valid {
+    .form-control:valid {
         background-image: none;
     }
     .img {
@@ -136,10 +125,11 @@
             padding-left: 35px;
         }
 
-        .form-group {
+        .custom-form-group {
             margin-right: 12px;
+            margin-bottom: 20px;
         }
-        label {
+        .form-label {
             font-family: AvenirNext-DemiBold, PingFangTC-Medium;
             font-size: 16px;
             font-weight: 500;
@@ -183,7 +173,7 @@
         }
         textarea {
             height: 122px;
-            margin: 8px 0 40px;
+            margin: 8px 0 20px;
             border-radius: 6px;
             background-color: #ffffff;
             font-family: AvenirNext-DemiBold, PingFangTC-Medium;
@@ -241,3 +231,17 @@
 
     }
 }
+
+
+.invalid-feedback {
+    font-family: PingFangTC-Medium;
+    font-size: 16px;
+    font-weight: 500;
+    width: auto;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.03px;
+    color: #f75f5f;
+    margin-top: 0;
+  }
