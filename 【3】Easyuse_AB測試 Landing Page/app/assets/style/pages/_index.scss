@@ -442,7 +442,7 @@
                 top: -26px;
                 width: 100px;
                 height: 54px;
-                padding: 14px 21px;
+                padding: 14px 0 14px 21px;
                 border-radius: 27px;
                 font-family: PingFangTC-Semibold;
                 background-color: #f48f7a;
@@ -454,6 +454,10 @@
                 letter-spacing: 0.03px;
                 text-align: center;
                 @include tablet() {    
+                    width: 100px;
+                    height: 54px;
+                    padding: 14px 0 14px 21px;
+                    border-radius: 27px;
                     font-size: 18px;
                     font-weight: 600;
                     font-stretch: normal;
@@ -464,7 +468,7 @@
                 @include mobile() {  
                     width: 80px;
                     height: 44px;
-                    padding: 12px 17px;
+                    padding: 12px 0 12px 17px;
                     font-size: 14px;
                     font-weight: 600;
                     font-stretch: normal;
@@ -672,7 +676,7 @@
                 top: -26px;
                 width: 100px;
                 height: 54px;
-                padding: 14px 21px;
+                padding: 14px 0 14px 21px;
                 border-radius: 27px;
                 font-family: PingFangTC-Semibold;
                 background-color: #0fc4ca;
@@ -684,6 +688,10 @@
                 letter-spacing: 0.03px;
                 text-align: center;
                 @include tablet() {    
+                    width: 100px;
+                    height: 54px;
+                    padding: 14px 0 14px 21px;
+                    border-radius: 27px;
                     font-size: 18px;
                     font-weight: 600;
                     font-stretch: normal;
@@ -694,7 +702,7 @@
                 @include mobile() {  
                     width: 80px;
                     height: 44px;
-                    padding: 12px 17px;
+                    padding: 12px 0 12px 17px;
                     font-size: 14px;
                     font-weight: 600;
                     font-stretch: normal;

@@ -11057,8 +11057,6 @@ footer .ABTest-Connect {
     background-size: contain;
     width: 168px;
     height: 36px;
-    -o-object-fit: contain;
-       object-fit: contain;
     margin-left: 471px;
     margin-right: 130px; }
     @media (max-width: 1439px) {
@@ -11639,7 +11637,7 @@ footer .ABTest-Copyright {
         top: -26px;
         width: 100px;
         height: 54px;
-        padding: 14px 21px;
+        padding: 14px 0 14px 21px;
         border-radius: 27px;
         font-family: PingFangTC-Semibold;
         background-color: #f48f7a;
@@ -11652,6 +11650,10 @@ footer .ABTest-Copyright {
         text-align: center; }
         @media (max-width: 1439px) {
           .ABTest-content .content-project-block .content-a-onsale-block .content-a-onsale-subject {
+            width: 100px;
+            height: 54px;
+            padding: 14px 0 14px 21px;
+            border-radius: 27px;
             font-size: 18px;
             font-weight: 600;
             font-stretch: normal;
@@ -11662,7 +11664,7 @@ footer .ABTest-Copyright {
           .ABTest-content .content-project-block .content-a-onsale-block .content-a-onsale-subject {
             width: 80px;
             height: 44px;
-            padding: 12px 17px;
+            padding: 12px 0 12px 17px;
             font-size: 14px;
             font-weight: 600;
             font-stretch: normal;
@@ -11851,7 +11853,7 @@ footer .ABTest-Copyright {
         top: -26px;
         width: 100px;
         height: 54px;
-        padding: 14px 21px;
+        padding: 14px 0 14px 21px;
         border-radius: 27px;
         font-family: PingFangTC-Semibold;
         background-color: #0fc4ca;
@@ -11864,6 +11866,10 @@ footer .ABTest-Copyright {
         text-align: center; }
         @media (max-width: 1439px) {
           .ABTest-content .content-project-block .content-b-onsale-block .content-b-onsale-subject {
+            width: 100px;
+            height: 54px;
+            padding: 14px 0 14px 21px;
+            border-radius: 27px;
             font-size: 18px;
             font-weight: 600;
             font-stretch: normal;
@@ -11874,7 +11880,7 @@ footer .ABTest-Copyright {
           .ABTest-content .content-project-block .content-b-onsale-block .content-b-onsale-subject {
             width: 80px;
             height: 44px;
-            padding: 12px 17px;
+            padding: 12px 0 12px 17px;
             font-size: 14px;
             font-weight: 600;
             font-stretch: normal;
