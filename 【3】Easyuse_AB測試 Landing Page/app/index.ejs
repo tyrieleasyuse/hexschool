@@ -38,7 +38,6 @@
   <%- include ('./ejs/layout/modal.ejs') %>  
   
   <script src="./assets/vendor/aos.js"></script>
-  <!-- <script src="./assets/vendor/select2.min.js"></script> -->
   <script src="./assets/js/all.js"></script>
   <script>
     AOS.init({
@@ -85,15 +84,6 @@
     })();
   </script>
   <script>
-    $(document).ready(function() {
-        // $('.custom-select-control').select2();
-        $(".custom-select-control").select2({
-          theme: "classic",
-          minimumResultsForSearch: Infinity
-        });
-
-        $('.js-example-basic-single').select2();
-    });
     $(".custom-btn-demo").click(function() {      
       if($("#username").val() === '')
          return;
