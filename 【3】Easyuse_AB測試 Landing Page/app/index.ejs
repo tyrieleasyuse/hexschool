@@ -78,8 +78,6 @@
               event.stopPropagation();
             }
             form.classList.add('was-validated');
-            document.getElementById('customInvalid').classList.add('was-validated');
-            console.log(form);
           }, false);
         });
       }, false);
@@ -87,11 +85,6 @@
   </script>
   <script>
     $("#companytype").change(function() {
-        // Pure JS
-        // var selectedVal = this.value;
-        // var selectedText = this.options[this.selectedIndex].text;
-
-        // jQuery
         var selectedVal = $(this).find(':selected').val();
         var selectedText = $(this).find(':selected').text();
         
@@ -100,8 +93,6 @@
           document.getElementById('invalid_companytype').classList.remove('d-block');
           return;
         }
-        console.log('selectedVal:' + selectedVal);
-        console.log('selectedText:' + selectedText);
     });
   </script>
   <script>
