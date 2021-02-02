@@ -204,31 +204,32 @@
             </div>
             <div class="d-flex  flex-md-row  flex-column">
                 <div class="custom-form-group  d-flex  flex-column-reverse">
-                    <select class="form-control  wd-100" id="companytype" name="companytype" required>
-                        <option class="wd-100" value=""> 請選擇 </option>
-                        <option class="wd-100"> 金融業 </option>
-                        <option class="wd-100"> 保險業 </option>
-                        <option class="wd-100"> 零售業 </option>
-                        <option class="wd-100"> 百貨業 </option>
-                        <option class="wd-100"> 旅遊業 </option>
-                        <option class="wd-100"> 電信業 </option>
-                        <option class="wd-100"> 運輸業 </option>
-                        <option class="wd-100"> 餐飲業 </option>
-                        <option class="wd-100"> 電商業 </option>
-                        <option class="wd-100"> 醫療業 </option>
-                        <option class="wd-100"> 資訊科技 </option>
-                        <option class="wd-100"> 行銷廣告 </option>
-                        <option class="wd-100"> 政府機關 </option>
-                        <option class="wd-100"> 非營利組織 </option>
-                        <option class="wd-100"> 其他 </option>
+                    <select class="wd-100  form-control  selectpicker" data-style="custom-form-control" data-size="9" id="companytype" name="companytype" required>
+                        <option class="wd-100-option custom-form-option" value=""> 請選擇 </option>
+                        <option class="wd-100-option custom-form-option"> 金融業 </option>
+                        <option class="wd-100-option custom-form-option"> 保險業 </option>
+                        <option class="wd-100-option custom-form-option"> 零售業 </option>
+                        <option class="wd-100-option custom-form-option"> 百貨業 </option>
+                        <option class="wd-100-option custom-form-option"> 旅遊業 </option>
+                        <option class="wd-100-option custom-form-option"> 電信業 </option>
+                        <option class="wd-100-option custom-form-option"> 運輸業 </option>
+                        <option class="wd-100-option custom-form-option"> 餐飲業 </option>
+                        <option class="wd-100-option custom-form-option"> 電商業 </option>
+                        <option class="wd-100-option custom-form-option"> 醫療業 </option>
+                        <option class="wd-100-option custom-form-option"> 資訊科技 </option>
+                        <option class="wd-100-option custom-form-option"> 行銷廣告 </option>
+                        <option class="wd-100-option custom-form-option"> 政府機關 </option>
+                        <option class="wd-100-option custom-form-option"> 非營利組織 </option>
+                        <option class="wd-100-option custom-form-option"> 其他 </option>
                     </select>
+                    <div ID="customInvalid" class="d-none"></div>
                     <div class="wd-100  d-flex  align-items-center  justify-content-between">
                         <label class="form-label" for="companytype">產業類別*</label>
-                        <label class="invalid-feedback">
+                        <label id="invalid_companytype" class="invalid-feedback">
                             請選擇類別
                         </label>
                     </div>
-                </div>
+                </div>                  
                 <div class="custom-form-group  d-flex  flex-column-reverse">
                     <input type="text" class="form-control  wd-100 background-color-primary" id="phone" name="phone"
                         placeholder="" value="" required>
@@ -309,7 +310,7 @@
         </div>
     </div>
 </div>  
-  
+
   <script src="./assets/vendor/aos.js"></script>
   <script src="./assets/js/all.js"></script>
   <script>
@@ -351,18 +352,43 @@
               event.stopPropagation();
             }
             form.classList.add('was-validated');
+            document.getElementById('customInvalid').classList.add('was-validated');
+            console.log(form);
           }, false);
         });
       }, false);
     })();
   </script>
   <script>
+    $("#companytype").change(function() {
+        // Pure JS
+        // var selectedVal = this.value;
+        // var selectedText = this.options[this.selectedIndex].text;
+
+        // jQuery
+        var selectedVal = $(this).find(':selected').val();
+        var selectedText = $(this).find(':selected').text();
+        
+        if(selectedVal !== '')
+        {
+          document.getElementById('invalid_companytype').classList.remove('d-block');
+          return;
+        }
+        console.log('selectedVal:' + selectedVal);
+        console.log('selectedText:' + selectedText);
+    });
+  </script>
+  <script>
     $(".custom-btn-demo").click(function() {      
+      document.getElementById('invalid_companytype').classList.remove('d-block');
+      if($("#companytype").val() === '')
+      {
+        document.getElementById('invalid_companytype').classList.add('d-block');
+         return;
+      }
       if($("#username").val() === '')
          return;
       if($("#companyname").val() === '')
-         return;
-      if($("#companytype").val() === '')
          return;
       if($("#phone").val() === '')
          return;
@@ -409,7 +435,7 @@
       $('#form-demo').removeClass('was-validated');
       $("#username").val('');
       $("#companyname").val('');
-      $("#companytype").val('');
+      $("#companytype").val('').change();
       $("#phone").val('');
       $("#email").val('');
       $("#memo").val('');
