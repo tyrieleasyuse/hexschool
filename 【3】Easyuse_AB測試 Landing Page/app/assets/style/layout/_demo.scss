@@ -139,6 +139,15 @@
             letter-spacing: 0.03px;
             color: #919191;
         }
+        .wd-100-option {
+            width: 220px;   
+            @include tablet() {
+                width: 220px;   
+            }
+            @include mobile() {
+                width: 260px;   
+            }
+        }
         .wd-100 {
             width: 240px;   
             @include tablet() {
@@ -158,6 +167,38 @@
             }
         }
 
+        .custom-form-control, .custom-form-control:hover, .custom-form-control:focus, .custom-form-control:focus-visible, .custom-form-control:focus-within {
+            outline: none;
+            border: none;
+            height: 40px;
+            font-family: PingFangTC-Regular;
+            font-style: normal;
+            padding-top: 12px;
+            padding-left: 14px;
+            border-radius: 6px;
+            background-color: #ffffff;
+            font-size: 16px;
+            line-height: 1;
+            letter-spacing: 0.03px;
+            color: #919191;
+        }
+        .custom-form-option {
+            border: none;
+            height: 36px;
+            padding-left: 14px;
+            font-family: PingFangTC-Regular;
+            font-style: normal;
+            color: #919191;
+        }
+        .custom-form-option:hover, .custom-form-option:active, .custom-form-option.active, .custom-form-option:focus {
+            border: none;
+            height: 36px;
+            padding-left: 14px;
+            font-family: PingFangTC-Regular;
+            font-style: normal;
+            background-color: #7c98fc;
+            color: #ffffff;
+        }
         input, option, select {
             height: 40px;
             border-radius: 6px;
@@ -232,6 +273,9 @@
     }
 }
 
+.bs-invalid {
+    border: solid 2px #f75f5f !important;
+}
 
 .invalid-feedback {
     font-family: PingFangTC-Medium;
