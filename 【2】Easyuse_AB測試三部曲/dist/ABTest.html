@@ -18,7 +18,7 @@
     <h2 class="text-light">USER MANUAL</h2>
     <div class="ABTest-title  d-flex  align-items-center">
         <img src="./assets/images/ic_logo_mailhunter@2x.png" alt="">
-        <div class="custom-btn-light  text-dark-light">2020</div>
+        <div id="year" class="custom-btn-light  text-dark-light"></div>
         <hr class="block-line"></hr>
         <p class="text-light">A/B TEST 三部曲</p>
     </div>
@@ -89,6 +89,9 @@
     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 
     });
+  </script>
+  <script>
+    document.getElementById("year").innerHTML = new Date().getFullYear();
   </script>
 </body>
 
