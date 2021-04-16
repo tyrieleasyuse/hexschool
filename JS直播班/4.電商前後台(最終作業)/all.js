@@ -1,11 +1,11 @@
 // 請代入自己的網址路徑
 const api_path = "hunterchen";
-const token = "hT61xcJ5Q8Zidu6bfBdabyqFLU63";
+const baseUrl = "https://hexschoollivejs.herokuapp.com"; 
 
 const productWrap = document.querySelector('.productWrap');
-const CartsList = document.querySelector('.CartsList');
+const cartsList = document.querySelector('.cartsList');
 const productSelect = document.querySelector('.productSelect');
-const OrderInfoBtn = document.querySelector('.orderInfo-btn');
+const orderInfoBtn = document.querySelector('.orderInfo-btn');
 const customerName = document.querySelector('#customerName');
 const customerPhone = document.querySelector('#customerPhone');
 const customerEmail = document.querySelector('#customerEmail');
@@ -16,19 +16,21 @@ let Products = [];
 let Carts = [];
 
 function init(){
-  getProductList();
-  getCartsList();
+  GetProductList();
+  GetCartsList();
 }
 
 // 取得訂單列表
-function getProductList(){
-  axios.get(`https://hexschoollivejs.herokuapp.com/api/livejs/v1/customer/${api_path}/products`).
+function GetProductList(){
+  axios.get(`${baseUrl}/api/livejs/v1/customer/${api_path}/products`).
     then(function (response) {
       // console.log(response.data);
       Products = response.data.products;
       RenderProductList();
+    }).catch(function(error){
+      alert(error);
     });
-    // console.log(OrderInfoBtn);
+    // console.log(orderInfoBtn);
 }
 
 function RenderProductList(){
@@ -50,10 +52,12 @@ function RenderProductList(){
 }
 
 productSelect.addEventListener('change',function(e){
-  getProductList();
+  e.preventDefault();
+  GetProductList();
 })
 
 productWrap.addEventListener('click',function(e){
+  e.preventDefault();
   if(e.target.getAttribute('class') == null){
     return;    
   }
@@ -61,7 +65,21 @@ productWrap.addEventListener('click',function(e){
     return;    
   }
   let id = e.target.getAttribute('data-id');
-  axios.post(`https://hexschoollivejs.herokuapp.com/api/livejs/v1/customer/${api_path}/carts`, 
+  // console.log(Carts);
+ 
+  let isAddedCarts = false;
+  Carts.forEach(function(item){
+    if(item.product.id === id)
+    {
+      alert('該產品已加入購物車。');
+      isAddedCarts = true;
+    }
+  });
+  if(isAddedCarts){
+    return;
+  }
+
+  axios.post(`${baseUrl}/api/livejs/v1/customer/${api_path}/carts`, 
   {
     "data": {
       "productId": id,
@@ -70,16 +88,21 @@ productWrap.addEventListener('click',function(e){
   })
   .then(function (response) {
     alert(`加入購物車成功。`);
-    getCartsList();
+    Carts = response.data.carts;
+    renderCartsList();
+  }).catch(function(error){
+    alert(error);
   });
 })
 
-function getCartsList(){
-  axios.get(`https://hexschoollivejs.herokuapp.com/api/livejs/v1/customer/${api_path}/carts`).
+function GetCartsList(){
+  axios.get(`${baseUrl}/api/livejs/v1/customer/${api_path}/carts`).
     then(function (response) {
       console.log(response.data);
       Carts = response.data.carts;
       renderCartsList();
+    }).catch(function(error){
+      alert(error);
     });
 }
 
@@ -93,7 +116,7 @@ function renderCartsList(){
                       <p>${item.product.title}</p>
                   </div>
               </td>
-              <td>NT$${item.product.origin_price.toLocaleString()}</td>
+              <td>NT$${item.product.price.toLocaleString()}</td>
               <td>${item.quantity.toLocaleString()}</td>
               <td>NT$${item.product.price.toLocaleString()}</td>
               <td class="discardBtn">
@@ -103,10 +126,11 @@ function renderCartsList(){
               </td>
           </tr>`;
   });
-  CartsList.innerHTML = str;
+  cartsList.innerHTML = str;
 }
 
-CartsList.addEventListener('click',function(e){
+cartsList.addEventListener('click',function(e){
+  e.preventDefault();
   if(e.target.getAttribute('class') == null){
     console.log(e.target);
     return;    
@@ -115,22 +139,29 @@ CartsList.addEventListener('click',function(e){
     console.log(e.target);
     return;    
   }
-  console.log('js-clearCarts');
+  // console.log('js-clearCarts');
   let id = e.target.getAttribute('data-id');
-  axios.delete(`https://hexschoollivejs.herokuapp.com/api/livejs/v1/customer/${api_path}/carts/${id}`)
+  axios.delete(`${baseUrl}/api/livejs/v1/customer/${api_path}/carts/${id}`)
   .then(function (response) {
     alert(`刪除購物車成功。`);
-    getCartsList();
+    GetCartsList();
+  }).catch(function(error){
+    alert(error);
   });
 })
 
-OrderInfoBtn.addEventListener('click',function(e){
+orderInfoBtn.addEventListener('click',function(e){
   e.preventDefault();
   if(customerName.value.trim() === '' || customerPhone.value.trim() === '' || customerEmail.value.trim() === '' || customerAddress.value.trim() === ''){
     alert('請填入訂單資訊。');
     return;    
   }
-  axios.post(`https://hexschoollivejs.herokuapp.com/api/livejs/v1/customer/${api_path}/orders`, 
+  if(Carts.length == 0)
+  {
+    alert('購物車無產品，無法完成訂單。');
+    return;    
+  }
+  axios.post(`${baseUrl}/api/livejs/v1/customer/${api_path}/orders`, 
   {
     "data": {
       "user": {
@@ -144,8 +175,10 @@ OrderInfoBtn.addEventListener('click',function(e){
   })
   .then(function (response) {
     alert(`訂單送出成功。`);
-    getCartsList();
+    GetCartsList();
     ClearOrderList();
+  }).catch(function(error){
+    alert(error);
   });
 })
 
