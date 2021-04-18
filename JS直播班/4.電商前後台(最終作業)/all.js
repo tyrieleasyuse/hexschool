@@ -1,11 +1,12 @@
 // 請代入自己的網址路徑
 const api_path = "hunterchen";
-const token = "hT61xcJ5Q8Zidu6bfBdabyqFLU63";
+const baseUrl = "https://hexschoollivejs.herokuapp.com"; 
 
 const productWrap = document.querySelector('.productWrap');
-const CartsList = document.querySelector('.CartsList');
+const cartsList = document.querySelector('.cartsList');
 const productSelect = document.querySelector('.productSelect');
-const OrderInfoBtn = document.querySelector('.orderInfo-btn');
+const orderInfoBtn = document.querySelector('.orderInfo-btn');
+const clearCartsAll = document.querySelector('.js-clearCartsAll');
 const customerName = document.querySelector('#customerName');
 const customerPhone = document.querySelector('#customerPhone');
 const customerEmail = document.querySelector('#customerEmail');
@@ -16,19 +17,21 @@ let Products = [];
 let Carts = [];
 
 function init(){
-  getProductList();
-  getCartsList();
+  GetProductList();
+  GetCartsList();
 }
 
 // 取得訂單列表
-function getProductList(){
-  axios.get(`https://hexschoollivejs.herokuapp.com/api/livejs/v1/customer/${api_path}/products`).
+function GetProductList(){
+  axios.get(`${baseUrl}/api/livejs/v1/customer/${api_path}/products`).
     then(function (response) {
       // console.log(response.data);
       Products = response.data.products;
       RenderProductList();
+    }).catch(function(error){
+      alert(error);
     });
-    // console.log(OrderInfoBtn);
+    // console.log(orderInfoBtn);
 }
 
 function RenderProductList(){
@@ -50,10 +53,12 @@ function RenderProductList(){
 }
 
 productSelect.addEventListener('change',function(e){
-  getProductList();
+  e.preventDefault();
+  GetProductList();
 })
 
 productWrap.addEventListener('click',function(e){
+  e.preventDefault();
   if(e.target.getAttribute('class') == null){
     return;    
   }
@@ -61,7 +66,21 @@ productWrap.addEventListener('click',function(e){
     return;    
   }
   let id = e.target.getAttribute('data-id');
-  axios.post(`https://hexschoollivejs.herokuapp.com/api/livejs/v1/customer/${api_path}/carts`, 
+  // console.log(Carts);
+ 
+  let isAddedCarts = false;
+  Carts.forEach(function(item){
+    if(item.product.id === id)
+    {
+      alert('該產品已加入購物車。');
+      isAddedCarts = true;
+    }
+  });
+  if(isAddedCarts){
+    return;
+  }
+
+  axios.post(`${baseUrl}/api/livejs/v1/customer/${api_path}/carts`, 
   {
     "data": {
       "productId": id,
@@ -70,21 +89,28 @@ productWrap.addEventListener('click',function(e){
   })
   .then(function (response) {
     alert(`加入購物車成功。`);
-    getCartsList();
+    Carts = response.data.carts;
+    renderCartsList();
+  }).catch(function(error){
+    alert(error);
   });
 })
 
-function getCartsList(){
-  axios.get(`https://hexschoollivejs.herokuapp.com/api/livejs/v1/customer/${api_path}/carts`).
+function GetCartsList(){
+  axios.get(`${baseUrl}/api/livejs/v1/customer/${api_path}/carts`).
     then(function (response) {
-      console.log(response.data);
+      // console.log(response.data);
       Carts = response.data.carts;
       renderCartsList();
+    }).catch(function(error){
+      alert(error);
     });
 }
 
 function renderCartsList(){
   let str = '';
+  let price = 0;
+  let quantity = 0;
   Carts.forEach(function(item,index){
     str += `<tr>
               <td>
@@ -93,8 +119,10 @@ function renderCartsList(){
                       <p>${item.product.title}</p>
                   </div>
               </td>
-              <td>NT$${item.product.origin_price.toLocaleString()}</td>
-              <td>${item.quantity.toLocaleString()}</td>
+              <td>NT$${item.product.price.toLocaleString()}</td>
+              <td>
+              <input type="number" class="js-cartsQuantity" name="cartsQuantity" maxlength="3" data-id='${item.id}' value='${item.quantity.toLocaleString()}'>
+              <input type="button" class="js-cartsQuantityBtn" value='修改' data-id='${item.id}'></td>
               <td>NT$${item.product.price.toLocaleString()}</td>
               <td class="discardBtn">
                   <a href="#" class="material-icons js-clearCarts" data-id='${item.id}'>
@@ -102,35 +130,166 @@ function renderCartsList(){
                   </a>
               </td>
           </tr>`;
+      quantity += parseInt(item.quantity);
+      price += parseInt(item.product.price) * parseInt(item.quantity);
   });
-  CartsList.innerHTML = str;
+  str += `<tr>
+              <td></td>
+              <td></td>
+              <td>${quantity.toLocaleString()}</td>
+              <td>NT$${price.toLocaleString()}</td>
+              <td></td>
+          </tr>`;
+  cartsList.innerHTML = str;
 }
 
-CartsList.addEventListener('click',function(e){
+cartsList.addEventListener('click',function(e){
+  e.preventDefault();
   if(e.target.getAttribute('class') == null){
-    console.log(e.target);
+    // console.log(e.target);
     return;    
   }
   if(!e.target.getAttribute('class').match('js-clearCarts')){
-    console.log(e.target);
+    // console.log(e.target);
     return;    
   }
-  console.log('js-clearCarts');
+  // console.log('js-clearCarts');
   let id = e.target.getAttribute('data-id');
-  axios.delete(`https://hexschoollivejs.herokuapp.com/api/livejs/v1/customer/${api_path}/carts/${id}`)
+  axios.delete(`${baseUrl}/api/livejs/v1/customer/${api_path}/carts/${id}`)
   .then(function (response) {
     alert(`刪除購物車成功。`);
-    getCartsList();
+    Carts = response.data.carts;
+    renderCartsList();
+  }).catch(function(error){
+    alert(error);
   });
 })
 
-OrderInfoBtn.addEventListener('click',function(e){
+cartsList.addEventListener('click',function(e){
   e.preventDefault();
-  if(customerName.value.trim() === '' || customerPhone.value.trim() === '' || customerEmail.value.trim() === '' || customerAddress.value.trim() === ''){
-    alert('請填入訂單資訊。');
+  if(e.target.getAttribute('class') == null){
+    // console.log(e.target);
     return;    
   }
-  axios.post(`https://hexschoollivejs.herokuapp.com/api/livejs/v1/customer/${api_path}/orders`, 
+  if(!e.target.getAttribute('class').match('js-cartsQuantityBtn')){
+    // console.log(e.target);
+    return;    
+  }
+  // console.log('js-clearCarts');
+  let id = e.target.getAttribute('data-id');
+  let targetQuantity;
+  const cartsQuantity = document.querySelectorAll(".js-cartsQuantity");
+  cartsQuantity.forEach(function(item){
+    // console.log(item);
+    let idTarget = item.getAttribute('data-id');
+    if(id === idTarget && item.value !== undefined){
+      targetQuantity = parseInt(item.value);
+    }
+  });
+  if(isNaN(targetQuantity)){
+    alert('修改訂單數量請輸入數字。');
+    return;    
+  }
+  if(targetQuantity == undefined){
+    alert('修改訂單數量發生錯誤。');
+    return;    
+  }
+  axios.patch(`${baseUrl}/api/livejs/v1/customer/${api_path}/carts`,
+  {
+    "data": {
+      "id": id,
+      "quantity": targetQuantity
+    }
+  })
+  .then(function (response) {
+    alert(`修改訂閱單數量成功。`);
+    Carts = response.data.carts;
+    renderCartsList();
+  }).catch(function(error){
+    alert(error);
+  });
+})
+
+clearCartsAll.addEventListener('click',function(e){
+  e.preventDefault();
+  axios.delete(`${baseUrl}/api/livejs/v1/customer/${api_path}/carts`)
+  .then(function (response) {
+    alert(`刪除全部購物車成功。`);
+    Carts = response.data.carts;
+    renderCartsList();
+  }).catch(function(error){
+    alert(error);
+  });
+})
+
+orderInfoBtn.addEventListener('click',function(e){
+  e.preventDefault();
+  var constraints = {
+    email: {
+      // Email is required
+      presence: true,
+      // and must be an email (duh)
+      email: {
+        message: "格式不正確"
+      }
+    },
+    Phone: {
+      // You need to pick a Phone too
+      presence: true,
+      // And it must be 8 characters long
+      length: {
+        minimum: 8,        
+        message: "長度須超過8碼"
+      }
+    },
+    Name: {
+      // You need to pick a Name too
+      presence: true,
+      // And it must be 1 characters long
+      length: {
+        minimum: 1,        
+        message: "不可空白"
+      }
+    },
+    Address: {
+      // You need to pick a Address too
+      presence: true,
+      // And it must be 1 characters long
+      length: {
+        minimum: 1,        
+        message: "不可空白"
+      }
+    }
+  };
+  let error = validate({Name: customerName.value.trim()}, constraints) || {};
+  if(error.Name !== undefined){
+    alert(error.Name[0]);
+    return;
+  }
+  error = validate({Phone: customerPhone.value.trim()}, constraints) || {};
+  if(error.Phone !== undefined){
+    alert(error.Phone[0]);
+    return;
+  }
+  error = validate({email: customerEmail.value.trim()}, constraints) || {};
+  if(error.email !== undefined){
+    alert(error.email[0]);
+    return;
+  }
+  error = validate({Address: customerAddress.value.trim()}, constraints) || {};
+  if(error.Address !== undefined){
+    alert(error.Address[0]);
+    return;
+  }
+
+  if(Carts.length == 0)
+  {
+    alert('購物車無產品，無法完成訂單。');
+    return;    
+  }
+  
+
+  axios.post(`${baseUrl}/api/livejs/v1/customer/${api_path}/orders`, 
   {
     "data": {
       "user": {
@@ -144,8 +303,10 @@ OrderInfoBtn.addEventListener('click',function(e){
   })
   .then(function (response) {
     alert(`訂單送出成功。`);
-    getCartsList();
+    GetCartsList();
     ClearOrderList();
+  }).catch(function(error){
+    alert(error);
   });
 })
 
