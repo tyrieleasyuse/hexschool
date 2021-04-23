@@ -104,6 +104,7 @@ function RenderOrderList(){
 
 //刪除全部訂單
 discardAllBtn.addEventListener('click',function(e){
+  e.preventDefault();
   if(Orders.length === 0){
     alert("無訂單資料可刪除。")
     return;
@@ -127,6 +128,7 @@ discardAllBtn.addEventListener('click',function(e){
 
 //刪除一筆訂單
 orderList.addEventListener('click',function(e){
+  e.preventDefault();
   if(e.target.getAttribute('class') != 'delSingleOrder-Btn'){
     return;
   }
@@ -149,19 +151,17 @@ orderList.addEventListener('click',function(e){
 })
 //更新處理狀態
 orderList.addEventListener('click',function(e){
+  e.preventDefault();
   if(e.target.getAttribute('class') != 'js-paid'){
     return;
   }
-  if(e.target.textContent === "已處理"){
-    alert("目前為已處理狀態，不可再變更。")
-    return;
-  }
+  let paid = e.target.textContent === "已處理" ? false : true;
   let id =e.target.getAttribute('data-id');
   axios.put(`${baseUrl}/api/livejs/v1/admin/${api_path}/orders`,
   {
     "data": {
       "id": id,
-      "paid": true
+      "paid": paid
     }
   },
   {
@@ -170,7 +170,7 @@ orderList.addEventListener('click',function(e){
     }
   }).
     then(function (response) {
-      alert('已設定為已處理狀態:' + id);
+      alert(`已設定為${paid ? "已處理" : "未處理"}狀態:` + id);
       Orders = response.data.orders;
       RenderOrderList();
       RednerC3();

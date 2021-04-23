@@ -54,7 +54,7 @@ function RenderProductList(){
 
 productSelect.addEventListener('change',function(e){
   e.preventDefault();
-  GetProductList();
+  RenderProductList();
 })
 
 productWrap.addEventListener('click',function(e){
@@ -112,6 +112,9 @@ function renderCartsList(){
   let price = 0;
   let quantity = 0;
   Carts.forEach(function(item,index){
+    let total = parseInt(item.product.price) * parseInt(item.quantity);
+    quantity += parseInt(item.quantity);
+    price += total;
     str += `<tr>
               <td>
                   <div class="cardItem-title">
@@ -123,15 +126,13 @@ function renderCartsList(){
               <td>
               <input type="number" class="js-cartsQuantity" name="cartsQuantity" maxlength="3" data-id='${item.id}' value='${item.quantity.toLocaleString()}'>
               <input type="button" class="js-cartsQuantityBtn" value='修改' data-id='${item.id}'></td>
-              <td>NT$${item.product.price.toLocaleString()}</td>
+              <td>NT$${total.toLocaleString()}</td>
               <td class="discardBtn">
                   <a href="#" class="material-icons js-clearCarts" data-id='${item.id}'>
                       clear
                   </a>
               </td>
           </tr>`;
-      quantity += parseInt(item.quantity);
-      price += parseInt(item.product.price) * parseInt(item.quantity);
   });
   str += `<tr>
               <td></td>
@@ -193,6 +194,10 @@ cartsList.addEventListener('click',function(e){
   if(targetQuantity == undefined){
     alert('修改訂單數量發生錯誤。');
     return;    
+  }  
+  if(targetQuantity <=0){
+    alert('訂單數量需大於0。');
+    return;    
   }
   axios.patch(`${baseUrl}/api/livejs/v1/customer/${api_path}/carts`,
   {
@@ -211,7 +216,12 @@ cartsList.addEventListener('click',function(e){
 })
 
 clearCartsAll.addEventListener('click',function(e){
-  e.preventDefault();
+  e.preventDefault();  
+  if(Carts.length == 0)
+  {
+    alert('購物車無產品，無法刪除。');
+    return;    
+  }
   axios.delete(`${baseUrl}/api/livejs/v1/customer/${api_path}/carts`)
   .then(function (response) {
     alert(`刪除全部購物車成功。`);
@@ -261,22 +271,24 @@ orderInfoBtn.addEventListener('click',function(e){
       }
     }
   };
-  let error = validate({Name: customerName.value.trim()}, constraints) || {};
+  let error = validate({
+                        Name: customerName.value.trim(),
+                        Phone: customerPhone.value.trim(),
+                        email: customerEmail.value.trim(),
+                        Address: customerAddress.value.trim()
+                        }, constraints) || {};
   if(error.Name !== undefined){
     alert(error.Name[0]);
     return;
   }
-  error = validate({Phone: customerPhone.value.trim()}, constraints) || {};
   if(error.Phone !== undefined){
     alert(error.Phone[0]);
     return;
   }
-  error = validate({email: customerEmail.value.trim()}, constraints) || {};
   if(error.email !== undefined){
     alert(error.email[0]);
     return;
   }
-  error = validate({Address: customerAddress.value.trim()}, constraints) || {};
   if(error.Address !== undefined){
     alert(error.Address[0]);
     return;
