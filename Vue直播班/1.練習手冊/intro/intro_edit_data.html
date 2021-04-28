@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>資料編輯</title><meta name="viewport" content="width=device-width, initial-scale=1"><link href="images/favicon.ico" rel="shortcut icon"><meta charset="UTF-8"><script src="/javascripts/vendor.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.2/vue.global.js"></script></head><body class="bg-lighter">
+<!DOCTYPE html><html><head><title>資料編輯</title><meta name="viewport" content="width=device-width, initial-scale=1"><link href="images/favicon.ico" rel="shortcut icon"><meta charset="UTF-8"><script src="../javascripts/vendor.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.2/vue.global.js"></script></head><body class="bg-lighter">
 <div class="container main my-5"><div class="row"><main class="col post">
 <!-- 章節標題 --><div class="mb-4"><h1 class="mt-0 text-muted">資料編輯</h1><small>檔名：<code>intro_edit_data.html</code></small></div>
 <!-- 🔥🔥練習開始🔥🔥 -->
@@ -14,19 +14,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="item in products" :key="item.id"
-        :class="{'table-success': item.onStock}">
-        <td>{{ item.name }}</td>
-        <td>
-          <img :src="item.imageUrl" alt="" height="100">
-        </td>
-        <td>
-          <input type="checkbox" v-model="item.onStock">
-        </td>
-        <td>
-          <button type="button" class="btn btn-outline-primary"
-          >修改</button>
-        </td>
+      <tr v-for='item in products' :key='item.id'
+       v-bind:class='{"table-success" : item.onStock}'>
+        <td>{{ item.name}}</td>
+        <td><img v-bind:src="item.imageUrl" alt="" srcset=""></td>
+        <td><input type="checkbox" v-model='item.onStock'></td>
+        <td><input type="button" value="修改" v-on:click='editItem(item)'></td>
       </tr>
     </tbody>
   </table>
@@ -76,11 +69,24 @@ const App = {
     }
   },
   methods: {
+    editItem(item){
+      this.temp = {...item };
+    },
     confirmEdit() {
-      this.temp.id = new Date().getTime();
-      this.temp.onStock = false;
-      this.products.push(this.temp);
-      this.temp = {};
+      console.log(this.temp);
+      if(!this.temp.id){
+        this.temp.id = new Date().getTime();
+        this.temp.onStock = false;
+        this.products.push(this.temp);
+        this.temp = {};
+      }else{
+        this.products.forEach((item,index) => {
+          if(item.id === this.temp.id){
+            this.products[index] = this.temp;
+          }
+        });
+        this.temp = {};
+      }
     }
   },
   created() {
@@ -193,7 +199,7 @@ Vue.createApp(App).mount('#app');
     <small class="text-black-50 fw-light mb-0">六角學院 Vue 課程專屬文件</small>
   </div>
 </footer>
-<link rel="stylesheet" href="/stylesheets/all.css">
+<link rel="stylesheet" href="../stylesheets/all.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </body>
 </html>
