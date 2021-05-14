@@ -38,7 +38,7 @@ const component = {
               </td>
               <td width="100">
                 <div class="form-check form-switch">
-                  <input class="form-check-input js-enableBtn" type="checkbox" id="is_enabled" ${item.is_enabled? 'checked': ''} data-action="complete" data-id="${item.id}">
+                  <input class="form-check-input js-enableBtn" type="checkbox" id="${item.id}" ${item.is_enabled? 'checked': ''} data-action="complete" data-id="${item.id}">
                   <label class="form-check-label" for="is_enabled">${item.is_enabled? '啟用' : '未啟用'}</label>
                 </div>
               </td>

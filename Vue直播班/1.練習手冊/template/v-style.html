@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>樣式切換</title><meta name="viewport" content="width=device-width, initial-scale=1"><link href="images/favicon.ico" rel="shortcut icon"><meta charset="UTF-8"><script src="/javascripts/vendor.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.2/vue.global.js"></script></head><body class="bg-lighter">
+<!DOCTYPE html><html><head><title>樣式切換</title><meta name="viewport" content="width=device-width, initial-scale=1"><link href="images/favicon.ico" rel="shortcut icon"><meta charset="UTF-8"><script src="../javascripts/vendor.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.2/vue.global.js"></script></head><body class="bg-lighter">
 <div class="container main my-5"><div class="row"><main class="col post">
 <!-- 章節標題 --><div class="mb-4"><h1 class="mt-0 text-muted">樣式切換</h1><small>檔名：<code>v-style.html</code></small></div>
 <!-- 🔥🔥練習開始🔥🔥 -->
@@ -6,18 +6,18 @@
 <div id="app">
   <h2>切換 Class</h2>
   <h3>物件寫法</h3>
-  <div class="box"></div>
+  <div class="box" :class="{rotate : isTransform, 'bg-danger': boxColor}"></div>
   <hr>
   <button class="btn btn-outline-primary" v-on:click="change('isTransform')">選轉物件</button>
   <button class="btn btn-outline-primary ms-1" v-on:click="change('boxColor')">切換色彩</button>
 
   <hr class="mt-4">
   <h3>物件寫法 2</h5>
-  <div class="box"></div>
+  <div class="box" :class="objclass"></div>
 
   <hr>
   <h4>陣列寫法</h4>
-  <button class="btn">請操作本元件</button>
+  <button class="btn" :class="arrayClass">請操作本元件</button>
   <button type="button"
     class="btn btn-outline-primary"
     v-on:click="addClass(['btn-primary', 'active'])">為陣列加入 Class</button>
@@ -25,9 +25,9 @@
   <hr>
   <h2>行內樣式</h2>
   <h4>綁定行內樣式</h4>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
+  <div class="box" :style="{backgroundColor : 'red'}"></div>
+  <div class="box" :style="styleObject"></div>
+  <div class="box" :style="[styleObject,styleObject2]"></div>
 </div>
 
 <script>
@@ -36,6 +36,7 @@ const App = {
     return {
       isTransform: true,
       boxColor: false,
+      objclass : {rotate : true, 'bg-danger': false},
 
       // Array 操作
       arrayClass: [''],
@@ -212,7 +213,7 @@ Vue.createApp(App).mount('#app');
     <small class="text-black-50 fw-light mb-0">六角學院 Vue 課程專屬文件</small>
   </div>
 </footer>
-<link rel="stylesheet" href="/stylesheets/all.css">
+<link rel="stylesheet" href="../stylesheets/all.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </body>
 </html>
