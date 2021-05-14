@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>呈現多筆資料</title><meta name="viewport" content="width=device-width, initial-scale=1"><link href="images/favicon.ico" rel="shortcut icon"><meta charset="UTF-8"><script src="/javascripts/vendor.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.2/vue.global.js"></script></head><body class="bg-lighter">
+<!DOCTYPE html><html><head><title>呈現多筆資料</title><meta name="viewport" content="width=device-width, initial-scale=1"><link href="images/favicon.ico" rel="shortcut icon"><meta charset="UTF-8"><script src="../javascripts/vendor.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.2/vue.global.js"></script></head><body class="bg-lighter">
 <div class="container main my-5"><div class="row"><main class="col post">
 <!-- 章節標題 --><div class="mb-4"><h1 class="mt-0 text-muted">呈現多筆資料</h1><small>檔名：<code>v-for.html</code></small></div>
 <!-- 🔥🔥練習開始🔥🔥 -->
@@ -7,23 +7,23 @@
   <h3>呈現多筆資料於畫面上 v-for</h3>
   <p>菜單</p>
   <ul>
-    
+    <li v-for='(item, key) in products'>{{ key + 1 }}.  {{item.name}} - {{item.price}}元</li>
   </ul>
 
   <h3>物件回圈</h3>
   <ul>
-    
+    <li v-for='(item, key) in productsObj'>{{ key }}:  {{item.name}} - {{item.price}}元</li>
   </ul>
 
   <h3>純數值回圈</h3>
   <ul>
-    
+    <li v-for='item in 5'>{{ item }}</li>
   </ul>
 
   <h3>v-for 與 key</h3>
   <p>菜單</p>
   <ul>
-    <li v-for="(item, key) in products">
+    <li v-for="(item, key) in products" :key='item.name'>
       {{ key }} - {{ item.name}} / {{ item.price }} 元
       <input type="text">
     </li>
@@ -35,20 +35,22 @@
   <h3>進階技巧：在 template 標籤使用 v-for</h3>
   <table class="table">
     <tbody>
-      <tr >
-        <th rowspan="2">1</th>
-        <td colspan="2">
-          飯糰
-        </td>
-      </tr>
-      <tr>
-        <td>
-          30元
-        </td>
-        <td>
-          不可素食
-        </td>
-      </tr>
+      <template v-for='(item, key) in products' :key='item.name'>
+        <tr >
+          <th rowspan="2">{{key + 1}}</th>
+          <td colspan="2">
+            {{item.name}}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{item.price}}元
+          </td>
+          <td>
+            {{item.vegan ? '素食' : '不可素食'}}
+          </td>
+        </tr>
+      </template>
     </tbody>
   </table>
   <p><a href="https://vue3js.cn/docs/zh/guide/list.html#%E5%9C%A8-template-%E4%B8%AD%E4%BD%BF%E7%94%A8-v-for">參考介紹</a></p>
@@ -258,7 +260,7 @@ Vue.createApp(App)
     <small class="text-black-50 fw-light mb-0">六角學院 Vue 課程專屬文件</small>
   </div>
 </footer>
-<link rel="stylesheet" href="/stylesheets/all.css">
+<link rel="stylesheet" href="../stylesheets/all.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </body>
 </html>

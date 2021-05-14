@@ -1,12 +1,12 @@
-<!DOCTYPE html><html><head><title>渲染判斷</title><meta name="viewport" content="width=device-width, initial-scale=1"><link href="images/favicon.ico" rel="shortcut icon"><meta charset="UTF-8"><script src="/javascripts/vendor.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.2/vue.global.js"></script></head><body class="bg-lighter">
+<!DOCTYPE html><html><head><title>渲染判斷</title><meta name="viewport" content="width=device-width, initial-scale=1"><link href="images/favicon.ico" rel="shortcut icon"><meta charset="UTF-8"><script src="../javascripts/vendor.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.2/vue.global.js"></script></head><body class="bg-lighter">
 <div class="container main my-5"><div class="row"><main class="col post">
 <!-- 章節標題 --><div class="mb-4"><h1 class="mt-0 text-muted">渲染判斷</h1><small>檔名：<code>v-if.html</code></small></div>
 <!-- 🔥🔥練習開始🔥🔥 -->
 
 <div id="app">
   <h3>v-if</h3>
-  <p>小明 飽了</p>
-  <!-- <p>小明 還沒吃飽</p> -->
+  <p v-if='isFull'>小明 飽了</p>
+  <p v-else='!isFull'>小明 還沒吃飽</p>
   <button type="button" v-on:click="change('isFull')">狀態切換</button>
 
   <hr>
@@ -20,17 +20,19 @@
       v-on:click="link = '杰倫'">杰倫</a>
   </nav>
   <div>
-    <div>小明吃早餐</div>
-    <div>小美去百貨公司</div>
-    <div>杰倫去幫助人</div>
+    <div v-if="link === '小明'">小明吃早餐</div>
+    <div v-else-if="link === '小美'">小美去百貨公司</div>
+    <div v-else-if="link === '杰倫'">杰倫去幫助人</div>
   </div>
 
   <hr>
   <h3>注意事項：v-for 與 v-if 混用</h3>
   <ul>
-    <li v-for="(item, key) in products" v-bind:key="item.name">
-      {{ item.name}} / {{ item.price }} 元
-    </li>
+    <template v-for="(item, key) in products" v-bind:key="item.name">
+      <li v-if='item.price <= 35'>
+        {{ item.name}} / {{ item.price }} 元
+      </li>
+    </template>
   </ul>
   <p>參考說明：<a href="https://vue3js.cn/docs/zh/guide/conditional.html#v-if-%E4%B8%8E-v-for-%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8">https://vue3js.cn/docs/zh/guide/conditional.html#v-if-%E4%B8%8E-v-for-%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8</a></p>
 
@@ -233,7 +235,7 @@ Vue.createApp(App).mount('#app');
     <small class="text-black-50 fw-light mb-0">六角學院 Vue 課程專屬文件</small>
   </div>
 </footer>
-<link rel="stylesheet" href="/stylesheets/all.css">
+<link rel="stylesheet" href="../stylesheets/all.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </body>
 </html>
