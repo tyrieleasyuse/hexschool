@@ -22,10 +22,9 @@ const component = {
               }
               const url = `${this.axios.url}admin/signin`;
               console.log(url);
-              axios.post(url,{
-                "username": username,
-                "password": password
-              })
+              this.signin.username = username;
+              this.signin.password = password;
+              axios.post(url,this.signin)
               .then(response =>{
                 const success = response.data.success;
                 if(success){
