@@ -15,7 +15,7 @@ const component = {
               e.preventDefault();
               const username = document.querySelector('#username').value;
               const password = document.querySelector('#password').value;
-              if(username.toString().trim() === '' || username.toString().trim() === 'password' )
+              if(username.toString().trim() === '' || password.toString().trim() === '' )
               {
                   alert('請輸入帳號密碼進行登入!');
                   return;
