@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>v-on 事件觸發</title><meta name="viewport" content="width=device-width, initial-scale=1"><link href="images/favicon.ico" rel="shortcut icon"><meta charset="UTF-8"><script src="/javascripts/vendor.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.2/vue.global.js"></script></head><body class="bg-lighter">
+<!DOCTYPE html><html><head><title>v-on 事件觸發</title><meta name="viewport" content="width=device-width, initial-scale=1"><link href="images/favicon.ico" rel="shortcut icon"><meta charset="UTF-8"><script src="../javascripts/vendor.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.2/vue.global.js"></script></head><body class="bg-lighter">
 <div class="container main my-5"><div class="row"><main class="col post">
 <!-- 章節標題 --><div class="mb-4"><h1 class="mt-0 text-muted">v-on 事件觸發</h1><small>檔名：<code>v-on.html</code></small></div>
 <!-- 🔥🔥練習開始🔥🔥 -->
@@ -6,33 +6,33 @@
   <h3>觸發事件 與 縮寫*</h3>
   <div class="box" :class="{ rotate: isTransform }"></div>
   <hr>
-  <button class="btn btn-outline-primary">選轉物件</button>
+  <button class="btn btn-outline-primary" @click="changeClass">選轉物件</button>
   <br>
   <h3>帶入參數*</h3>
   <div class="box" :class="{ rotate: isTransform }"></div>
   <hr>
-  <button class="btn btn-outline-primary">選轉物件</button>
+  <button class="btn btn-outline-primary" @click="change('isTransform')">選轉物件</button>
   
   <hr>
   <h3>原生 DOM 事件*</h3>
   <!-- https://developer.mozilla.org/en-US/docs/Web/Events -->
   <h4>input change 事件</h4>
-  <input type="text">
+  <input type="text" @change="onChange">
   <br><br>
   <h4>form submit 事件</h4>
-  <form>
+  <form @submit.prevent="submitForm">
     <input type="text" v-model="name">
     <button>送出表單</button>
   </form>
   <hr>
   <h3>動態事件 []</h3>
-  <input type="text">
+  <input type="text" @[event]="dynamicEvent">
   <input type="text" v-model="event">
 
   <hr>
   <h3>動態物件方法 {}</h3>
   <!-- 此方法無法傳入參數 -->
-  <button class="box">
+  <button class="box" @="{ mousedown : down, mouseup : up }">
   </button>
   <hr>
   <h3>作為運算*</h3>
@@ -226,7 +226,7 @@ Vue.createApp(App).mount('#app');
     <small class="text-black-50 fw-light mb-0">六角學院 Vue 課程專屬文件</small>
   </div>
 </footer>
-<link rel="stylesheet" href="/stylesheets/all.css">
+<link rel="stylesheet" href="../stylesheets/all.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </body>
 </html>
