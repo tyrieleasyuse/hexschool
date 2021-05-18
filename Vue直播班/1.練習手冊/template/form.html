@@ -1,16 +1,16 @@
-<!DOCTYPE html><html><head><title>v-model 與表單</title><meta name="viewport" content="width=device-width, initial-scale=1"><link href="images/favicon.ico" rel="shortcut icon"><meta charset="UTF-8"><script src="/javascripts/vendor.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.2/vue.global.js"></script></head><body class="bg-lighter">
+<!DOCTYPE html><html><head><title>v-model 與表單</title><meta name="viewport" content="width=device-width, initial-scale=1"><link href="images/favicon.ico" rel="shortcut icon"><meta charset="UTF-8"><script src="../javascripts/vendor.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.2/vue.global.js"></script></head><body class="bg-lighter">
 <div class="container main my-5"><div class="row"><main class="col post">
 <!-- 章節標題 --><div class="mb-4"><h1 class="mt-0 text-muted">v-model 與表單</h1><small>檔名：<code>form.html</code></small></div>
 <!-- 🔥🔥練習開始🔥🔥 -->
 
 <div id="app">
   <h3>input</h3>
-  <input type="text" class="form-control">
+  <input type="text" class="form-control" v-model="name">
   {{ name }}
 
   <hr>
   <h3>textarea</h3>
-  <textarea cols="30" rows="3" class="form-control"></textarea>
+  <textarea cols="30" rows="3" class="form-control" v-model="text"></textarea>
   {{ text }}
   
   <hr>
@@ -18,7 +18,7 @@
   <p>小明，你是吃飽沒？</p>
   <p>{{ checkAnswer ? '吃飽了' : '還沒'}}</p>
   <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="check1" >
+    <input type="checkbox" class="form-check-input" id="check1" v-model="checkAnswer" >
     <label class="form-check-label" for="check1">小明回覆</label>
   </div>
 
@@ -27,7 +27,7 @@
   <p>小明，你是吃飽沒？</p>
   <p>{{ checkAnswer2 }}</p>
   <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="check2" >
+    <input type="checkbox" class="form-check-input" id="check2" v-model="checkAnswer2" true-value="吃飽了" false-value="還沒" >
     <label class="form-check-label" for="check2">小明回覆</label>
   </div>
 
@@ -36,15 +36,15 @@
   <p>你還要吃什麼？</p>
   <p>{{ checkAnswer3.join(' ') }}</p>
   <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="check3" value="蛋餅" >
+    <input type="checkbox" class="form-check-input" id="check3" value="蛋餅" v-model="checkAnswer3" >
     <label class="form-check-label" for="check3">蛋餅</label>
   </div>
   <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="check4" value="蘿蔔糕" >
+    <input type="checkbox" class="form-check-input" id="check4" value="蘿蔔糕" v-model="checkAnswer3" >
     <label class="form-check-label" for="check4">蘿蔔糕</label>
   </div>
   <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="check5" value="豆漿" >
+    <input type="checkbox" class="form-check-input" id="check5" value="豆漿" v-model="checkAnswer3" >
     <label class="form-check-label" for="check5">豆漿</label>
   </div>
 
@@ -53,15 +53,15 @@
   <p>你還要吃什麼？</p>
   <p>{{ radioAnswer }}</p>
   <div class="form-check">
-    <input type="radio" class="form-check-input" id="radio1" value="蛋餅" >
+    <input type="radio" class="form-check-input" id="radio1" value="蛋餅" v-model="radioAnswer" >
     <label class="form-check-label" for="radio1">蛋餅</label>
   </div>
   <div class="form-check">
-    <input type="radio" class="form-check-input" id="radio2" value="蘿蔔糕" >
+    <input type="radio" class="form-check-input" id="radio2" value="蘿蔔糕" v-model="radioAnswer" >
     <label class="form-check-label" for="radio2">蘿蔔糕</label>
   </div>
   <div class="form-check">
-    <input type="radio" class="form-check-input" id="radio3" value="豆漿" >
+    <input type="radio" class="form-check-input" id="radio3" value="豆漿" v-model="radioAnswer" >
     <label class="form-check-label" for="radio3">豆漿</label>
   </div>
 
@@ -69,15 +69,16 @@
   <h3>select 單選</h3>
   <p>你還要吃什麼？</p>
   <p>{{ selectAnswer }}</p>
-  <select class="form-select">
-    <option >說吧，你要吃什麼？</option>
+  <select class="form-select" v-model="selectAnswer">
+    <option value="" >說吧，你要吃什麼？</option>
+    <option v-for="item in products" :key="item.name" :value="item.name" >{{item.name}} - {{item.price}}元</option>
   </select>
 
   <hr>
   <h3>select 多選</h3>
   <p>你還要吃什麼？</p>
   <p>{{ selectAnswer2 }}</p>
-  <select class="form-select" v-model="selectAnswer2">
+  <select class="form-select" v-model="selectAnswer2" multiple>
     <option selected disabled value="">說吧，你要吃什麼？</option>
     <option :value="item.name" v-for="item in products" :key="item.name">
     {{item.name}} / {{item.price}} 元</option>
@@ -290,7 +291,7 @@ Vue.createApp(App)
     <small class="text-black-50 fw-light mb-0">六角學院 Vue 課程專屬文件</small>
   </div>
 </footer>
-<link rel="stylesheet" href="/stylesheets/all.css">
+<link rel="stylesheet" href="../stylesheets/all.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </body>
 </html>
