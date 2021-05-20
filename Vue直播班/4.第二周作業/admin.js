@@ -24,17 +24,11 @@ const componet = {
     ],
     axios : {
         url : 'https://vue3-course-api.hexschool.io/api',
-        api_path : 'hunterchen',
-        productTokenHeader : {
-            headers: {
-              'Authorization': ''
-            }
-        }
+        api_path : 'hunterchen'
     },
     getProductList(){
-        this.axios.productTokenHeader.headers.Authorization = Cookies.get('token');
         const url = `${this.axios.url}/${this.axios.api_path}/admin/products?page=1`;
-        axios.get(url, this.axios.productTokenHeader)
+        axios.get(url)
         .then(response => {
             const success = response.data.success;
             if(success){
@@ -83,7 +77,7 @@ const componet = {
             if (dialog === true) {
                 const id = e.target.dataset.id;            
                 const url = `${this.axios.url}/${this.axios.api_path}/admin/product/${id}`;
-                axios.delete(url, this.axios.productTokenHeader)
+                axios.delete(url)
                 .then(response => {
                     const success = response.data.success;
                     if(success){
@@ -104,6 +98,7 @@ const componet = {
         }))
     },
     init(){
+        axios.defaults.headers.common.Authorization = Cookies.get('token');
         this.getProductList();
     }
 }
