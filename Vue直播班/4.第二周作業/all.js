@@ -1,12 +1,11 @@
 
 const component = {
-    "signin" :   {
+      signin :   {
         "username": "hexscholl@test.com",
         "password": "zzxxccvv"
       },
-      "axios" : {
-          url : "https://vue3-course-api.hexschool.io/",
-          api_path : "hunterchen"
+      axios : {
+          url : "https://vue3-course-api.hexschool.io/"
       }
       ,
       userSignin(){
@@ -15,7 +14,7 @@ const component = {
               e.preventDefault();
               const username = document.querySelector('#username').value;
               const password = document.querySelector('#password').value;
-              if(username.toString().trim() === '' || password.toString().trim() === '' )
+              if(username.trim() === '' || password.trim() === '' )
               {
                   alert('請輸入帳號密碼進行登入!');
                   return;
@@ -29,7 +28,6 @@ const component = {
                 const success = response.data.success;
                 if(success){
                     const token = response.data.token;
-                    console.log(response);
                     Cookies.set('token', token);
                     alert("登入成功。");
                     location.href = "admin.html";
