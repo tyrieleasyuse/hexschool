@@ -1,6 +1,6 @@
 
 const componet = {
-    "products": [
+    products: [
         {
             "category": "衣服3",
             "content": "這是內容",
@@ -22,16 +22,29 @@ const componet = {
             "unit": "個"
         }
     ],
-    "axois" : {
+    axios : {
         url : 'https://vue3-course-api.hexschool.io/api',
-        api_path : 'hunterchen'
+        api_path : 'hunterchen',
+        productTokenHeader : {
+            headers: {
+              'Authorization': ''
+            }
+        }
     },
     getProductList(){
-        const url = `${this.axois.url}/${this.axois.api_path}/products?page=1`
-        axios.get(url)
+        this.axios.productTokenHeader.headers.Authorization = Cookies.get('token');
+        const url = `${this.axios.url}/${this.axios.api_path}/admin/products?page=1`;
+        axios.get(url, this.axios.productTokenHeader)
         .then(response => {
-            this.products = response.data.products;
-            this.renderProductList();
+            const success = response.data.success;
+            if(success){
+                this.products = response.data.products;
+                this.renderProductList();
+            }
+            else{
+                const message = response.data.message;
+                alert(message);
+            }
         })
         .catch(error=>{
             alert(error);
@@ -43,7 +56,7 @@ const componet = {
         let str=''
         this.products.forEach(item =>{
             str+=`<tr>
-            <td>${item.category}</td>
+            <td>${item.title}</td>
             <td width="120">
               ${item.origin_price}
             </td>
@@ -66,11 +79,11 @@ const componet = {
     removeProductAllItem(){
         const remove = document.querySelectorAll('.js-deleteBtn');
         remove.forEach(btn => btn.addEventListener('click', (e)=>{
-            var dialog = confirm("你確定要刪除產品嗎?");
+            const dialog = confirm("你確定要刪除產品嗎?");
             if (dialog === true) {
                 const id = e.target.dataset.id;            
-                const url = `${this.axois.url}/${this.axois.api_path}/cart/${id}`;
-                axios.delete(url)
+                const url = `${this.axios.url}/${this.axios.api_path}/admin/product/${id}`;
+                axios.delete(url, this.axios.productTokenHeader)
                 .then(response => {
                     const success = response.data.success;
                     if(success){
