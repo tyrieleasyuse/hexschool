@@ -1,0 +1,7 @@
+v-model 用於表單元素 input、 select & option ...
+
+v-model 將表單資料寫入Vue的data
+
+v-for v-bind v-if 將Vue的data渲染到畫面上
+
+v-on 呼叫Vue的事件，利用事件修改Vue的資料，修改後的資料會渲染到畫面。
