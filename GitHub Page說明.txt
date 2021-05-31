@@ -23,3 +23,5 @@ https://tyrieleasyuse.github.io/hexschool/14.week7/dist/sunglasses.html
 Vue
 
 https://tyrieleasyuse.github.io/hexschool/Vue%E7%9B%B4%E6%92%AD%E7%8F%AD/4.%E7%AC%AC%E4%BA%8C%E5%91%A8%E4%BD%9C%E6%A5%AD/
+
+https://tyrieleasyuse.github.io/hexschool/Vue%E7%9B%B4%E6%92%AD%E7%8F%AD/5.%E7%AC%AC%E4%B8%89%E5%91%A8%E4%BD%9C%E6%A5%AD/
