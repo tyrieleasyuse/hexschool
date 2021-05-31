@@ -66,7 +66,11 @@
         </tbody>
       </table>
     </div>
-    <!-- Modal -->
+    <delete-modal :item='tempProdcut' @update="getProductList"></delete-modal>
+    <edit-modal :product='tempProdcut' @update="getProductList"></edit-modal>
+  </div>
+  <!-- Modal -->
+  <script type="text/x-template" id="editModalTemplate">
     <div id="productModal" ref="productModal" class="modal fade" tabindex="-1" aria-labelledby="productModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-xl">
@@ -83,19 +87,19 @@
                 <div class="mb-1">
                   <div class="form-group">
                     <label for="imageUrl">輸入主圖片網址</label>
-                    <input type="text" class="form-control" placeholder="請輸入主圖片連結" v-model="tempProdcut.imageUrl">
+                    <input type="text" class="form-control" placeholder="請輸入主圖片連結" v-model="Prodcut.imageUrl">
                   </div>
-                  <img class="img-fluid" :src="tempProdcut.imageUrl" alt="">
+                  <img class="img-fluid" :src="Prodcut.imageUrl" alt="">
                 </div>
                 <div>
-                  <template v-for="(item, index) in tempProdcut.imagesUrl" :key="index">
+                  <template v-for="(item, index) in Prodcut.imagesUrl" :key="index">
                     <div class="mb-1">
                       <div class="form-group">
                         <label for="imageUrl">輸入圖片{{index + 1}}網址</label>
                         <input type="text" class="form-control" placeholder="請輸入圖片連結"
-                          v-model="tempProdcut.imagesUrl[index]">
+                          v-model="Prodcut.imagesUrl[index]">
                       </div>
-                      <img class="img-fluid" :src="tempProdcut.imagesUrl[index]" alt="">
+                      <img class="img-fluid" :src="Prodcut.imagesUrl[index]" alt="">
                       <button class="btn btn-outline-danger btn-sm d-block w-100" @click="deleteImageItem(index)">
                         刪除圖片
                       </button>
@@ -105,8 +109,7 @@
                 <div class="mb-1">
                   <div class="form-group">
                     <label for="imageUrl">輸入圖片網址</label>
-                    <input type="text" class="form-control" placeholder="請輸入圖片連結"
-                      v-model="tempImage">
+                    <input type="text" class="form-control" placeholder="請輸入圖片連結" v-model="tempImage">
                   </div>
                   <img class="img-fluid" :src="tempImage" alt="">
                 </div>
@@ -117,19 +120,19 @@
               <div class="col-sm-8">
                 <div class="form-group">
                   <label for="title">標題</label>
-                  <input id="title" type="text" class="form-control" placeholder="請輸入標題" v-model="tempProdcut.title">
+                  <input id="title" type="text" class="form-control" placeholder="請輸入標題" v-model="Prodcut.title">
                 </div>
 
                 <div class="row">
                   <div class="form-group col-md-6">
                     <label for="category">分類</label>
                     <input id="category" type="text" class="form-control" placeholder="請輸入分類"
-                      v-model="tempProdcut.category">
+                      v-model="Prodcut.category">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="price">單位</label>
                     <input id="unit" type="text" class="form-control" placeholder="請輸入單位"
-                      v-model.number="tempProdcut.num">
+                      v-model.number="Prodcut.num">
                   </div>
                 </div>
 
@@ -137,12 +140,12 @@
                   <div class="form-group col-md-6">
                     <label for="origin_price">原價</label>
                     <input id="origin_price" type="number" min="0" class="form-control" placeholder="請輸入原價"
-                      v-model.number="tempProdcut.origin_price">
+                      v-model.number="Prodcut.origin_price">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="price">售價</label>
                     <input id="price" type="number" min="0" class="form-control" placeholder="請輸入售價"
-                      v-model.number="tempProdcut.price">
+                      v-model.number="Prodcut.price">
                   </div>
                 </div>
                 <hr>
@@ -150,19 +153,19 @@
                 <div class="form-group">
                   <label for="description">產品描述</label>
                   <textarea id="description" type="text" class="form-control" placeholder="請輸入產品描述"
-                    v-model="tempProdcut.description">
+                    v-model="Prodcut.description">
                     </textarea>
                 </div>
                 <div class="form-group">
                   <label for="content">說明內容</label>
                   <textarea id="description" type="text" class="form-control" placeholder="請輸入說明內容"
-                    v-model="tempProdcut.content">
+                    v-model="Prodcut.content">
                     </textarea>
                 </div>
                 <div class="form-group">
                   <div class="form-check">
                     <input id="is_enabled" class="form-check-input" type="checkbox" :true-value="1" :false-value="0"
-                      v-model="tempProdcut.is_enabled">
+                      v-model="Prodcut.is_enabled">
                     <label class="form-check-label" for="is_enabled">是否啟用</label>
                   </div>
                 </div>
@@ -180,6 +183,8 @@
         </div>
       </div>
     </div>
+  </script>
+  <script type="text/x-template" id="deleteModalTemplate">
     <div id="delProductModal" ref="delProductModal" class="modal fade" tabindex="-1"
       aria-labelledby="delProductModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -192,7 +197,7 @@
           </div>
           <div class="modal-body">
             是否刪除
-            <strong class="text-danger">{{tempProdcut.title}}</strong> 商品(刪除後將無法恢復)。
+            <strong class="text-danger">{{item.title}}</strong> 商品(刪除後將無法恢復)。
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
@@ -205,8 +210,8 @@
         </div>
       </div>
     </div>
-    <!-- Modal -->
-  </div>
+  </script>
+  <!-- Modal -->
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.9.1/axios.min.js'
     integrity='sha512-Xk3wWei2TGrsh9kDSBKUMIjw/86sLUvhtnv9f7fOuIwhhiUTKz8szkWkzHthrM5Bb3Bu9idSzkxOrkzhcneuiw=='
