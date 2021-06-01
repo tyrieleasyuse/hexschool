@@ -1,6 +1,8 @@
 let productModal;
 let delProductModal;
 
+import pagination_compoment from "./pagination.js";
+
 const api_url = 'https://vue3-course-api.hexschool.io/api';
 const api_path = 'hunterchen';
 
@@ -10,9 +12,9 @@ Vue.createApp({
             products: [
             ],
             pagination: {
-              },
+            },
             tempProduct: {
-                imagesUrl : []
+                imagesUrl: []
             }
         }
     },
@@ -76,148 +78,125 @@ Vue.createApp({
     },
 })
 
-.component('edit-modal',{
-    //props為參考範例原始碼
-    //帶入物件需類別驗證為type : Object，預設值為imagesUrl: []
-    props: {
-        product: {
-          type: Object,
-          default() {
-            return { 
-              imagesUrl: [],
-            }
-          }
-        }
-    },
-    template : '#editModalTemplate',
-    data(){
-        return {
-            tempImage : ''
-        }
-    },
-    methods:{
-        editProductItem() {
-            if (this.product.id === undefined) {
-                this.tempImage = '';
-                const url = `${api_url}/${api_path}/admin/product`;
-                const requestData = {
-                    data: this.product
-                }
-                axios.post(url, requestData)
-                    .then(response => {
-                        const success = response.data.success;
-                        if (success) {
-                            this.$emit('emit-update');
-                            productModal.hide();
-                        } else {
-                            const message = response.data.message;
-                            alert(message);
-                        }
-                    })
-                    .catch(error => {
-                        alert(error);
-                    })
-            }
-            else {
-                const id = this.product.id;
-                const url = `${api_url}/${api_path}/admin/product/${id}`;
-                const requestData = {
-                    data: this.product
-                }
-                axios.put(url, requestData)
-                    .then(response => {
-                        const success = response.data.success;
-                        if (success) {
-                            this.$emit('emit-update');
-                            productModal.hide();
-                        } else {
-                            const message = response.data.message;
-                            alert(message);
-                        }
-                    })
-                    .catch(error => {
-                        alert(error);
-                    })
-            }
-        },
-        deleteImageItem(index){
-            this.product.imagesUrl.splice(index,1);            
-        },
-        addImageItem(){
-            this.product.imagesUrl.push(this.tempImage);
-        },
-    },
-    mounted() {    
-    }
-})
+    .component('pagination', pagination_compoment)
 
-.component('pagination',{
-    //props為參考範例原始碼
-    //帶入物件需類別驗證為type : Object，預設值為空物件
-    props: {
-        item: {
-        type: Object,
-        default() {
-          return { 
-          }
-        }
-      }
-    },
-    template : '#paginationTemplate',
-    data(){
-        return {
-        }
-    },
-    methods :{
-        navigatePage(index) {
-            this.$emit('emit-navigate',index);
-        }
-    },
-    mounted() {
-    },
-})
-
-.component('delete-modal',{
-    //props為參考範例原始碼
-    //帶入物件需類別驗證為type : Object，預設值為空物件
-    props: {
-      item: {
-        type: Object,
-        default() {
-          return { 
-          }
-        }
-      }
-    },
-    template : '#deleteModalTemplate',
-    data(){
-        return {
-        }
-    },
-    methods :{
-        deleteProductItem() {
-            const id = this.item.id;
-            const url = `${api_url}/${api_path}/admin/product/${id}`;
-            console.log('url', url);
-            console.log('id', id);
-            axios.delete(url)
-                .then(response => {
-                    const success = response.data.success;
-                    if (success) {
-                        this.$emit('emit-update');
-                        delProductModal.hide();
-                    } else {
-                        const message = response.data.message
-                        alert(message);
+    .component('edit-modal', {
+        //props為參考範例原始碼
+        //帶入物件需類別驗證為type : Object，預設值為imagesUrl: []
+        props: {
+            product: {
+                type: Object,
+                default() {
+                    return {
+                        imagesUrl: [],
                     }
-                })
-                .catch(error => {
-                    alert(error);
-                })
+                }
+            }
         },
-    },
-    mounted() {
-    },
-})
+        template: '#editModalTemplate',
+        data() {
+            return {
+                tempImage: ''
+            }
+        },
+        methods: {
+            editProductItem() {
+                if (this.product.id === undefined) {
+                    this.tempImage = '';
+                    const url = `${api_url}/${api_path}/admin/product`;
+                    const requestData = {
+                        data: this.product
+                    }
+                    axios.post(url, requestData)
+                        .then(response => {
+                            const success = response.data.success;
+                            if (success) {
+                                this.$emit('emit-update');
+                                productModal.hide();
+                            } else {
+                                const message = response.data.message;
+                                alert(message);
+                            }
+                        })
+                        .catch(error => {
+                            alert(error);
+                        })
+                }
+                else {
+                    const id = this.product.id;
+                    const url = `${api_url}/${api_path}/admin/product/${id}`;
+                    const requestData = {
+                        data: this.product
+                    }
+                    axios.put(url, requestData)
+                        .then(response => {
+                            const success = response.data.success;
+                            if (success) {
+                                this.$emit('emit-update');
+                                productModal.hide();
+                            } else {
+                                const message = response.data.message;
+                                alert(message);
+                            }
+                        })
+                        .catch(error => {
+                            alert(error);
+                        })
+                }
+            },
+            deleteImageItem(index) {
+                this.product.imagesUrl.splice(index, 1);
+            },
+            addImageItem() {
+                if (this.product.imagesUrl == undefined) {
+                    this.product.imagesUrl = [];
+                }
+                this.product.imagesUrl.push(this.tempImage);
+            },
+        },
+        mounted() {
+        }
+    })
 
-.mount("#app");
+    .component('delete-modal', {
+        //props為參考範例原始碼
+        //帶入物件需類別驗證為type : Object，預設值為空物件
+        props: {
+            item: {
+                type: Object,
+                default() {
+                    return {
+                    }
+                }
+            }
+        },
+        template: '#deleteModalTemplate',
+        data() {
+            return {
+            }
+        },
+        methods: {
+            deleteProductItem() {
+                const id = this.item.id;
+                const url = `${api_url}/${api_path}/admin/product/${id}`;
+                axios.delete(url)
+                    .then(response => {
+                        const success = response.data.success;
+                        if (success) {
+                            this.$emit('emit-update');
+                            delProductModal.hide();
+                        } else {
+                            const message = response.data.message
+                            alert(message);
+                        }
+                    })
+                    .catch(error => {
+                        alert(error);
+                    })
+            },
+        },
+        mounted() {
+        },
+    })
+
+    .mount("#app");
