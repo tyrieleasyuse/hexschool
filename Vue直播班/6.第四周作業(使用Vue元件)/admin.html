@@ -65,10 +65,23 @@
           </template>
         </tbody>
       </table>
+      <pagination :item='pagination' @emit-navigate="getProductList"></pagination>
     </div>
-    <delete-modal :item='tempProdcut' @update="getProductList"></delete-modal>
-    <edit-modal :product='tempProdcut' @update="getProductList"></edit-modal>
+    <edit-modal :product='tempProduct' @emit-update="getProductList"></edit-modal>
+    <delete-modal :item='tempProduct' @emit-update="getProductList"></delete-modal>
   </div>
+  <script type="text/x-template" id="paginationTemplate">
+    <nav aria-label="Page navigation">
+      <ul class="pagination">
+        <li class="page-item" :class="{ disabled: !item.has_pre }"  @click.prevent="navigatePage(item.current_page-1)"><a class="page-link" href="#">Previous</a></li>
+        <template v-for="index in item.total_pages" :key="index">
+          <li class="page-item"  :class="{ active: index === item.current_page }" @click.prevent="navigatePage(index)"><a class="page-link" href="#">{{ index }}</a></li>
+        </template>
+        <li class="page-item" :class="{ disabled: !item.has_next }"   @click.prevent="navigatePage(item.current_page+1)"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </nav>
+  </script>
+  </script>
   <!-- Modal -->
   <script type="text/x-template" id="editModalTemplate">
     <div id="productModal" ref="productModal" class="modal fade" tabindex="-1" aria-labelledby="productModalLabel"
@@ -87,19 +100,19 @@
                 <div class="mb-1">
                   <div class="form-group">
                     <label for="imageUrl">輸入主圖片網址</label>
-                    <input type="text" class="form-control" placeholder="請輸入主圖片連結" v-model="Prodcut.imageUrl">
+                    <input type="text" class="form-control" placeholder="請輸入主圖片連結" v-model="product.imageUrl">
                   </div>
-                  <img class="img-fluid" :src="Prodcut.imageUrl" alt="">
+                  <img class="img-fluid" :src="product.imageUrl" alt="">
                 </div>
                 <div>
-                  <template v-for="(item, index) in Prodcut.imagesUrl" :key="index">
+                  <template v-for="(item, index) in product.imagesUrl" :key="index">
                     <div class="mb-1">
                       <div class="form-group">
                         <label for="imageUrl">輸入圖片{{index + 1}}網址</label>
                         <input type="text" class="form-control" placeholder="請輸入圖片連結"
-                          v-model="Prodcut.imagesUrl[index]">
+                          v-model="product.imagesUrl[index]">
                       </div>
-                      <img class="img-fluid" :src="Prodcut.imagesUrl[index]" alt="">
+                      <img class="img-fluid" :src="product.imagesUrl[index]" alt="">
                       <button class="btn btn-outline-danger btn-sm d-block w-100" @click="deleteImageItem(index)">
                         刪除圖片
                       </button>
@@ -120,19 +133,19 @@
               <div class="col-sm-8">
                 <div class="form-group">
                   <label for="title">標題</label>
-                  <input id="title" type="text" class="form-control" placeholder="請輸入標題" v-model="Prodcut.title">
+                  <input id="title" type="text" class="form-control" placeholder="請輸入標題" v-model="product.title">
                 </div>
 
                 <div class="row">
                   <div class="form-group col-md-6">
                     <label for="category">分類</label>
                     <input id="category" type="text" class="form-control" placeholder="請輸入分類"
-                      v-model="Prodcut.category">
+                      v-model="product.category">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="price">單位</label>
                     <input id="unit" type="text" class="form-control" placeholder="請輸入單位"
-                      v-model.number="Prodcut.num">
+                      v-model.number="product.num">
                   </div>
                 </div>
 
@@ -140,12 +153,12 @@
                   <div class="form-group col-md-6">
                     <label for="origin_price">原價</label>
                     <input id="origin_price" type="number" min="0" class="form-control" placeholder="請輸入原價"
-                      v-model.number="Prodcut.origin_price">
+                      v-model.number="product.origin_price">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="price">售價</label>
                     <input id="price" type="number" min="0" class="form-control" placeholder="請輸入售價"
-                      v-model.number="Prodcut.price">
+                      v-model.number="product.price">
                   </div>
                 </div>
                 <hr>
@@ -153,19 +166,19 @@
                 <div class="form-group">
                   <label for="description">產品描述</label>
                   <textarea id="description" type="text" class="form-control" placeholder="請輸入產品描述"
-                    v-model="Prodcut.description">
+                    v-model="product.description">
                     </textarea>
                 </div>
                 <div class="form-group">
                   <label for="content">說明內容</label>
                   <textarea id="description" type="text" class="form-control" placeholder="請輸入說明內容"
-                    v-model="Prodcut.content">
+                    v-model="product.content">
                     </textarea>
                 </div>
                 <div class="form-group">
                   <div class="form-check">
                     <input id="is_enabled" class="form-check-input" type="checkbox" :true-value="1" :false-value="0"
-                      v-model="Prodcut.is_enabled">
+                      v-model="product.is_enabled">
                     <label class="form-check-label" for="is_enabled">是否啟用</label>
                   </div>
                 </div>
