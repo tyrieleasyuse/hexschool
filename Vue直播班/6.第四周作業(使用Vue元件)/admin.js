@@ -1,31 +1,31 @@
 let productModal;
 let delProductModal;
 
-const my_url = 'https://vue3-course-api.hexschool.io/api';
-const my_api_path = 'hunterchen';
+const api_url = 'https://vue3-course-api.hexschool.io/api';
+const api_path = 'hunterchen';
 
-const app = {
+Vue.createApp({
     data() {
         return {
             products: [
             ],
-            axios: {
-                url: 'https://vue3-course-api.hexschool.io/api',
-                api_path: 'hunterchen'
-            },
-            tempProdcut: {
+            pagination: {
+              },
+            tempProduct: {
                 imagesUrl : []
             }
         }
     },
     methods: {
-        getProductList() {
-            const url = `${this.axios.url}/${this.axios.api_path}/admin/products?page=1`;
+        getProductList(page) {
+            const targetPage = page == undefined ? this.pagination.current_page : page;
+            const url = `${api_url}/${api_path}/admin/products?page=` + targetPage;
             axios.get(url)
                 .then(response => {
                     const success = response.data.success;
                     if (success) {
                         this.products = response.data.products;
+                        this.pagination = response.data.pagination;
                     }
                     else {
                         const message = response.data.message;
@@ -38,15 +38,15 @@ const app = {
                 })
         },
         deleteProductItemDialog(item) {
-            this.tempProdcut = { ...item };
+            this.tempProduct = { ...item };
             delProductModal.show();
         },
         editProductItemDialog(item) {
-            this.tempProdcut = { ...item };
+            this.tempProduct = JSON.parse(JSON.stringify(item)); //需深層拷貝，避免圖片物件刪除未送出，下次編輯時卻未帶出的Bug。
             productModal.show();
         },
         addProductItemDialog() {
-            this.tempProdcut = {
+            this.tempProduct = {
                 category: "",
                 content: "",
                 description: "",
@@ -71,16 +71,16 @@ const app = {
     },
     mounted() {
         axios.defaults.headers.common.Authorization = Cookies.get('token');
-        this.getProductList();
+        this.getProductList(1);
         this.bindingModal();
     },
-}
-
-Vue.createApp(app)
+})
 
 .component('edit-modal',{
+    //props為參考範例原始碼
+    //帶入物件需類別驗證為type : Object，預設值為imagesUrl: []
     props: {
-        Prodcut: {
+        product: {
           type: Object,
           default() {
             return { 
@@ -97,11 +97,11 @@ Vue.createApp(app)
     },
     methods:{
         editProductItem() {
-            if (this.Prodcut.id === undefined) {
+            if (this.product.id === undefined) {
                 this.tempImage = '';
-                const url = `${my_url}/${my_api_path}/admin/product`;
+                const url = `${api_url}/${api_path}/admin/product`;
                 const requestData = {
-                    data: this.Prodcut
+                    data: this.product
                 }
                 axios.post(url, requestData)
                     .then(response => {
@@ -119,16 +119,16 @@ Vue.createApp(app)
                     })
             }
             else {
-                const id = this.Prodcut.id;
-                const url = `${my_url}/${my_api_path}/admin/product/${id}`;
+                const id = this.product.id;
+                const url = `${api_url}/${api_path}/admin/product/${id}`;
                 const requestData = {
-                    data: this.Prodcut
+                    data: this.product
                 }
                 axios.put(url, requestData)
                     .then(response => {
                         const success = response.data.success;
                         if (success) {
-                            this.$emit('update');
+                            this.$emit('emit-update');
                             productModal.hide();
                         } else {
                             const message = response.data.message;
@@ -141,17 +141,45 @@ Vue.createApp(app)
             }
         },
         deleteImageItem(index){
-            this.Prodcut.imagesUrl.splice(index,1);            
+            this.product.imagesUrl.splice(index,1);            
         },
-        addImageItem(index){
-            this.Prodcut.imagesUrl.push(this.tempImage);
+        addImageItem(){
+            this.product.imagesUrl.push(this.tempImage);
         },
     },
     mounted() {    
     }
 })
 
+.component('pagination',{
+    //props為參考範例原始碼
+    //帶入物件需類別驗證為type : Object，預設值為空物件
+    props: {
+        item: {
+        type: Object,
+        default() {
+          return { 
+          }
+        }
+      }
+    },
+    template : '#paginationTemplate',
+    data(){
+        return {
+        }
+    },
+    methods :{
+        navigatePage(index) {
+            this.$emit('emit-navigate',index);
+        }
+    },
+    mounted() {
+    },
+})
+
 .component('delete-modal',{
+    //props為參考範例原始碼
+    //帶入物件需類別驗證為type : Object，預設值為空物件
     props: {
       item: {
         type: Object,
@@ -169,14 +197,14 @@ Vue.createApp(app)
     methods :{
         deleteProductItem() {
             const id = this.item.id;
-            const url = `${my_url}/${my_api_path}/admin/product/${id}`;
+            const url = `${api_url}/${api_path}/admin/product/${id}`;
             console.log('url', url);
             console.log('id', id);
             axios.delete(url)
                 .then(response => {
                     const success = response.data.success;
                     if (success) {
-                        this.$emit('update');
+                        this.$emit('emit-update');
                         delProductModal.hide();
                     } else {
                         const message = response.data.message
