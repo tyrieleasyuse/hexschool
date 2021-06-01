@@ -107,7 +107,7 @@ Vue.createApp({
                     .then(response => {
                         const success = response.data.success;
                         if (success) {
-                            this.$emit('update');
+                            this.$emit('emit-update');
                             productModal.hide();
                         } else {
                             const message = response.data.message;
