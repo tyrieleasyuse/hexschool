@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d2261a6"],{e6dc:function(n,e,c){"use strict";c.r(e);var r=c("7a23");function t(n,e,c,t,u,a){return Object(r["o"])(),Object(r["d"])("h1",null,"前台產品列表")}var u={};u.render=t;e["default"]=u}}]);
+//# sourceMappingURL=chunk-2d2261a6.4d480a3c.js.map
