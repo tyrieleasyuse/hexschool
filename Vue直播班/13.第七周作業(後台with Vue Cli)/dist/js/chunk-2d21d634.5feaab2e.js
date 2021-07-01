@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d21d634"],{d0a3:function(n,e,r){"use strict";r.r(e);var c=r("7a23");function t(n,e,r,t,u,a){return Object(c["r"])(),Object(c["e"])("h1",null,"優惠券頁面")}var u={};u.render=t;e["default"]=u}}]);
+//# sourceMappingURL=chunk-2d21d634.5feaab2e.js.map
