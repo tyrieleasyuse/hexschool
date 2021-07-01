@@ -8,5 +8,6 @@ https://tyrieleasyuse.github.io/hexschool/Vue%E7%9B%B4%E6%92%AD%E7%8F%AD/6.%E7%A
 
 https://tyrieleasyuse.github.io/hexschool/Vue%E7%9B%B4%E6%92%AD%E7%8F%AD/8.%E7%AC%AC%E4%BA%94%E5%91%A8%E4%BD%9C%E6%A5%AD(%E8%A1%A8%E5%96%AE%E9%A9%97%E8%AD%89)/index.html
 
-
 https://tyrieleasyuse.github.io/hexschool/Vue%E7%9B%B4%E6%92%AD%E7%8F%AD/10.%E7%AC%AC%E5%85%AD%E5%91%A8%E4%BD%9C%E6%A5%AD(Vue%20Router)/vue-exam6/dist/index.html
+
+https://tyrieleasyuse.github.io/hexschool/Vue%E7%9B%B4%E6%92%AD%E7%8F%AD/13.%E7%AC%AC%E4%B8%83%E5%91%A8%E4%BD%9C%E6%A5%AD(%E5%BE%8C%E5%8F%B0with%20Vue%20Cli)/dist/index.html
